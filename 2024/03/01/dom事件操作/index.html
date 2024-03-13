@@ -18,14 +18,14 @@
   
     <meta name="description" content="事件对象概述  -&gt; 事件对象-&gt; 为什么需要事件对象键盘事件, 鼠标事件会在触发的时候 得到很多的数据, 例键盘按下的是什么键(组合件)再比如鼠标移动时候的坐标是什么…为了好使用这些数据, 浏览器帮我们将生成的这些数据进行 “打包”, 将其打包一个对象.  -&gt; 怎么使用事件对象呢?  1&gt; 怎么拿到对象   在事件触发( 人执行某一个预定义行为的时候 )的时候, 浏览器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="dom事件操作">
+<meta property="og:title" content="dom事件操作1">
 <meta property="og:url" content="http://luckyangyang.github.io/2024/03/01/dom%E4%BA%8B%E4%BB%B6%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="幸福来敲门">
 <meta property="og:description" content="事件对象概述  -&gt; 事件对象-&gt; 为什么需要事件对象键盘事件, 鼠标事件会在触发的时候 得到很多的数据, 例键盘按下的是什么键(组合件)再比如鼠标移动时候的坐标是什么…为了好使用这些数据, 浏览器帮我们将生成的这些数据进行 “打包”, 将其打包一个对象.  -&gt; 怎么使用事件对象呢?  1&gt; 怎么拿到对象   在事件触发( 人执行某一个预定义行为的时候 )的时候, 浏览器">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://luckyangyang.github.io/img/default1.png">
 <meta property="article:published_time" content="2024-03-01T08:57:52.538Z">
-<meta property="article:modified_time" content="2024-03-01T09:21:18.550Z">
+<meta property="article:modified_time" content="2024-03-11T06:57:45.909Z">
 <meta property="article:author" content="幸福来敲门">
 <meta property="article:tag" content="dom操作">
 <meta name="twitter:card" content="summary_large_image">
@@ -33,7 +33,7 @@
   
   
   
-  <title>dom事件操作 - 幸福来敲门</title>
+  <title>dom事件操作1 - 幸福来敲门</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -239,7 +239,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="dom事件操作"></span>
+            <span id="subtitle" data-typed-text="dom事件操作1"></span>
           
         </div>
 
@@ -263,7 +263,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          1.3k 字
+          2.3k 字
         
       </span>
     
@@ -275,7 +275,7 @@
         
         
           <!-- compatible with older versions-->
-          12 分钟
+          20 分钟
         
       </span>
     
@@ -313,7 +313,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">dom事件操作</h1>
+            <h1 id="seo-header">dom事件操作1</h1>
             
             
               <div class="markdown-body">
@@ -366,6 +366,32 @@
 </code></pre>
 <p>var btn &#x3D; document.querySelector( ‘input’ );<br>        btn.onclick &#x3D; function () {<br>            alert( ‘点击提交’ );<br>            return false; &#x2F;&#x2F; 在点击按钮事件触发后, 不会执行事件的默认行为. 即不会提交<br>        };</p>
 </blockquote>
+<h2 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h2><p>冒泡[ 重点 ]<br>    描述:<br>        <div><br>            <div></div><br>        </div><br>    我们点击 里面的 div, 问是点击的 里面的 div 还是点击的 外面的 div 呢?</p>
+<p>​	我们的 html 结构是一个嵌套关系的时候, 如果对里面的元素触发事件, 那么也相当于对外面的元素触发事件，那么这个过程不是我们注册事件才会实现, 而是浏览器对事件处理的基本原理, 不是因为我们注册了事件才有这个效果, 而是原本就有这个特征, 我们注册了事件才可以观察到.</p>
+<pre><code class="hljs"> 这样事件的触发会 从里往外 自动的传递, 我们将其称为事件的冒泡.
+</code></pre>
+<p>​	有些浏览器( 老 ), 我们在嵌套标签中触发事件的时候, 事件执行会 从 外 往 里. 那么将其称为 事件的捕获.</p>
+<p>​    由于 js 不断发展, 为了实现向下兼容. js 的事件语法中支持控制让事件以冒泡的形式传递 还是 以捕获的形式传递.</p>
+<pre><code class="hljs">语法:
+    元素.addEventListener( &#39;事件的类型&#39;, 事件处理函数[, 是否捕获 ] );
+该语法的第三个参数是可选参数, 提供一个 boolean 值
+1&gt; 如果不传入, 或传入的是 false, 表示采用冒泡的方式传递事件
+2&gt; 如果传入的是 true 则以捕获的形式进行传递事件
+</code></pre>
+<h3 id="事件冒泡-1"><a href="#事件冒泡-1" class="headerlink" title="事件冒泡"></a>事件冒泡</h3><p>事件的触发会 从里往外 自动的传递, 我们将其称为事件的冒泡.</p>
+<p>利用事件冒泡来实现事件代理<br>代理( delegate, 委托 ), 自己要做, 但是不做, 让另一个对象帮你做, 那么这个对象就是你的 代理.<br>事件代理, 就是原本应该触发你的事件, 但是触发的是别人的事件, 让这个事件来给你完成任务.</p>
+<p>案例:<br>    列表鼠标悬浮高量<br>思考: 冒泡在这个案例中, 存在什么特征? 就是每一次鼠标进入与离开, 都会被外层的 div 所察觉.<br>思考: 如果不给里面的所有 div 注册鼠标进入与离开的事件, 外层 容器的事件会 触发么? 会</p>
+<p>考虑, 如果在事件的传递过程中, 可以得到最早触发事件的元素( 事件的源头 ).<br>如果可以得到这个源头, 我们的 代码 会怎么样?</p>
+<p>事件处理函数中的事件对象, 有一个属性叫 target, 就是我们事件的源头.</p>
+<h3 id="事件捕获"><a href="#事件捕获" class="headerlink" title="事件捕获"></a>事件捕获</h3><p>事件执行会 从 外 往 里. 那么将其称为 事件的捕获.</p>
+<p>事件处理函数中的事件对象, 有一个属性叫 target, 就是我们事件的源头.</p>
+<h3 id="target-属性"><a href="#target-属性" class="headerlink" title="target,属性"></a>target,属性</h3><p>事件处理函数中的事件对象, 有一个属性叫 target, 就是我们事件的源头.</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;ie=edge&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css">        <span class="hljs-selector-class">.list</span> <span class="hljs-selector-tag">div</span> &#123;</span><br><span class="language-css">            <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;</span><br><span class="language-css">            <span class="hljs-attribute">height</span>: <span class="hljs-number">20px</span>;</span><br><span class="language-css">            <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#ccc</span>;</span><br><span class="language-css">            <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">rgba</span>( <span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0.3</span> );</span><br><span class="language-css">        &#125;</span><br><span class="language-css">    </span><br><span class="language-css">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;list&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">        <span class="hljs-keyword">var</span> list = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>( <span class="hljs-string">&#x27;.list&#x27;</span> );</span><br><span class="language-javascript"></span><br><span class="language-javascript">        list.<span class="hljs-property">onmouseover</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params"> e </span>) &#123;</span><br><span class="language-javascript">            <span class="hljs-comment">// console.log( &#x27;进入事件触发了&#x27; );</span></span><br><span class="language-javascript">            <span class="hljs-comment">// console.log( e );</span></span><br><span class="language-javascript"></span><br><span class="language-javascript">            <span class="hljs-comment">// var div = 源头;</span></span><br><span class="language-javascript">            <span class="hljs-keyword">var</span> div = e.<span class="hljs-property">target</span>;</span><br><span class="language-javascript">            div.<span class="hljs-property">style</span>.<span class="hljs-property">backgroundColor</span> = <span class="hljs-string">&#x27;red&#x27;</span>;</span><br><span class="language-javascript">        &#125;;</span><br><span class="language-javascript">        list.<span class="hljs-property">onmouseout</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params"> e </span>) &#123;</span><br><span class="language-javascript">            <span class="hljs-comment">// console.log( &#x27;离开事件触发了&#x27; );</span></span><br><span class="language-javascript">            <span class="hljs-comment">// console.log( e );</span></span><br><span class="language-javascript"></span><br><span class="language-javascript">            <span class="hljs-comment">// var div = 源头;</span></span><br><span class="language-javascript">            <span class="hljs-keyword">var</span> div = e.<span class="hljs-property">target</span>;</span><br><span class="language-javascript">            div.<span class="hljs-property">style</span>.<span class="hljs-property">backgroundColor</span> = <span class="hljs-string">&#x27;&#x27;</span>;</span><br><span class="language-javascript">        &#125;;</span><br><span class="language-javascript">        </span><br><span class="language-javascript">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="取消事件的默认行为-1"><a href="#取消事件的默认行为-1" class="headerlink" title="取消事件的默认行为"></a>取消事件的默认行为</h3><p>return false</p>
+<h3 id="取消事件冒泡"><a href="#取消事件冒泡" class="headerlink" title="取消事件冒泡"></a>取消事件冒泡</h3><p>stopPropagation()</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs actionscript">span.onclick = <span class="hljs-keyword">function</span> <span class="hljs-params">( e )</span> &#123;<br>            alert( <span class="hljs-string">&#x27;span&#x27;</span> );<br>            e.stopPropagation(); <span class="hljs-comment">// 阻止了事件向上传递( 没有冒泡了 )</span><br>        &#125;;<br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
@@ -411,7 +437,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>dom事件操作</div>
+      <div>dom事件操作1</div>
       <div>http://luckyangyang.github.io/2024/03/01/dom事件操作/</div>
     </div>
     <div class="license-meta">
@@ -735,6 +761,6 @@
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
   <!-- 动态背景 -->
-<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<script color="0,0,0" opacity='0.7' zIndex="-2" count="200" type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
