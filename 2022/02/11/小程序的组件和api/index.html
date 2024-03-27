@@ -1,0 +1,774 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/blog/img/avatar2.jpg">
+  <link rel="icon" href="/blog/img/avatar2.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="幸福来敲门">
+  <meta name="keywords" content="幸福来敲门,博客,技术贴,前端,后端,vue,hexo,html,css,小程序,uni-app,后台,移动端,建站,论坛,bootstrap,安卓,ios,技术前沿，技术博客,mui,ant-design,elementui,java,javaStrpict,sass,scss,less,React,Angular,jQuery">
+  
+    <meta name="description" content="小程序的组件和api组件123https:&#x2F;&#x2F;developers.weixin.qq.com&#x2F;ebook?action&#x3D;get_post_info&amp;docid&#x3D;000eec0b998e80bb0086f092b5100a一个小程序页面可以分解成多个部分组成，组件就是小程序页面的基本组成单元。为了让开发者可以快速进行开发，小程序的宿主环境提供了一系列基础组件。组件是在WXML模板文件声明中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小程序的组件和api和事件">
+<meta property="og:url" content="https://gitee.com/dong-wanyang/blog/2022/02/11/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BB%84%E4%BB%B6%E5%92%8Capi/index.html">
+<meta property="og:site_name" content="幸福来敲门">
+<meta property="og:description" content="小程序的组件和api组件123https:&#x2F;&#x2F;developers.weixin.qq.com&#x2F;ebook?action&#x3D;get_post_info&amp;docid&#x3D;000eec0b998e80bb0086f092b5100a一个小程序页面可以分解成多个部分组成，组件就是小程序页面的基本组成单元。为了让开发者可以快速进行开发，小程序的宿主环境提供了一系列基础组件。组件是在WXML模板文件声明中">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/blog/img/myimg9.jpg">
+<meta property="article:published_time" content="2022-02-11T12:20:12.000Z">
+<meta property="article:modified_time" content="2024-03-27T08:05:12.108Z">
+<meta property="article:author" content="幸福来敲门">
+<meta property="article:tag" content="小程序">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gitee.com/blog/img/myimg9.jpg">
+  
+  
+  
+  <title>小程序的组件和api和事件 - 幸福来敲门</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/blog/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/blog/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/blog/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/blog/css/font_gd7ak9jx13f/iconfont.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"gitee.com","root":"/blog/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/blog/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/blog/js/utils.js" ></script>
+  <script  src="/blog/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/blog/">
+      <strong>幸福来敲门</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/commonweal/" target="_self">
+                <i class="iconfont icon-gongyi"></i>
+                <span>公益</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/guestbook/" target="_self">
+                <i class="iconfont icon-B-liuyan"></i>
+                <span>留言</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/blog/img/default.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="小程序的组件和api和事件"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-02-11 20:20" pubdate>
+          2022年02月11日 20:20:12
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          3.3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          28 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+    <script type="text/javascript" src="/js/love.js"></script>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">小程序的组件和api和事件</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="小程序的组件和api"><a href="#小程序的组件和api" class="headerlink" title="小程序的组件和api"></a>小程序的组件和api</h1><h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">https:</span><span class="hljs-comment">//developers.weixin.qq.com/ebook?action=get_post_info&amp;docid=000eec0b998e80bb0086f092b5100a</span><br>一个小程序页面可以分解成多个部分组成，组件就是小程序页面的基本组成单元。为了让开发者可以快速进行开发，小程序的宿主环境提供了一系列基础组件。<br>组件是在WXML模板文件声明中使用的，WXML的语法和HTML语法相似，小程序使用标签名来引用一个组件，通常包含开始标签和结束标签，该标签的属性用来描述该组件。	<br></code></pre></td></tr></table></figure>
+
+<h3 id="组件共有属性"><a href="#组件共有属性" class="headerlink" title="组件共有属性"></a>组件共有属性</h3><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript">属性名	类型	描述	其他说明<br>id	<span class="hljs-built_in">String</span>	组件的唯一标示	保持整个页面唯一<br><span class="hljs-keyword">class</span>	<span class="hljs-title class_">String</span>	组件的样式类	在对应的WXSS中定义的样式类<br>style	<span class="hljs-built_in">String</span>	组件的内联样式	可以通过数据绑定进行动态设置的内联样式<br>hidden	<span class="hljs-built_in">Boolean</span>	组件是否显示	所有组件默认显示<br>data-*	Any	自定义属性	组件上触发的事件时，会发送给事件处理函数<br>bind / <span class="hljs-keyword">catch</span>	EventHandler	事件	详情见<span class="hljs-number">3.5</span>节<br></code></pre></td></tr></table></figure>
+
+<h3 id="自定义组件"><a href="#自定义组件" class="headerlink" title="自定义组件"></a>自定义组件</h3><p>新建文件夹（所有组件component）<br>里面，新建组件文件夹（swiper）<br>里面，新建组件文件</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs stylus">swiper<span class="hljs-selector-class">.wxml</span><br>&lt;view class=<span class="hljs-string">&quot;inner&quot;</span>&gt;<br>  &#123;&#123;innerText&#125;&#125;<br>&lt;/view&gt;<br>swiper<span class="hljs-selector-class">.wxss</span><br><span class="hljs-selector-class">.inner</span> &#123;<br>  <span class="hljs-attribute">color</span>: red;<br>&#125;<br>swiper<span class="hljs-selector-class">.json</span><br>&#123;<br>  <span class="hljs-string">&quot;component&quot;</span>: true<br>&#125;<br>swiper<span class="hljs-selector-class">.js</span><br><span class="hljs-built_in">Component</span>(&#123;<br>  properties: &#123;<br>    <span class="hljs-comment">// 这里定义了innerText属性，属性值可以在组件使用时指定</span><br>    innerText: &#123;<br>      type: String,<br>      value: <span class="hljs-string">&#x27;default value&#x27;</span>,<br>    &#125;<br>  &#125;,<br>  data: &#123;<br>    <span class="hljs-comment">// 这里是一些组件内部数据</span><br>    someData: &#123;&#125;<br>  &#125;,<br>  methods: &#123;<br>    <span class="hljs-comment">// 这里是一个自定义方法</span><br>    customMethod: <span class="hljs-built_in">function</span>()&#123;&#125;<br>  &#125;<br>&#125;)<br><br></code></pre></td></tr></table></figure>
+
+<p>组件的引用<br>seiper   任意组件名字<br>page1.json(需要引用组建的页面)</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs xquery">&#123;<br>  <span class="hljs-string">&quot;usingComponents&quot;</span>: &#123;<br>     <span class="hljs-string">&quot;seiper&quot;</span>: <span class="hljs-string">&quot;../component/swiper/swiper&quot;</span><br>  &#125;<br>&#125;<br>page1.wxml(需要引用组建的页面)<br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml">  <span class="hljs-comment">&lt;!-- 以下是对一个自定义组件的引用 --&gt;</span></span><br><span class="language-xml">  </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">seiper</span> <span class="hljs-attr">inner-text</span>=<span class="hljs-string">&quot;Some 	text&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">seiper</span>&gt;</span></span><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<h4 id="swiper组件-案例"><a href="#swiper组件-案例" class="headerlink" title="swiper组件  案例"></a>swiper组件  案例</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br></pre></td><td class="code"><pre><code class="hljs stylus">swiper<span class="hljs-selector-class">.wxml</span><br>&lt;!<span class="hljs-attr">--pages</span>/component/swiper/swiper.wxml--&gt;<br>&lt;view class=<span class="hljs-string">&quot;page-body&quot;</span>&gt;<br>    &lt;view class=<span class="hljs-string">&quot;page-section page-section-spacing swiper&quot;</span>&gt;<br>      &lt;swiper<br>        indicator-dots=<span class="hljs-string">&quot;&#123;&#123;indicatorDots&#125;&#125;&quot;</span> autoplay=<span class="hljs-string">&quot;&#123;&#123;autoplay&#125;&#125;&quot;</span> circular=<span class="hljs-string">&quot;&#123;&#123;circular&#125;&#125;&quot;</span> vertical=<span class="hljs-string">&quot;&#123;&#123;vertical&#125;&#125;&quot;</span><br>        interval=<span class="hljs-string">&quot;&#123;&#123;interval&#125;&#125;&quot;</span> duration=<span class="hljs-string">&quot;&#123;&#123;duration&#125;&#125;&quot;</span> previous-<span class="hljs-attribute">margin</span>=<span class="hljs-string">&quot;&#123;&#123;previousMargin&#125;&#125;px&quot;</span> next-margin=<span class="hljs-string">&quot;&#123;&#123;nextMargin&#125;&#125;px&quot;</span>&gt;<br>        &lt;block wx:<span class="hljs-keyword">for</span>=<span class="hljs-string">&quot;&#123;&#123;background&#125;&#125;&quot;</span> wx:key=<span class="hljs-string">&quot;*this&quot;</span>&gt;<br>          &lt;swiper-item&gt;<br>            &lt;view&gt;<br>               &lt;image <span class="hljs-attribute">src</span>=<span class="hljs-string">&quot;/pages/img/1-s-benner.png&quot;</span>&gt;&lt;/image&gt;<br>            &lt;/view&gt;<br>          &lt;/swiper-item&gt;<br>        &lt;/block&gt;<br>      &lt;/swiper&gt;<br>    &lt;/view&gt;<br>  &lt;/view&gt;<br><br><br><br>swiper<span class="hljs-selector-class">.js</span><br>const app = <span class="hljs-built_in">getApp</span>()<br><br><span class="hljs-built_in">Page</span>(&#123;<br>   data: &#123;<br>      motto: <span class="hljs-string">&#x27;Hello World&#x27;</span>,<br>      userInfo: &#123;&#125;,<br>      hasUserInfo: false,<br>      canIUse: wx<span class="hljs-selector-class">.canIUse</span>(<span class="hljs-string">&#x27;button.open-type.getUserInfo&#x27;</span>),<br>      <span class="hljs-attribute">background</span>: [<span class="hljs-string">&#x27;demo-text-1&#x27;</span>, <span class="hljs-string">&#x27;demo-text-2&#x27;</span>, <span class="hljs-string">&#x27;demo-text-3&#x27;</span>],<br>      indicatorDots: true,<br>      vertical: false,<br>      autoplay: true,<br>      circular: true,<br>      interval: <span class="hljs-number">3000</span>,<br>      duration: <span class="hljs-number">500</span>,<br>      previousMargin: <span class="hljs-number">0</span>,<br>      nextMargin: <span class="hljs-number">0</span><br>   &#125;,<br>&#125;)<br><br>swiper<span class="hljs-selector-class">.json</span><br>&#123;<br>   <span class="hljs-string">&quot;component&quot;</span>: true,<br>   <span class="hljs-string">&quot;usingComponents&quot;</span>: &#123;&#125;<br>&#125;<br>swiper<span class="hljs-selector-class">.wxss</span><br><span class="hljs-comment">/* pages/component/swiper/swiper.wxss */</span><br><span class="hljs-comment">/* @import &quot;./weui.wxss&quot;; */</span><br><br>page &#123;<br>  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#F8F8F8</span>;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;<br>  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">32</span>rpx;<br>  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1.6</span>;<br>&#125;<br>.page-body&#123;<br>  <span class="hljs-attribute">background-color</span>: pink;<br>&#125;<br>.page-section&#123;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;<br>&#125;<br>.page-section_center&#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">flex-direction</span>: column;<br>  <span class="hljs-attribute">align-items</span>: center;<br>&#125;<br><span class="hljs-selector-class">.page-section</span>:last-child&#123;<br>  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">0</span>;<br>&#125;<br>.page-section-<span class="hljs-attribute">gap</span>&#123;<br>  <span class="hljs-attribute">box-sizing</span>: border-box;<br>  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> <span class="hljs-number">30</span>rpx;<br>&#125;<br>.page-section-spacing&#123;<br>  <span class="hljs-attribute">box-sizing</span>: border-box;<br>&#125;<br>.page-section-title&#123;<br>  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">28</span>rpx;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-number">#999999</span>;<br>  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">10</span>rpx;<br>  <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">30</span>rpx;<br>  <span class="hljs-attribute">padding-right</span>: <span class="hljs-number">30</span>rpx;<br>&#125;<br><span class="hljs-selector-class">.page-section-gap</span> .page-section-title&#123;<br>  <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">0</span>;<br>  <span class="hljs-attribute">padding-right</span>: <span class="hljs-number">0</span>;<br>&#125;<br>button&#123;<br>  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">30</span>rpx;<br>&#125;<br><span class="hljs-selector-tag">button</span>:last-child&#123;<br>  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">0</span>;<br>&#125;<br>.page-section-title&#123;<br>  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;<br>&#125;<br>swiper&#123;<br>   <span class="hljs-attribute">height</span>: <span class="hljs-number">370</span>rpx;<br>&#125;<br>swiper-item&#123;<br>  <span class="hljs-attribute">display</span>: block;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;<br>&#125;<br>swiper-item &gt;view&#123;<br>   <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;<br>   <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;<br>&#125;<br>swiper-item &gt;view image&#123;<br>   <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;<br>   <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;<br>&#125;<br>.page-section-title&#123;<br>  <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">60</span>rpx;<br>  <span class="hljs-attribute">position</span>: relative;<br>&#125;<br>.info&#123;<br>  <span class="hljs-attribute">position</span>: absolute;<br>  <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-number">#353535</span>;<br>  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">30</span>rpx;<br>&#125;<br>.page-foot&#123;<br>  <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">50</span>rpx;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<h4 id="三级联动"><a href="#三级联动" class="headerlink" title="三级联动"></a>三级联动</h4><figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml">https://developers.weixin.qq.com/miniprogram/dev/component/picker.html</span><br><span class="language-xml">wxml</span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">picker</span> <span class="hljs-attr">mode</span>=<span class="hljs-string">&quot;region&quot;</span> <span class="hljs-attr">bindchange</span>=<span class="hljs-string">&quot;bindRegionChange&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">region</span>&#125;&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span> <span class="hljs-attr">custom-item</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">customItem</span>&#125;&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>&gt;</span></span><br><span class="language-xml">         <span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;picker&quot;</span>&gt;</span></span><br><span class="language-xml">         <span class="hljs-comment">&lt;!-- 当前选择：</span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">region</span>[0]&#125;&#125;</span><span class="language-xml"><span class="hljs-comment">，</span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">region</span>[1]&#125;&#125;</span><span class="language-xml"><span class="hljs-comment">，</span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">region</span>[2]&#125;&#125;</span><span class="language-xml"><span class="hljs-comment"> --&gt;</span></span><br><span class="language-xml">         </span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">region</span>[1]&#125;&#125;</span><span class="language-xml"></span><br><span class="language-xml">         <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;/<span class="hljs-name">picker</span>&gt;</span></span><br><span class="language-xml">js</span><br><span class="language-xml">data: &#123;</span><br><span class="language-xml">      region: [&#x27;广东省&#x27;, &#x27;广州市&#x27;, &#x27;海珠区&#x27;],</span><br><span class="language-xml">      customItem: &#x27;全部&#x27;</span><br><span class="language-xml">   &#125;,</span><br><span class="language-xml">   bindRegionChange: function (e) &#123;</span><br><span class="language-xml">      console.log(&#x27;picker发送选择改变，携带值为&#x27;, e.detail.value)</span><br><span class="language-xml">      this.setData(&#123;</span><br><span class="language-xml">         region: e.detail.value</span><br><span class="language-xml">      &#125;)</span><br><span class="language-xml">   &#125;,</span><br><span class="language-xml"></span><br><span class="language-xml"></span><br><span class="language-xml">就可以了</span><br><span class="language-xml">mode可以选择不同类型</span><br><span class="language-xml">multiSelector  time   date   region（地区选择器）</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="组件传值"><a href="#组件传值" class="headerlink" title="组件传值"></a>组件传值</h3><h4 id="组件传值-父传子"><a href="#组件传值-父传子" class="headerlink" title="组件传值(父传子)"></a>组件传值(父传子)</h4><p>页面A</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs routeros">wxml<br>  &lt;titleimg <span class="hljs-attribute">paramAtoB</span>=<span class="hljs-string">&quot;/pages/img/1-s-xinpintuijian.png&quot;</span>&gt;&lt;/titleimg&gt;<br>paramAtoB  任意参数名<br>json<br>&#123;<br>  <span class="hljs-string">&quot;usingComponents&quot;</span>: &#123;<br>     <span class="hljs-string">&quot;swiper&quot;</span>: <span class="hljs-string">&quot;/pages/component/swiper/swiper&quot;</span>,<br>     <span class="hljs-string">&quot;navbox&quot;</span>: <span class="hljs-string">&quot;/pages/component/navbox/navbox&quot;</span>,<br>     <span class="hljs-string">&quot;titleimg&quot;</span>: <span class="hljs-string">&quot;/pages/component/titleimg/titleimg&quot;</span><br>  &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<p>组件页面B</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs javascript">wxml<br>&lt;view <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;titleimg&quot;</span>&gt;<br>   <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">mode</span>=<span class="hljs-string">&#x27;widthFix&#x27;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&#123;&#123;paramAtoB&#125;&#125;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span></span><br>  &lt;/view&gt;<br>直接使用<br>js<br><span class="hljs-title class_">Component</span>(&#123;<br>   <span class="hljs-attr">behaviors</span>: [],<br>	<span class="hljs-attr">properties</span>: &#123;<br>  <span class="hljs-attr">paramAtoB</span>: <span class="hljs-title class_">String</span><br>   &#125;,<br>   <span class="hljs-attr">data</span>: &#123;<br><br>   &#125;, <span class="hljs-comment">// 私有数据，可用于模版渲染</span><br>   <span class="hljs-comment">// 生命周期函数，可以为函数，或一个在methods段中定义的方法名</span><br><br>   <span class="hljs-attr">attached</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123; &#125;,<br>   <span class="hljs-attr">moved</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123; &#125;,<br>   <span class="hljs-attr">detached</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123; &#125;,<br>   <span class="hljs-attr">methods</span>: &#123;<br><br>   &#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="组件传值-子传父"><a href="#组件传值-子传父" class="headerlink" title="组件传值(子传父)"></a>组件传值(子传父)</h4><p>子组件内部准备参数</p>
+<p>html</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;navbox&quot;</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;navbox_ul&quot;</span> &gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">bindtap</span>=<span class="hljs-string">&quot;tap_fn&quot;</span> <span class="hljs-attr">data-id</span>=<span class="hljs-string">&quot;A&quot;</span>&gt;</span><br>         <span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/pages/img/1-s-NEW.png&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span><br>         <span class="hljs-tag">&lt;<span class="hljs-name">text</span>&gt;</span>新品推荐<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br>   <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
+
+<p>js</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs arcade">tap_fn:<span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>)&#123;<br>      <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">1111111111</span>, e.currentTarget.dataset.id)<br>      <span class="hljs-keyword">var</span> scrollTopId = e.currentTarget.dataset.id;<br>		<span class="hljs-comment">//scrollTopId我要传的参数</span><br>		<span class="hljs-comment">//新建自定义事件，把参数放里</span><br>      this.triggerEvent(<span class="hljs-string">&#x27;myevent&#x27;</span>, scrollTopId) <br><br><span class="hljs-comment">//myevent自定义名称事件，父组件中使用</span><br>   &#125;,<br></code></pre></td></tr></table></figure>
+
+<p>父组件接收参数</p>
+<p>navbox  是我的父组件名<br>myevent 我的事件名<br>scrollTopId  我随意起的函数名称</p>
+<p>html</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">navbox</span> <span class="hljs-attr">bind:myevent</span>=<span class="hljs-string">&quot;scrollTopId&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">navbox</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>js</p>
+<p>e里面有我的参数</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs arcade">scrollTopId:<span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>)&#123;<br>      <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(e);<br>   &#125;,<br></code></pre></td></tr></table></figure>
+
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="小程序提供的API按照功能主要分为几大类"><a href="#小程序提供的API按照功能主要分为几大类" class="headerlink" title="小程序提供的API按照功能主要分为几大类"></a>小程序提供的API按照功能主要分为几大类</h3><p>网络、媒体、文件、数据缓存、位置、设备、界面、界面节点信息还有一些特殊的开放接口</p>
+<p>为了让开发者可以很方便的调起微信提供的能力，例如获取用户信息、微信支付等等，小程序提供了很多 API 给开发者去使用。 </p>
+<p>要获取用户的地理位置时，只需要： </p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs stylus">wx<span class="hljs-selector-class">.getLocation</span>(&#123;<br>  type: <span class="hljs-string">&#x27;wgs84&#x27;</span>,<br>  success: (res) =&gt; &#123;<br>    <span class="hljs-selector-tag">var</span> latitude = res<span class="hljs-selector-class">.latitude</span> <span class="hljs-comment">// 纬度</span><br>    <span class="hljs-selector-tag">var</span> longitude = res<span class="hljs-selector-class">.longitude</span> <span class="hljs-comment">// 经度</span><br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>调用微信扫一扫能力，只需要： </p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs arcade">wx.scanCode(&#123;<br>  <span class="hljs-attr">success</span>: <span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> &#123;<br>    <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(res)<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>更多api功能参考官方文档</p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api/">https://developers.weixin.qq.com/miniprogram/dev/api/</a></p>
+<h3 id="API一般调用的约定："><a href="#API一般调用的约定：" class="headerlink" title="API一般调用的约定："></a>API一般调用的约定：</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs dart">wx.<span class="hljs-keyword">on</span>* 开头的 API 是监听某个事件发生的API接口，接受一个 Callback 函数作为参数。当该事件触发时，会调用 Callback 函数。<br>如未特殊约定，多数 API 接口为异步接口 ，都接受一个<span class="hljs-built_in">Object</span>作为参数。<br>API的<span class="hljs-built_in">Object</span>参数一般由success、fail、complete三个回调来接收接口调用结果，示例代码如代码清单<span class="hljs-number">3</span><span class="hljs-number">-17</span>所示，详细说明如表<span class="hljs-number">3</span><span class="hljs-number">-9</span>所示。<br>wx.<span class="hljs-keyword">get</span>* 开头的API是获取宿主环境数据的接口。<br>wx.<span class="hljs-keyword">set</span>* 开头的API是写入数据到宿主环境的接口。<br></code></pre></td></tr></table></figure>
+
+<h3 id="wx-request"><a href="#wx-request" class="headerlink" title="wx.request"></a>wx.request</h3><p>通过wx.request发起网络请求</p>
+<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs subunit">wx.request(&#123;<br>url: &#x27;test.php&#x27;,<br>data: &#123;&#125;,<br>header: &#123; &#x27;content-type&#x27;: &#x27;application/json&#x27; &#125;,<br><span class="hljs-keyword">success: </span>function(res) &#123;<br> // 收到https服务成功后返回<br> console.log(res.data)<br>&#125;,<br>fail: function() &#123;<br> // 发生网络错误等情况触发<br>&#125;,<br>complete: function() &#123;<br> // 成功或者失败后触发<br>&#125;<br>&#125;)<br><br>代表3<span class="hljs-string">-9</span> API接口回调说明<br><br>参数名字	类型	必填	描述<br><span class="hljs-keyword">success	</span>Function	否	接口调用成功的回调函数<br>fail	Function	否	接口调用失败的回调函数<br>complete	Function	否	接口调用结束的回调函数（调用成功、失败都会执行）<br></code></pre></td></tr></table></figure>
+
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><h3 id="常见的事件类型"><a href="#常见的事件类型" class="headerlink" title="常见的事件类型"></a>常见的事件类型</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs css">touchstart	手指触摸动作开始<br>touchmove	手指触摸后移动<br>touchcancel	手指触摸动作被打断，如来电提醒，弹窗<br>touchend	手指触摸动作结束<br>tap	手指触摸后马上离开<br>longpress	手指触摸后，超过<span class="hljs-number">350ms</span>再离开，如果指定了事件回调函数并触发了这个事件，tap事件将不被触发<br>longtap	手指触摸后，超过<span class="hljs-number">350ms</span>再离开（推荐使用longpress事件代替）<br>transitionend	会在 WXSS <span class="hljs-attribute">transition</span> 或 wx<span class="hljs-selector-class">.createAnimation</span> 动画结束后触发<br>animationstart	会在一个 WXSS <span class="hljs-attribute">animation</span> 动画开始时触发<br>animationiteration	会在一个 WXSS <span class="hljs-attribute">animation</span> 一次迭代结束时触发<br>animationend	会在一个 WXSS <span class="hljs-attribute">animation</span> 动画完成时触发<br></code></pre></td></tr></table></figure>
+
+<h3 id="简单事件代码演示"><a href="#简单事件代码演示" class="headerlink" title="简单事件代码演示"></a>简单事件代码演示</h3><figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="language-xml"><span class="hljs-comment">&lt;!-- page.wxml --&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tapTest&quot;</span> <span class="hljs-attr">data-hi</span>=<span class="hljs-string">&quot;WeChat&quot;</span> <span class="hljs-attr">bindtap</span>=<span class="hljs-string">&quot;tapName&quot;</span>&gt;</span> Click me! <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml"></span><br><span class="language-xml">// page.js</span><br><span class="language-xml">   Page(</span><span class="hljs-template-variable">&#123;</span><br><span class="hljs-template-variable">  tapName: function(event) &#123;</span><br><span class="hljs-template-variable">    console.log(event)</span><br><span class="hljs-template-variable">  &#125;</span><span class="language-xml"></span><br><span class="language-xml">&#125;)</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="事件对象属性"><a href="#事件对象属性" class="headerlink" title="事件对象属性"></a>事件对象属性</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">type</span>	String	事件类型<br><span class="hljs-type">timeStamp</span>	<span class="hljs-type">Integer</span>	页面打开到触发事件所经过的毫秒数<br>target	<span class="hljs-keyword">Object</span>	触发事件的组件的一些属性值集合<br>currentTarget	<span class="hljs-keyword">Object</span>	当前组件的一些属性值集合<br>detail	<span class="hljs-keyword">Object</span>	额外的信息<br>touches	<span class="hljs-keyword">Array</span>	触摸事件，当前停留在屏幕中的触摸点信息的数组<br>changedTouches	<span class="hljs-keyword">Array</span>	触摸事件，当前变化的触摸点信息的数组<br></code></pre></td></tr></table></figure>
+
+<p>事件对象实例</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="language-xml"><span class="hljs-comment">&lt;!-- page.wxml --&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;outer&quot;</span> <span class="hljs-attr">catchtap</span>=<span class="hljs-string">&quot;handleTap&quot;</span>&gt;</span></span><br><span class="language-xml">  <span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;inner&quot;</span>&gt;</span>点击我<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml">// page.js</span><br><span class="language-xml">Page(</span><span class="hljs-template-variable">&#123;</span><br><span class="hljs-template-variable">  handleTap: function(evt) &#123;</span><br><span class="hljs-template-variable">       // 当点击inner节点时</span><br><span class="hljs-template-variable">    // evt.target 是inner view组件</span><br><span class="hljs-template-variable">       // evt.currentTarget 是绑定了handleTap的outer view组件</span><br><span class="hljs-template-variable">       // evt.type == “tap”</span><br><span class="hljs-template-variable">       // evt.timeStamp == 1542</span><br><span class="hljs-template-variable">       // evt.detail == &#123;x: 270, y: 63&#125;</span><span class="language-xml"></span><br><span class="language-xml">       // evt.touches == [</span><span class="hljs-template-variable">&#123;identifier: 0, pageX: 270, pageY: 63, clientX: 270, clientY: 63&#125;</span><span class="language-xml">]</span><br><span class="language-xml">       // evt.changedTouches == [</span><span class="hljs-template-variable">&#123;identifier: 0, pageX: 270, pageY: 63, clientX: 270, clientY: 63&#125;</span><span class="language-xml">]</span><br><span class="language-xml">  &#125;</span><br><span class="language-xml">&#125;)</span><br><span class="language-xml"></span><br></code></pre></td></tr></table></figure>
+
+<p>target和currentTarget事件对象属性</p>
+<p>属性	类型	说明<br>id	String	当前组件的id<br>tagName	String	当前组件的类型<br>dataset	Object	当前组件上由data-开头的自定义属性组成的集合</p>
+<p>属性	类型	说明<br>identifier	Number	触摸点的标识符<br>pageX, pageY	Number	距离文档左上角的距离，文档的左上角为原点 ，横向为X轴，纵向为Y轴<br>clientX, clientY	Number	距离页面可显示区域（屏幕除去导航条）左上角距离，横向为X轴，纵向为Y轴</p>
+<h3 id="事件绑定与冒泡捕获"><a href="#事件绑定与冒泡捕获" class="headerlink" title="事件绑定与冒泡捕获"></a>事件绑定与冒泡捕获</h3><p>事件绑定的写法和组件属性一致，以key&#x3D;”value”的形式，其中：</p>
+<p>key以bind或者catch开头，然后跟上事件的类型，如bindtap、catchtouchstart。自基础库版本1.5.0起，bind和catch后可以紧跟一个冒号，其含义不变，如bind:tap、catch:touchstart。同时bind和catch前还可以加上capture-来表示捕获阶段。<br>value是一个字符串，需要在对应的页面Page构造器中定义同名的函数，否则触发事件时在控制台会有报错信息。<br>bind和capture-bind的含义分别代表事件的冒泡阶段和捕获阶段</p>
+<p>capture-bind  事件捕获<br>bind   事件冒泡<br>capture-catch  将中断捕获阶段和取消冒泡阶段</p>
+<p>点击 inner view 会先后调用handleTap2、handleTap4、handleTap3、handleTap1。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-operator">&lt;</span><span class="hljs-keyword">view</span><br>  id<span class="hljs-operator">=</span>&quot;outer&quot;<br>  bind:touchstart<span class="hljs-operator">=</span>&quot;handleTap1&quot;<br>  capture<span class="hljs-operator">-</span>bind:touchstart<span class="hljs-operator">=</span>&quot;handleTap2&quot;<br><span class="hljs-operator">&gt;</span><br>  <span class="hljs-keyword">outer</span> <span class="hljs-keyword">view</span><br>  <span class="hljs-operator">&lt;</span><span class="hljs-keyword">view</span><br>    id<span class="hljs-operator">=</span>&quot;inner&quot;<br>    bind:touchstart<span class="hljs-operator">=</span>&quot;handleTap3&quot;<br>    capture<span class="hljs-operator">-</span>bind:touchstart<span class="hljs-operator">=</span>&quot;handleTap4&quot;<br>  <span class="hljs-operator">&gt;</span><br>    <span class="hljs-keyword">inner</span> <span class="hljs-keyword">view</span><br>  <span class="hljs-operator">&lt;</span><span class="hljs-operator">/</span><span class="hljs-keyword">view</span><span class="hljs-operator">&gt;</span><br><span class="hljs-operator">&lt;</span><span class="hljs-operator">/</span><span class="hljs-keyword">view</span><span class="hljs-operator">&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="bind和catch"><a href="#bind和catch" class="headerlink" title="bind和catch"></a>bind和catch</h4><p>bind事件绑定不会阻止冒泡事件向上冒泡，catch事件绑定可以阻止冒泡事件向上冒泡。如果将上面代码中的第一个capture-bind改为capture-catch，将只触发handleTap2(capture-catch将中断捕获阶段和取消冒泡阶段)</p>
+<h4 id="滑动事件"><a href="#滑动事件" class="headerlink" title="滑动事件"></a>滑动事件</h4><p>用的就是<br>touchstart	手指触摸动作开始<br>touchmove	手指触摸后移动<br>touchcancel	手指触摸动作被打断，如来电提醒，弹窗</p>
+<p>实例</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><code class="hljs javascript">bindtouchstart=<span class="hljs-string">&quot;scrollTouchstart&quot;</span> bindtouchmove=<span class="hljs-string">&quot;scrollTouchmove&quot;</span> bindtouchend=<span class="hljs-string">&quot;scrollTouchend&quot;</span><br><br><br>js<br><span class="hljs-comment">// pages/about/about.js</span><br><br><span class="hljs-title class_">Page</span>(&#123;<br>   <span class="hljs-attr">data</span>: &#123;<br>      <span class="hljs-attr">scrollindex</span>: <span class="hljs-number">0</span>,  <span class="hljs-comment">//当前页面的索引值</span><br>      <span class="hljs-attr">totalnum</span>: <span class="hljs-number">5</span>,  <span class="hljs-comment">//总共页面数</span><br>      <span class="hljs-attr">starty</span>: <span class="hljs-number">0</span>,  <span class="hljs-comment">//开始的位置x</span><br>      <span class="hljs-attr">endy</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">//结束的位置y</span><br>      <span class="hljs-attr">critical</span>: <span class="hljs-number">100</span>, <span class="hljs-comment">//触发翻页的临界值</span><br>      <span class="hljs-attr">margintop</span>: <span class="hljs-number">0</span>,  <span class="hljs-comment">//滑动下拉距离</span><br>   &#125;,<br>   <span class="hljs-attr">onLoad</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>   &#125;,<br>   <span class="hljs-attr">scrollTouchstart</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) &#123;<br>      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;滚动到顶部&#x27;</span>);<br>      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(e.<span class="hljs-property">touches</span>[<span class="hljs-number">0</span>].<span class="hljs-property">pageY</span>);<br>      <span class="hljs-keyword">let</span> py = e.<span class="hljs-property">touches</span>[<span class="hljs-number">0</span>].<span class="hljs-property">pageY</span>;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setData</span>(&#123;<br>         <span class="hljs-attr">starty</span>: py<br>      &#125;)<br>   &#125;,<br>   <span class="hljs-attr">scrollTouchmove</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) &#123;<br>      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;滚动中&#x27;</span>);<br>      <span class="hljs-comment">// console.log(e.touches[0].pageY);</span><br>      <span class="hljs-keyword">let</span> py = e.<span class="hljs-property">touches</span>[<span class="hljs-number">0</span>].<span class="hljs-property">pageY</span>;<br>      <span class="hljs-keyword">let</span> d = <span class="hljs-variable language_">this</span>.<span class="hljs-property">data</span>;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setData</span>(&#123;<br>         <span class="hljs-attr">endy</span>: py,<br>      &#125;)<br>      <span class="hljs-comment">// 滑动屏幕100px内时，前端给动效（设置margin-top）</span><br>      <span class="hljs-keyword">if</span> (py - d.<span class="hljs-property">starty</span> &lt; <span class="hljs-number">100</span> &amp;&amp; py - d.<span class="hljs-property">starty</span> &gt; -<span class="hljs-number">100</span>) &#123;<br>         <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setData</span>(&#123;<br>            <span class="hljs-attr">margintop</span>: py - d.<span class="hljs-property">starty</span><br>         &#125;)<br>      &#125;<br>   &#125;,<br>   <span class="hljs-attr">scrollTouchend</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) &#123;<br>      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;滚动到底部&#x27;</span>);<br>      <span class="hljs-keyword">let</span> d = <span class="hljs-variable language_">this</span>.<span class="hljs-property">data</span>;<br>      <span class="hljs-keyword">if</span> (d.<span class="hljs-property">endy</span> - d.<span class="hljs-property">starty</span> &gt; <span class="hljs-number">100</span> &amp;&amp; d.<span class="hljs-property">scrollindex</span> &gt; <span class="hljs-number">0</span>) &#123;<br>         <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setData</span>(&#123;<br>            <span class="hljs-attr">scrollindex</span>: d.<span class="hljs-property">scrollindex</span> - <span class="hljs-number">1</span><br>         &#125;)<br>      &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (d.<span class="hljs-property">endy</span> - d.<span class="hljs-property">starty</span> &lt; -<span class="hljs-number">100</span> &amp;&amp; d.<span class="hljs-property">scrollindex</span> &lt; <span class="hljs-variable language_">this</span>.<span class="hljs-property">data</span>.<span class="hljs-property">totalnum</span> - <span class="hljs-number">1</span>) &#123;<br>         <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setData</span>(&#123;<br>            <span class="hljs-attr">scrollindex</span>: d.<span class="hljs-property">scrollindex</span> + <span class="hljs-number">1</span><br>         &#125;)<br>      &#125;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setData</span>(&#123;<br>         <span class="hljs-attr">starty</span>: <span class="hljs-number">0</span>,<br>         <span class="hljs-attr">endy</span>: <span class="hljs-number">0</span>,<br>         <span class="hljs-attr">margintop</span>: <span class="hljs-number">0</span><br>      &#125;)<br>   &#125;,<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<h4 id="自定义属性，事件中获取"><a href="#自定义属性，事件中获取" class="headerlink" title="自定义属性，事件中获取"></a>自定义属性，事件中获取</h4><p>设置自定义属性<br>取值自定义属性</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs stata">&lt;<span class="hljs-keyword">view</span> data-<span class="hljs-keyword">alpha</span>-beta=<span class="hljs-string">&quot;1&quot;</span> data-alphaBeta=<span class="hljs-string">&quot;2&quot;</span> bindtap=<span class="hljs-string">&quot;bindViewTap&quot;</span>&gt; DataSet <span class="hljs-keyword">Test</span> &lt;/<span class="hljs-keyword">view</span>&gt;<br>Page(&#123;<br>  bindViewTap:function(event)&#123;<br>    event.currentTarget.dataset.alphaBeta === 1 <span class="hljs-comment">// - 会转为驼峰写法</span><br>    event.currentTarget.dataset.alphabeta === 2 <span class="hljs-comment">// 大写会转为小写</span><br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>获取取路由参数</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs kotlin"><span class="hljs-comment">//小程序内使用event来传值只能在本页面，到别的页面接收的是空的，所以先传到js在通过url传值</span><br>A页面：WXML<br>&lt;button bindtap=<span class="hljs-string">&quot;GoHome&quot;</span> <span class="hljs-keyword">open</span>-type=<span class="hljs-string">&quot;launchApp&quot;</span>  <span class="hljs-keyword">data</span>-index=<span class="hljs-string">&quot;123&quot;</span>&gt;进入餐厅&lt;/button&gt;<br><br>A页面：js page内即可<br><br>GoHome: function (e) &#123;<br>    wx.navigateTo(&#123;<br>    	url: <span class="hljs-string">&quot;../HomePage/HomePage?UName=&quot;</span> + e.target.dataset.index,<br>	&#125;)<br>&#125;<br><br>B页面：js <span class="hljs-keyword">data</span>内先声明一个参数，用以接收值<br><br><span class="hljs-keyword">data</span>: &#123;<br>    UName:<span class="hljs-string">&#x27;&#x27;</span><br>&#125;,<br><br>onload内写，自动获取<br><br>onLoad: function (options) &#123;<br>     <span class="hljs-keyword">this</span>.setData(&#123;<br>     UName: options.UName<br>    &#125;)<br>    console.log(<span class="hljs-keyword">this</span>.<span class="hljs-keyword">data</span>.UName)<br>  &#125;,<br><br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/blog/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" class="category-chain-item">小程序</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/blog/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" class="print-no-link">#小程序</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>小程序的组件和api和事件</div>
+      <div>https://gitee.com/dong-wanyang/blog/2022/02/11/小程序的组件和api/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>幸福来敲门</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>February 11, 2022</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/blog/2022/02/12/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BB%A3%E7%A0%81%E6%9E%84%E6%88%90/" title="小程序的配置和代码构成">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">小程序的配置和代码构成</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/2022/02/10/git/" title="git总结">
+                        <span class="hidden-mobile">git总结</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Luck</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>幸福来敲门</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/blog/js/events.js" ></script>
+<script  src="/blog/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/blog/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/blog/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/blog/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+  <!-- 动态背景 -->
+<script color="0,0,0" opacity='0.7' zIndex="-2" count="200" type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

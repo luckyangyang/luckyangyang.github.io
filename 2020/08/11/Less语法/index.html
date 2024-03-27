@@ -1,0 +1,774 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/blog/img/avatar2.jpg">
+  <link rel="icon" href="/blog/img/avatar2.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="幸福来敲门">
+  <meta name="keywords" content="幸福来敲门,博客,技术贴,前端,后端,vue,hexo,html,css,小程序,uni-app,后台,移动端,建站,论坛,bootstrap,安卓,ios,技术前沿，技术博客,mui,ant-design,elementui,java,javaStrpict,sass,scss,less,React,Angular,jQuery">
+  
+    <meta name="description" content="简介 Less （Leaner Style Sheets 的缩写） 是一门向后兼容的 CSS 扩展语言。这里呈现的是 Less 的官方文档（中文版），包含了 Less 语言以及利用 JavaScript 开发的用于将 Less 样式转换成 CSS 样式的 Less.js 工具。  因为 Less 和 CSS 非常像，因此很容易学习。而且 Less 仅对 CSS 语言增加了少许方便的扩展，这就是 L">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Less语法">
+<meta property="og:url" content="https://gitee.com/dong-wanyang/blog/2020/08/11/Less%E8%AF%AD%E6%B3%95/index.html">
+<meta property="og:site_name" content="幸福来敲门">
+<meta property="og:description" content="简介 Less （Leaner Style Sheets 的缩写） 是一门向后兼容的 CSS 扩展语言。这里呈现的是 Less 的官方文档（中文版），包含了 Less 语言以及利用 JavaScript 开发的用于将 Less 样式转换成 CSS 样式的 Less.js 工具。  因为 Less 和 CSS 非常像，因此很容易学习。而且 Less 仅对 CSS 语言增加了少许方便的扩展，这就是 L">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/blog/img/myimg17.jpg">
+<meta property="article:published_time" content="2020-08-11T04:11:12.000Z">
+<meta property="article:modified_time" content="2024-03-27T07:40:49.917Z">
+<meta property="article:author" content="幸福来敲门">
+<meta property="article:tag" content="Less语法">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gitee.com/blog/img/myimg17.jpg">
+  
+  
+  
+  <title>Less语法 - 幸福来敲门</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/blog/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/blog/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/blog/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/blog/css/font_gd7ak9jx13f/iconfont.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"gitee.com","root":"/blog/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/blog/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/blog/js/utils.js" ></script>
+  <script  src="/blog/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/blog/">
+      <strong>幸福来敲门</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/commonweal/" target="_self">
+                <i class="iconfont icon-gongyi"></i>
+                <span>公益</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/guestbook/" target="_self">
+                <i class="iconfont icon-B-liuyan"></i>
+                <span>留言</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/blog/img/default.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Less语法"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2020-08-11 12:11" pubdate>
+          2020年08月11日 12:11:12
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          1.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          14 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+    <script type="text/javascript" src="/js/love.js"></script>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Less语法</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><blockquote>
+<p>Less （Leaner Style Sheets 的缩写） 是一门向后兼容的 CSS 扩展语言。这里呈现的是 Less 的官方文档（中文版），包含了 Less 语言以及利用 JavaScript 开发的用于将 Less 样式转换成 CSS 样式的 Less.js 工具。</p>
+</blockquote>
+<p>因为 Less 和 CSS 非常像，因此很容易学习。而且 Less 仅对 CSS 语言增加了少许方便的扩展，这就是 Less 如此易学的原因之一。</p>
+<h1 id="变量（Variables）"><a href="#变量（Variables）" class="headerlink" title="变量（Variables）"></a>变量（Variables）</h1><p>无需多说，看代码一目了然： </p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-variable">@width:</span> <span class="hljs-number">10px</span>;<br><span class="hljs-variable">@height:</span> <span class="hljs-variable">@width</span> + <span class="hljs-number">10px</span>;<br><br><span class="hljs-selector-id">#header</span> &#123;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-variable">@width</span>;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-variable">@height</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>编译为：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-id">#header</span> &#123;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">10px</span>;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">20px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="混合（Mixins）"><a href="#混合（Mixins）" class="headerlink" title="混合（Mixins）"></a>混合（Mixins）</h1><p>混合（Mixin）是一种将一组属性从一个规则集包含（或混入）到另一个规则集的方法。假设我们定义了一个类（class）如下：</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm">.<span class="hljs-keyword">bordered </span>&#123;<br>  <span class="hljs-keyword">border-top: </span>dotted <span class="hljs-number">1</span>px <span class="hljs-keyword">black;</span><br><span class="hljs-keyword"></span>  <span class="hljs-keyword">border-bottom: </span>solid <span class="hljs-number">2</span>px <span class="hljs-keyword">black;</span><br><span class="hljs-keyword"></span>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>如果我们希望在其它规则集中使用这些属性呢？没问题，我们只需像下面这样输入所需属性的类（class）名称即可，如下所示：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-id">#menu</span> <span class="hljs-selector-tag">a</span> &#123;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-number">#111</span>;<br>  <span class="hljs-selector-class">.bordered</span>();<br>&#125;<br><br><span class="hljs-selector-class">.post</span> <span class="hljs-selector-tag">a</span> &#123;<br>  <span class="hljs-attribute">color</span>: red;<br>  <span class="hljs-selector-class">.bordered</span>();<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><code>.bordered</code> 类所包含的属性就将同时出现在 <code>#menu a</code> 和 <code>.post a</code> 中了。（注意，你也可以使用 <code>#ids</code> 作为 mixin 使用。</p>
+<h1 id="嵌套（Nesting）"><a href="#嵌套（Nesting）" class="headerlink" title="嵌套（Nesting）"></a>嵌套（Nesting）</h1><p>Less 提供了使用嵌套（nesting）代替层叠或与层叠结合使用的能力。假设我们有以下 CSS 代码：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-selector-id">#header</span> &#123;<br>  <span class="hljs-attribute">color</span>: black;<br>&#125;<br><span class="hljs-selector-id">#header</span> <span class="hljs-selector-class">.navigation</span> &#123;<br>  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;<br>&#125;<br><span class="hljs-selector-id">#header</span> <span class="hljs-selector-class">.logo</span> &#123;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>用 Less 语言我们可以这样书写代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-id">#header</span> &#123;<br>  <span class="hljs-attribute">color</span>: black;<br>  <span class="hljs-selector-class">.navigation</span> &#123;<br>    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;<br>  &#125;<br>  <span class="hljs-selector-class">.logo</span> &#123;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>用 Less 书写的代码更加简洁，并且模仿了 HTML 的组织结构。</p>
+<p>你还可以使用此方法将伪选择器（pseudo-selectors）与混合（mixins）一同使用。下面是一个经典的 clearfix 技巧，重写为一个混合（mixin） (<code>&amp;</code> 表示当前选择器的父级）：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.clearfix</span> &#123;<br>  <span class="hljs-attribute">display</span>: block;<br>  zoom: <span class="hljs-number">1</span>;<br><br>  &amp;<span class="hljs-selector-pseudo">:after</span> &#123;<br>    <span class="hljs-attribute">content</span>: <span class="hljs-string">&quot; &quot;</span>;<br>    <span class="hljs-attribute">display</span>: block;<br>    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">0</span>;<br>    <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;<br>    <span class="hljs-attribute">clear</span>: both;<br>    <span class="hljs-attribute">visibility</span>: hidden;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="规则嵌套和冒泡"><a href="#规则嵌套和冒泡" class="headerlink" title="@规则嵌套和冒泡"></a>@规则嵌套和冒泡</h2><p>@ 规则（例如 <code>@media</code> 或 <code>@supports</code>）可以与选择器以相同的方式进行嵌套。@ 规则会被放在前面，同一规则集中的其它元素的相对顺序保持不变。这叫做冒泡（bubbling）。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.component</span> &#123;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;<br>  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">768px</span>) &#123;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">600px</span>;<br>    <span class="hljs-keyword">@media</span>  (<span class="hljs-attribute">min-resolution</span>: <span class="hljs-number">192dpi</span>) &#123;<br>      <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">/img/retina2x.png</span>);<br>    &#125;<br>  &#125;<br>  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">1280px</span>) &#123;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">800px</span>;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>编译为：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.component</span> &#123;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;<br>&#125;<br><span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">768px</span>) &#123;<br>  <span class="hljs-selector-class">.component</span> &#123;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">600px</span>;<br>  &#125;<br>&#125;<br><span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">768px</span>) <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-resolution</span>: <span class="hljs-number">192dpi</span>) &#123;<br>  <span class="hljs-selector-class">.component</span> &#123;<br>    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">/img/retina2x.png</span>);<br>  &#125;<br>&#125;<br><span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">1280px</span>) &#123;<br>  <span class="hljs-selector-class">.component</span> &#123;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">800px</span>;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="运算（Operations）"><a href="#运算（Operations）" class="headerlink" title="运算（Operations）"></a>运算（Operations）</h1><p>算术运算符 <code>+</code>、<code>-</code>、<code>*</code>、<code>/</code> 可以对任何数字、颜色或变量进行运算。如果可能的话，算术运算符在加、减或比较之前会进行单位换算。计算的结果以最左侧操作数的单位类型为准。如果单位换算无效或失去意义，则忽略单位。无效的单位换算例如：px 到 cm 或 rad 到 % 的转换。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-comment">// 所有操作数被转换成相同的单位</span><br><span class="hljs-variable">@conversion-1:</span> <span class="hljs-number">5cm</span> + <span class="hljs-number">10mm</span>; <span class="hljs-comment">// 结果是 6cm</span><br><span class="hljs-variable">@conversion-2:</span> <span class="hljs-number">2</span> - <span class="hljs-number">3cm</span> - <span class="hljs-number">5mm</span>; <span class="hljs-comment">// 结果是 -1.5cm</span><br><br><span class="hljs-comment">// conversion is impossible</span><br><span class="hljs-variable">@incompatible-units:</span> <span class="hljs-number">2</span> + <span class="hljs-number">5px</span> - <span class="hljs-number">3cm</span>; <span class="hljs-comment">// 结果是 4px</span><br><br><span class="hljs-comment">// example with variables</span><br><span class="hljs-variable">@base:</span> <span class="hljs-number">5%</span>;<br><span class="hljs-variable">@filler:</span> <span class="hljs-variable">@base</span> * <span class="hljs-number">2</span>; <span class="hljs-comment">// 结果是 10%</span><br><span class="hljs-variable">@other:</span> <span class="hljs-variable">@base</span> + <span class="hljs-variable">@filler</span>; <span class="hljs-comment">// 结果是 15%</span><br></code></pre></td></tr></table></figure>
+
+<p>乘法和除法不作转换。因为这两种运算在大多数情况下都没有意义，一个长度乘以一个长度就得到一个区域，而 CSS 是不支持指定区域的。Less 将按数字的原样进行操作，并将为计算结果指定明确的单位类型。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-variable">@base:</span> <span class="hljs-number">2cm</span> * <span class="hljs-number">3mm</span>; <span class="hljs-comment">// 结果是 6cm</span><br></code></pre></td></tr></table></figure>
+
+<p>你还可以对颜色进行算术运算：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-variable">@color:</span> (<span class="hljs-number">#224488</span> / <span class="hljs-number">2</span>); <span class="hljs-comment">// 结果是 #112244</span><br><span class="hljs-attribute">background-color</span>: <span class="hljs-number">#112244</span> + <span class="hljs-number">#111</span>; <span class="hljs-comment">// 结果是 #223355</span><br></code></pre></td></tr></table></figure>
+
+<p>不过，你会发现 Less 提供的 <a target="_blank" rel="noopener" href="https://less.bootcss.com/functions/#color-operations">色彩函数</a> 更有用。</p>
+<p>From 4.0, No division is performed outside of parens using <code>/</code> operator.</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-variable">@color:</span> <span class="hljs-number">#222</span> / <span class="hljs-number">2</span>; <span class="hljs-comment">// results in `#222 / 2`, not #111</span><br><span class="hljs-attribute">background-color</span>: (<span class="hljs-number">#FFFFFF</span> / <span class="hljs-number">16</span>); <span class="hljs-comment">//results is #101010</span><br></code></pre></td></tr></table></figure>
+
+<p>You can change <a target="_blank" rel="noopener" href="https://less.bootcss.com/usage/#less-options-math">Math</a> setting, if you want to make it always work, but not recommended.</p>
+<h2 id="calc-特例"><a href="#calc-特例" class="headerlink" title="calc() 特例"></a>calc() 特例</h2><p><em>Released v3.0.0</em></p>
+<p>为了与 CSS 保持兼容，<code>calc()</code> 并不对数学表达式进行计算，但是在嵌套函数中会计算变量和数学公式的值。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-variable">@var:</span> <span class="hljs-number">50vh</span>/<span class="hljs-number">2</span>;<br><span class="hljs-attribute">width</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">50%</span> + (<span class="hljs-variable">@var</span> - <span class="hljs-number">20px</span>));  <span class="hljs-comment">// 结果是 calc(50% + (25vh - 20px))</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="转义（Escaping）"><a href="#转义（Escaping）" class="headerlink" title="转义（Escaping）"></a>转义（Escaping）</h1><p>转义（Escaping）允许你使用任意字符串作为属性或变量值。任何 <code>~&quot;anything&quot;</code> 或 <code>~&#39;anything&#39;</code> 形式的内容都将按原样输出，除非 <a target="_blank" rel="noopener" href="https://less.bootcss.com/features/#variables-feature-variable-interpolation">interpolation</a>。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-variable">@min768:</span> <span class="hljs-string">~&quot;(min-width: 768px)&quot;</span>;<br><span class="hljs-selector-class">.element</span> &#123;<br>  <span class="hljs-keyword">@media</span> <span class="hljs-variable">@min768</span> &#123;<br>    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.2rem</span>;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>编译为：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">768px</span>) &#123;<br>  <span class="hljs-selector-class">.element</span> &#123;<br>    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.2rem</span>;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>注意，从 Less 3.5 开始，可以简写为：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-variable">@min768:</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">768px</span>);<br><span class="hljs-selector-class">.element</span> &#123;<br>  <span class="hljs-keyword">@media</span> <span class="hljs-variable">@min768</span> &#123;<br>    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.2rem</span>;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>在 Less 3.5+ 版本中，许多以前需要“引号转义”的情况就不再需要了。</p>
+<h1 id="函数（Functions）"><a href="#函数（Functions）" class="headerlink" title="函数（Functions）"></a>函数（Functions）</h1><p>Less 内置了多种函数用于转换颜色、处理字符串、算术运算等。这些函数在<a target="_blank" rel="noopener" href="https://less.bootcss.com/functions/">Less 函数手册</a>中有详细介绍。</p>
+<p>函数的用法非常简单。下面这个例子将介绍如何利用 percentage 函数将 0.5 转换为 50%，将颜色饱和度增加 5%，以及颜色亮度降低 25% 并且色相值增加 8 等用法：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-variable">@base:</span> <span class="hljs-number">#f04615</span>;<br><span class="hljs-variable">@width:</span> <span class="hljs-number">0.5</span>;<br><br><span class="hljs-selector-class">.class</span> &#123;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-built_in">percentage</span>(<span class="hljs-variable">@width</span>); <span class="hljs-comment">// returns `50%`</span><br>  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">saturate</span>(<span class="hljs-variable">@base</span>, <span class="hljs-number">5%</span>);<br>  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">spin</span>(<span class="hljs-built_in">lighten</span>(<span class="hljs-variable">@base</span>, <span class="hljs-number">25%</span>), <span class="hljs-number">8</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="命名空间和访问符"><a href="#命名空间和访问符" class="headerlink" title="命名空间和访问符"></a>命名空间和访问符</h1><p>(不要和 <a target="_blank" rel="noopener" href="http://www.w3.org/TR/css3-namespace/">CSS <code>@namespace</code></a> 或 <a target="_blank" rel="noopener" href="http://www.w3.org/TR/css3-selectors/#typenmsp">namespace selectors</a> 混淆了)。</p>
+<p>有时，出于组织结构或仅仅是为了提供一些封装的目的，你希望对混合（mixins）进行分组。你可以用 Less 更直观地实现这一需求。假设你希望将一些混合（mixins）和变量置于 <code>#bundle</code> 之下，为了以后方便重用或分发：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-id">#bundle</span>() &#123;<br>  <span class="hljs-selector-class">.button</span> &#123;<br>    <span class="hljs-attribute">display</span>: block;<br>    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid black;<br>    <span class="hljs-attribute">background-color</span>: grey;<br>    &amp;<span class="hljs-selector-pseudo">:hover</span> &#123;<br>      <span class="hljs-attribute">background-color</span>: white;<br>    &#125;<br>  &#125;<br>  <span class="hljs-selector-class">.tab</span> &#123; ... &#125;<br>  <span class="hljs-selector-class">.citation</span> &#123; ... &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>现在，如果我们希望把 <code>.button</code> 类混合到 <code>#header a</code> 中，我们可以这样做：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-id">#header</span> <span class="hljs-selector-tag">a</span> &#123;<br>  <span class="hljs-attribute">color</span>: orange;<br>  <span class="hljs-selector-id">#bundle</span><span class="hljs-selector-class">.button</span>();  <span class="hljs-comment">// 还可以书写为 #bundle &gt; .button 形式</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="映射（Maps）"><a href="#映射（Maps）" class="headerlink" title="映射（Maps）"></a>映射（Maps）</h1><p>从 Less 3.5 版本开始，你还可以将混合（mixins）和规则集（rulesets）作为一组值的映射（map）使用。</p>
+<figure class="highlight leaf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs leaf"><span class="hljs-punctuation">#</span><span class="hljs-keyword">colors</span><span class="hljs-params">()</span> &#123;<br>  primary: blue;<br>  secondary: green;<br>&#125;<br><br>.button &#123;<br>  color: <span class="hljs-punctuation">#</span><span class="hljs-keyword">colors</span>[primary];<br>  border: 1px solid <span class="hljs-punctuation">#</span><span class="hljs-keyword">colors</span>[secondary];<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>输出符合预期：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.button</span> &#123;<br>  <span class="hljs-attribute">color</span>: blue;<br>  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid green;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="注释（Comments）"><a href="#注释（Comments）" class="headerlink" title="注释（Comments）"></a>注释（Comments）</h1><p>块注释和行注释都可以使用：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-comment">/* 一个块注释</span><br><span class="hljs-comment"> * style comment! */</span><br><span class="hljs-variable">@var:</span> red;<br><br><span class="hljs-comment">// 这一行被注释掉了！</span><br><span class="hljs-variable">@var:</span> white;<br></code></pre></td></tr></table></figure>
+
+<h1 id="导入（Importing）"><a href="#导入（Importing）" class="headerlink" title="导入（Importing）"></a>导入（Importing）</h1><p>“导入”的工作方式和你预期的一样。你可以导入一个 <code>.less</code> 文件，此文件中的所有变量就可以全部使用了。如果导入的文件是 <code>.less</code> 扩展名，则可以将扩展名省略掉：</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs scss"><span class="hljs-keyword">@import</span> <span class="hljs-string">&quot;library&quot;</span>; <span class="hljs-comment">// library.less</span><br><span class="hljs-keyword">@import</span> <span class="hljs-string">&quot;typo.css&quot;</span>;<br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/blog/categories/Less%E8%AF%AD%E6%B3%95/" class="category-chain-item">Less语法</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/blog/tags/Less%E8%AF%AD%E6%B3%95/" class="print-no-link">#Less语法</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Less语法</div>
+      <div>https://gitee.com/dong-wanyang/blog/2020/08/11/Less语法/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>幸福来敲门</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>August 11, 2020</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/blog/2020/08/19/%E6%93%8D%E4%BD%9C%E5%B1%9E%E6%80%A7%E4%B8%8E%E6%A0%B7%E5%BC%8F/" title="操作属性与样式">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">操作属性与样式</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/2020/08/10/%E6%93%8D%E4%BD%9Cdom%E8%8E%B7%E5%8F%96%E5%AE%BD%E9%AB%98%E5%92%8C%E5%9D%90%E6%A0%87/" title="操作dom获取宽高和坐标">
+                        <span class="hidden-mobile">操作dom获取宽高和坐标</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Luck</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>幸福来敲门</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/blog/js/events.js" ></script>
+<script  src="/blog/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/blog/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/blog/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/blog/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+  <!-- 动态背景 -->
+<script color="0,0,0" opacity='0.7' zIndex="-2" count="200" type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

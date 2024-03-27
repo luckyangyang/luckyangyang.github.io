@@ -1,0 +1,822 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/blog/img/avatar2.jpg">
+  <link rel="icon" href="/blog/img/avatar2.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="幸福来敲门">
+  <meta name="keywords" content="幸福来敲门,博客,技术贴,前端,后端,vue,hexo,html,css,小程序,uni-app,后台,移动端,建站,论坛,bootstrap,安卓,ios,技术前沿，技术博客,mui,ant-design,elementui,java,javaStrpict,sass,scss,less,React,Angular,jQuery">
+  
+    <meta name="description" content="简介vue-element-admin 是一个后台前端解决方案，它基于 vue 和 element-ui实现。  官网地址：https:&#x2F;&#x2F;panjiachen.github.io&#x2F;vue-element-admin-site&#x2F;zh&#x2F;guide&#x2F;#功能 遇到问题顶部搜索栏获取信息html 1234567891011121314&lt;template&gt;  &lt;div :class&#x3D;&amp;qu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-element-admin遇到的问题和解决记录">
+<meta property="og:url" content="https://gitee.com/dong-wanyang/blog/2024/01/10/vue-element-admin%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="幸福来敲门">
+<meta property="og:description" content="简介vue-element-admin 是一个后台前端解决方案，它基于 vue 和 element-ui实现。  官网地址：https:&#x2F;&#x2F;panjiachen.github.io&#x2F;vue-element-admin-site&#x2F;zh&#x2F;guide&#x2F;#功能 遇到问题顶部搜索栏获取信息html 1234567891011121314&lt;template&gt;  &lt;div :class&#x3D;&amp;qu">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/blog/img/myimg1.jpg">
+<meta property="article:published_time" content="2024-01-10T11:50:01.000Z">
+<meta property="article:modified_time" content="2024-03-27T08:20:26.406Z">
+<meta property="article:author" content="幸福来敲门">
+<meta property="article:tag" content="element-Ui">
+<meta property="article:tag" content="vue-element-admin">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gitee.com/blog/img/myimg1.jpg">
+  
+  
+  
+  <title>vue-element-admin遇到的问题和解决记录 - 幸福来敲门</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/blog/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/blog/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/blog/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/blog/css/font_gd7ak9jx13f/iconfont.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"gitee.com","root":"/blog/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/blog/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/blog/js/utils.js" ></script>
+  <script  src="/blog/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/blog/">
+      <strong>幸福来敲门</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/commonweal/" target="_self">
+                <i class="iconfont icon-gongyi"></i>
+                <span>公益</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/guestbook/" target="_self">
+                <i class="iconfont icon-B-liuyan"></i>
+                <span>留言</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/blog/img/default.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="vue-element-admin遇到的问题和解决记录"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-01-10 19:50" pubdate>
+          2024年01月10日 19:50:01
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          3.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          29 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+    <script type="text/javascript" src="/js/love.js"></script>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">vue-element-admin遇到的问题和解决记录</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><a target="_blank" rel="noopener" href="http://panjiachen.github.io/vue-element-admin">vue-element-admin</a> 是一个后台前端解决方案，它基于 <a target="_blank" rel="noopener" href="https://github.com/vuejs/vue">vue</a> 和 <a target="_blank" rel="noopener" href="https://github.com/ElemeFE/element">element-ui</a>实现。 </p>
+<p>官网地址：<a target="_blank" rel="noopener" href="https://panjiachen.github.io/vue-element-admin-site/zh/guide/#%E5%8A%9F%E8%83%BD">https://panjiachen.github.io/vue-element-admin-site/zh/guide/#功能</a></p>
+<h3 id="遇到问题"><a href="#遇到问题" class="headerlink" title="遇到问题"></a>遇到问题</h3><h3 id="顶部搜索栏获取信息"><a href="#顶部搜索栏获取信息" class="headerlink" title="顶部搜索栏获取信息"></a>顶部搜索栏获取信息</h3><p>html</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs applescript">&lt;template&gt;<br>  &lt;<span class="hljs-keyword">div</span> :<span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;&#123;&#x27;show&#x27;:show&#125;&quot;</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;header-search&quot;</span>&gt;<br>    &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;search&quot;</span>&gt;<br>      &lt;<span class="hljs-keyword">div</span><br>        <span class="hljs-built_in">id</span>=<span class="hljs-string">&quot;input&quot;</span><br>        <span class="hljs-keyword">ref</span>=<span class="hljs-string">&quot;input&quot;</span><br>        :placeholder=<span class="hljs-string">&quot;placeholder&quot;</span><br>        contenteditable=<span class="hljs-string">&quot;plaintext-only&quot;</span><br>        @keydown=<span class="hljs-string">&quot;toSearch($event)&quot;</span><br>      /&gt;<br>      &lt;i <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;el-icon-search&quot;</span> @click=<span class="hljs-string">&quot;toSearchClick()&quot;</span> /&gt;<br>    &lt;/<span class="hljs-keyword">div</span>&gt;<br>  &lt;/<span class="hljs-keyword">div</span>&gt;<br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+
+<p>js      this.$root.$emit(‘tosearch’, this.search)</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs kotlin">methods: &#123;<br>    toSearch(e) &#123;<br>      <span class="hljs-comment">// console.log(e.isComposing); // return false</span><br>      <span class="hljs-keyword">const</span> search = <span class="hljs-keyword">this</span>.$refs.input.innerText.trim()<br>      <span class="hljs-keyword">if</span> (!e.isComposing &amp;&amp; e.code === <span class="hljs-string">&#x27;Enter&#x27;</span> &amp;&amp; search) &#123;<br>        e.preventDefault()<br>        <span class="hljs-keyword">this</span>.$root.$emit(<span class="hljs-string">&#x27;tosearch&#x27;</span>, <span class="hljs-keyword">this</span>.search)<br>      &#125;<br>    &#125;,<br>    toSearchClick() &#123;<br>      <span class="hljs-keyword">const</span> search = <span class="hljs-keyword">this</span>.$refs.input.innerText.trim()<br>      <span class="hljs-keyword">if</span> (search) &#123;<br>        <span class="hljs-keyword">this</span>.$root.$emit(<span class="hljs-string">&#x27;tosearch&#x27;</span>, <span class="hljs-keyword">this</span>.search)<br>      &#125;<br>    &#125;<br>  &#125;<br></code></pre></td></tr></table></figure>
+
+<p>其他页面获取搜索参数</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs arcade">this.<span class="hljs-symbol">$root</span>.<span class="hljs-symbol">$o</span>n(<span class="hljs-string">&#x27;tosearch&#x27;</span>, (e) =&gt; &#123;<br>      <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(e)<br>    &#125;)<br></code></pre></td></tr></table></figure>
+
+<h3 id="安装-失败bug"><a href="#安装-失败bug" class="headerlink" title="安装-失败bug"></a>安装-失败bug</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 克隆项目</span><br>git <span class="hljs-built_in">clone</span> https://github.com/PanJiaChen/vue-element-admin.git<br><br><span class="hljs-comment"># 进入项目目录</span><br><span class="hljs-built_in">cd</span> vue-element-admin<br><br><br><span class="hljs-comment"># 安装依赖</span><br>npm install<br><br><br>遇到报错了<br>nodejs报错解决： EBUSY: resource busy or locked 和 npm ERR! errno -4082<br></code></pre></td></tr></table></figure>
+
+<p>建议不要用 cnpm 安装 会有各种诡异的bug 可以通过如下操作解决 npm 下载速度慢的问题</p>
+<p>npm install –registry&#x3D;<a target="_blank" rel="noopener" href="https://registry.npmmirror.com/">https://registry.npmmirror.com</a></p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-comment"># 本地开发 启动项目</span><br><span class="hljs-built_in">npm</span> run dev<br><br><br>安装失败   清缓存   后从新安装  成功了<br><span class="hljs-built_in">npm</span> cache clean --force<br><br><span class="hljs-comment"># 安装依赖</span><br><span class="hljs-built_in">npm</span> install<br><br><span class="hljs-comment"># 本地开发 启动项目</span><br><span class="hljs-built_in">npm</span> run dev<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="左侧菜单配置路由"><a href="#左侧菜单配置路由" class="headerlink" title="左侧菜单配置路由"></a>左侧菜单配置路由</h3><p>找到路由配置文件  src\router\index.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> constantRoutes   基础路由配置<br><br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> asyncRoutes   异步加载路由配置<br><br><br>可以注释掉然后引入自己的路由配置<br>  <br><span class="hljs-keyword">import</span> myrouter <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./modules/myrouter&#x27;</span><br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> asyncRoutes = myrouter<br></code></pre></td></tr></table></figure>
+
+<p>案例   myrouter.js    只显示父级   显示子集  详情页路由&#x2F;&#x2F;详情页路由，面包屑无法追加问题</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript">mport Layout <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/layout&#x27;</span><br>const componentsRouter = [<br>    &#123;<br>        path: <span class="hljs-string">&#x27;/&#x27;</span>,<br>        component: Layout,<br>        redirect: <span class="hljs-string">&#x27;/homepage&#x27;</span>,<br>        children: [<br>            &#123;<br>                path: <span class="hljs-string">&#x27;homepage&#x27;</span>,<br>                component: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;@/myViews/homepage/homepage&#x27;</span>),<br>                name: <span class="hljs-string">&#x27;homepage&#x27;</span>,<br>                meta: &#123; title: <span class="hljs-string">&#x27;首页&#x27;</span>, icon: <span class="hljs-string">&#x27;dashboard&#x27;</span>, affix: <span class="hljs-literal">true</span> &#125;<br>            &#125;<br>        ]<br>    &#125;,<br>    &#123;<br>        path: <span class="hljs-string">&#x27;/xtgl&#x27;</span>,<br>        component: Layout,<br>        redirect: <span class="hljs-string">&#x27;/xtgl/bmgl&#x27;</span>,<br>        alwaysShow: <span class="hljs-literal">true</span>, <span class="hljs-regexp">//</span> will always show the root menu<br>        name: <span class="hljs-string">&#x27;xtgl&#x27;</span>,<br>        meta: &#123;<br>            title: <span class="hljs-string">&#x27;系统管理&#x27;</span>,<br>            <span class="hljs-regexp">//</span> icon: <span class="hljs-string">&#x27;lock&#x27;</span>,<br>            icon: <span class="hljs-string">&#x27;icon-gengduo&#x27;</span>,<br>            roles: [<span class="hljs-string">&#x27;admin&#x27;</span>, <span class="hljs-string">&#x27;editor&#x27;</span>] <span class="hljs-regexp">//</span> you can set roles <span class="hljs-keyword">in</span> root nav<br>        &#125;,<br>        children: [<br>            &#123;<br>                path: <span class="hljs-string">&#x27;bmgl&#x27;</span>,<br>                component: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;@/myViews/xtgl/bmgl&#x27;</span>),<br>                name: <span class="hljs-string">&#x27;bmgl&#x27;</span>,<br>                meta: &#123;<br>                    title: <span class="hljs-string">&#x27;部门管理&#x27;</span>,<br>                    roles: [<span class="hljs-string">&#x27;admin&#x27;</span>] <span class="hljs-regexp">//</span> <span class="hljs-keyword">or</span> you can only set roles <span class="hljs-keyword">in</span> sub nav<br>                &#125;<br>            &#125;,<br>            &#123;<br>                path: <span class="hljs-string">&#x27;yhgl&#x27;</span>,<br>                component: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;@/myViews/xtgl/yhgl&#x27;</span>),<br>                name: <span class="hljs-string">&#x27;yhgl&#x27;</span>,<br>                meta: &#123;<br>                    title: <span class="hljs-string">&#x27;用户管理&#x27;</span><br>                    <span class="hljs-regexp">//</span> <span class="hljs-keyword">if</span> <span class="hljs-keyword">do</span> <span class="hljs-keyword">not</span> set roles, means: this page does <span class="hljs-keyword">not</span> <span class="hljs-built_in">require</span> permission<br>                &#125;<br>            &#125;,<br>            &#123;<br>                path: <span class="hljs-string">&#x27;qxgl&#x27;</span>,<br>                component: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;@/myViews/xtgl/qxgl&#x27;</span>),<br>                name: <span class="hljs-string">&#x27;qxgl&#x27;</span>,<br>                meta: &#123;<br>                    title: <span class="hljs-string">&#x27;权限管理&#x27;</span>,<br>                    roles: [<span class="hljs-string">&#x27;admin&#x27;</span>]<br>                &#125;<br>            &#125;,<br>            &#123;<br>                path: <span class="hljs-string">&#x27;gzrz&#x27;</span>,<br>                component: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;@/myViews/xtgl/gzrz&#x27;</span>),<br>                name: <span class="hljs-string">&#x27;gzrz&#x27;</span>,<br>                meta: &#123;<br>                    title: <span class="hljs-string">&#x27;工作日志&#x27;</span>,<br>                    roles: [<span class="hljs-string">&#x27;admin&#x27;</span>]<br>                &#125;<br>            &#125;,<br>        ]<br>    &#125;,<br>	 &#123;<br>    path: <span class="hljs-string">&#x27;/nrgl&#x27;</span>,<br>    component: Layout,<br>    redirect: <span class="hljs-string">&#x27;/index&#x27;</span>,<br>    children: [<br>      &#123;<br>        path: <span class="hljs-string">&#x27;index&#x27;</span>,<br>        component: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;@/views/myview/nrgl/index&#x27;</span>),<br>        name: <span class="hljs-string">&#x27;nrgl&#x27;</span>,<br>        meta: &#123; title: <span class="hljs-string">&#x27;内容管理&#x27;</span>, icon: <span class="hljs-string">&#x27;dashboard&#x27;</span>, affix: <span class="hljs-literal">true</span> &#125;<br>      &#125;,<br>      &#123;<br>        path: <span class="hljs-string">&#x27;detail&#x27;</span>,<br>        component: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;@/views/myview/nrgl/detail&#x27;</span>),<br>        name: <span class="hljs-string">&#x27;nrgl&#x27;</span>,<br>        meta: &#123; title: <span class="hljs-string">&#x27;内容详情&#x27;</span>, icon: <span class="hljs-string">&#x27;dashboard&#x27;</span>, affix: <span class="hljs-literal">true</span> &#125;,<br>        hidden: <span class="hljs-literal">true</span><br>      &#125;,<br>    ]<br>  &#125;,<br><br><br><span class="hljs-regexp">//</span>详情页路由，面包屑无法追加问题<br>&#123;<br>    path: <span class="hljs-string">&#x27;/nrgl&#x27;</span>,<br>    component: Layout,<br>    redirect: <span class="hljs-string">&#x27;/nrgl/index&#x27;</span>,<br>    meta: &#123;<br>      title: <span class="hljs-string">&#x27;内容管理&#x27;</span>,<br>      icon: <span class="hljs-string">&#x27;el-icon-s-help&#x27;</span><br>    &#125;,<br>    children: [<br>      &#123;<br>        path: <span class="hljs-string">&#x27;index&#x27;</span>,<br>        component: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;@/views/myview/nrgl/index&#x27;</span>),<br>        name: <span class="hljs-string">&#x27;index&#x27;</span>,<br>        meta: &#123; title: <span class="hljs-string">&#x27;内容列表&#x27;</span>, icon: <span class="hljs-string">&#x27;dashboard&#x27;</span> &#125;<br>      &#125;,<br>      &#123;<br>        path: <span class="hljs-string">&#x27;detail&#x27;</span>,<br>        component: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;@/views/myview/nrgl/detail&#x27;</span>),<br>        name: <span class="hljs-string">&#x27;detail&#x27;</span>,<br>        meta: &#123; title: <span class="hljs-string">&#x27;内容详情&#x27;</span>, icon: <span class="hljs-string">&#x27;dashboard&#x27;</span>, noCache: <span class="hljs-literal">true</span>, activeMenu: <span class="hljs-string">&#x27;/nrgl/index&#x27;</span> &#125;,<br>        hidden: <span class="hljs-literal">true</span><br>      &#125;,<br>    ]<br>  &#125;,<br><span class="hljs-regexp">//</span>详情路由追加    meta: &#123; title: <span class="hljs-string">&#x27;内容详情&#x27;</span>, icon: <span class="hljs-string">&#x27;dashboard&#x27;</span>, noCache: <span class="hljs-literal">true</span>, activeMenu: <span class="hljs-string">&#x27;/nrgl/index&#x27;</span> &#125;,   路径定向到列表页<br>    &#123;<br>        path: <span class="hljs-string">&#x27;/jcxm&#x27;</span>,<br>        component: Layout,<br>        redirect: <span class="hljs-string">&#x27;/jcxm&#x27;</span>,<br>        children: [<br>            &#123;<br>                path: <span class="hljs-string">&#x27;jcxm&#x27;</span>,<br>                component: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;@/myViews/jcxm&#x27;</span>),<br>                name: <span class="hljs-string">&#x27;jcxm&#x27;</span>,<br>                meta: &#123; title: <span class="hljs-string">&#x27;检测项目&#x27;</span>, icon: <span class="hljs-string">&#x27;dashboard&#x27;</span>, affix: <span class="hljs-literal">true</span> &#125;<br>            &#125;<br>        ]<br>    &#125;,<br>    &#123;<br>        path: <span class="hljs-string">&#x27;/htgl&#x27;</span>,<br>        component: Layout,<br>        redirect: <span class="hljs-string">&#x27;/htgl&#x27;</span>,<br>        children: [<br>            &#123;<br>                path: <span class="hljs-string">&#x27;htgl&#x27;</span>,<br>                component: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;@/myViews/htgl&#x27;</span>),<br>                name: <span class="hljs-string">&#x27;htgl&#x27;</span>,<br>                meta: &#123; title: <span class="hljs-string">&#x27;合同管理&#x27;</span>, icon: <span class="hljs-string">&#x27;dashboard&#x27;</span>, affix: <span class="hljs-literal">true</span> &#125;<br>            &#125;<br>        ]<br>    &#125;,<br>]<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> componentsRouter<br></code></pre></td></tr></table></figure>
+
+<h4 id="只显示父级"><a href="#只显示父级" class="headerlink" title="只显示父级"></a>只显示父级</h4><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript">&#123;<br>    path: <span class="hljs-string">&#x27;/&#x27;</span>,<br>    component: Layout,<br>    redirect: <span class="hljs-string">&#x27;/homepage&#x27;</span>,<br>    children: [<br>        &#123;<br>            path: <span class="hljs-string">&#x27;homepage&#x27;</span>,<br>            component: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;@/myViews/homepage/homepage&#x27;</span>),<br>            name: <span class="hljs-string">&#x27;homepage&#x27;</span>,<br>            meta: &#123; title: <span class="hljs-string">&#x27;首页&#x27;</span>, icon: <span class="hljs-string">&#x27;dashboard&#x27;</span>, affix: <span class="hljs-literal">true</span> &#125;<br>        &#125;<br>    ]<br>&#125;,<br></code></pre></td></tr></table></figure>
+
+<h4 id="显示子集"><a href="#显示子集" class="headerlink" title="显示子集"></a>显示子集</h4><figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs xl">&#123;<br>    <span class="hljs-built_in">path</span>: <span class="hljs-string">&#x27;/xtgl&#x27;</span>,<br>    component: Layout,<br>    redirect: <span class="hljs-string">&#x27;/xtgl/bmgl&#x27;</span>,<br>    alwaysShow: <span class="hljs-literal">true</span>, <span class="hljs-comment">// will always show the root menu</span><br>    <span class="hljs-keyword">name</span>: <span class="hljs-string">&#x27;xtgl&#x27;</span>,<br>    meta: &#123;<br>        <span class="hljs-built_in">title</span>: <span class="hljs-string">&#x27;系统管理&#x27;</span>,<br>        <span class="hljs-comment">// icon: &#x27;lock&#x27;,</span><br>        icon: <span class="hljs-string">&#x27;icon-gengduo&#x27;</span>,<br>        roles: [<span class="hljs-string">&#x27;admin&#x27;</span>, <span class="hljs-string">&#x27;editor&#x27;</span>] <span class="hljs-comment">// you can set roles in root nav</span><br>    &#125;,<br>    children: [<br>        &#123;<br>            <span class="hljs-built_in">path</span>: <span class="hljs-string">&#x27;bmgl&#x27;</span>,<br>            component: () =&gt; <span class="hljs-keyword">import</span>(&#x27;@/myViews/xtgl/bmgl&#x27;),<br>            <span class="hljs-keyword">name</span>: <span class="hljs-string">&#x27;bmgl&#x27;</span>,<br>            meta: &#123;<br>                <span class="hljs-built_in">title</span>: <span class="hljs-string">&#x27;部门管理&#x27;</span>,<br>                roles: [<span class="hljs-string">&#x27;admin&#x27;</span>] <span class="hljs-comment">// or you can only set roles in sub nav</span><br>            &#125;<br>        &#125;,<br></code></pre></td></tr></table></figure>
+
+<h4 id="详情页路由"><a href="#详情页路由" class="headerlink" title="详情页路由"></a>详情页路由</h4><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript">&#123;<br>   path: <span class="hljs-string">&#x27;/nrgl&#x27;</span>,<br>   component: Layout,<br>   redirect: <span class="hljs-string">&#x27;/index&#x27;</span>,<br>   children: [<br>     &#123;<br>       path: <span class="hljs-string">&#x27;index&#x27;</span>,<br>       component: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;@/views/myview/nrgl/index&#x27;</span>),<br>       name: <span class="hljs-string">&#x27;nrgl&#x27;</span>,<br>       meta: &#123; title: <span class="hljs-string">&#x27;内容管理&#x27;</span>, icon: <span class="hljs-string">&#x27;dashboard&#x27;</span>, affix: <span class="hljs-literal">true</span> &#125;<br>     &#125;,<br>     &#123;<br>       path: <span class="hljs-string">&#x27;detail&#x27;</span>,<br>       component: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;@/views/myview/nrgl/detail&#x27;</span>),<br>       name: <span class="hljs-string">&#x27;nrgl&#x27;</span>,<br>       meta: &#123; title: <span class="hljs-string">&#x27;内容详情&#x27;</span>, icon: <span class="hljs-string">&#x27;dashboard&#x27;</span>, affix: <span class="hljs-literal">true</span> &#125;,<br>       hidden: <span class="hljs-literal">true</span><br>     &#125;,<br>   ]<br> &#125;,<br></code></pre></td></tr></table></figure>
+
+<h4 id="详情页路由，面包屑无法追加问题"><a href="#详情页路由，面包屑无法追加问题" class="headerlink" title="详情页路由，面包屑无法追加问题"></a>详情页路由，面包屑无法追加问题</h4><p> noCache: true, activeMenu: ‘&#x2F;nrgl&#x2F;index’ },</p>
+<figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs xl"><span class="hljs-comment">//详情页路由，面包屑无法追加问题</span><br>&#123;<br>    <span class="hljs-built_in">path</span>: <span class="hljs-string">&#x27;/nrgl&#x27;</span>,<br>    component: Layout,<br>    redirect: <span class="hljs-string">&#x27;/nrgl/index&#x27;</span>,<br>    meta: &#123;<br>      <span class="hljs-built_in">title</span>: <span class="hljs-string">&#x27;内容管理&#x27;</span>,<br>      icon: <span class="hljs-string">&#x27;el-icon-s-help&#x27;</span><br>    &#125;,<br>    children: [<br>      &#123;<br>        <span class="hljs-built_in">path</span>: <span class="hljs-string">&#x27;index&#x27;</span>,<br>        component: () =&gt; <span class="hljs-keyword">import</span>(&#x27;@/views/myview/nrgl/index&#x27;),<br>        <span class="hljs-keyword">name</span>: <span class="hljs-string">&#x27;index&#x27;</span>,<br>        meta: &#123; <span class="hljs-built_in">title</span>: <span class="hljs-string">&#x27;内容列表&#x27;</span>, icon: <span class="hljs-string">&#x27;dashboard&#x27;</span> &#125;<br>      &#125;,<br>      &#123;<br>        <span class="hljs-built_in">path</span>: <span class="hljs-string">&#x27;detail&#x27;</span>,<br>        component: () =&gt; <span class="hljs-keyword">import</span>(&#x27;@/views/myview/nrgl/detail&#x27;),<br>        <span class="hljs-keyword">name</span>: <span class="hljs-string">&#x27;detail&#x27;</span>,<br>        meta: &#123; <span class="hljs-built_in">title</span>: <span class="hljs-string">&#x27;内容详情&#x27;</span>, icon: <span class="hljs-string">&#x27;dashboard&#x27;</span>, noCache: <span class="hljs-literal">true</span>, activeMenu: <span class="hljs-string">&#x27;/nrgl/index&#x27;</span> &#125;,<br>        hidden: <span class="hljs-literal">true</span><br>      &#125;,<br>    ]<br>  &#125;,<br><br></code></pre></td></tr></table></figure>
+
+<p>&#x2F;&#x2F;详情路由追加    meta: { title: ‘内容详情’, icon: ‘dashboard’, noCache: true, activeMenu: ‘&#x2F;nrgl&#x2F;index’ },   路径定向到列表页</p>
+<h4 id="路由详情页左侧没有高亮问题"><a href="#路由详情页左侧没有高亮问题" class="headerlink" title="路由详情页左侧没有高亮问题"></a>路由详情页左侧没有高亮问题</h4><p>详情页路由加上</p>
+<p> meta: { title: ‘内容详情’, icon: ‘dashboard’, noCache: true, activeMenu: ‘&#x2F;nrgl&#x2F;index’ },</p>
+<h3 id="左侧菜单图标自定义"><a href="#左侧菜单图标自定义" class="headerlink" title="左侧菜单图标自定义"></a>左侧菜单图标自定义</h3><p>1 去阿里图表库下载<br><a target="_blank" rel="noopener" href="https://www.iconfont.cn/collections/index?spm=a313x.7781069.1998910419.42">https://www.iconfont.cn/collections/index?spm=a313x.7781069.1998910419.42</a></p>
+<p>购物车 》 下载代码</p>
+<p>2  src\assets   文件下新建   icon  文件夹   将下载好的文件放进去</p>
+<p>src\assets\icon    demo_index.html。。。。等</p>
+<p>3   src\main.js   文件下引入</p>
+<p>import ‘@&#x2F;assets&#x2F;icon&#x2F;iconfont.css’</p>
+<p>4  找到   Item.vue文件     src\layout\components\Sidebar\Item.vue</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs gradle"><span class="hljs-keyword">if</span> (icon) &#123;<br>      console.log(<span class="hljs-string">&#x27;icon&#x27;</span>,icon);<br>      <span class="hljs-keyword">if</span> (icon.<span class="hljs-keyword">includes</span>(<span class="hljs-string">&#x27;el-icon&#x27;</span>)) &#123;<br>        vnodes.<span class="hljs-keyword">push</span>(&lt;i <span class="hljs-keyword">class</span>=&#123;[icon, <span class="hljs-string">&#x27;sub-el-icon&#x27;</span>]&#125; /&gt;)<br>      &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (icon.<span class="hljs-keyword">includes</span>(<span class="hljs-string">&#x27;icon-&#x27;</span>)) &#123;<br>        vnodes.<span class="hljs-keyword">push</span>(&lt;i <span class="hljs-keyword">class</span>=&#123;[icon, <span class="hljs-string">&#x27;iconfont&#x27;</span>]&#125; style=<span class="hljs-string">&quot;margin-right:10px&quot;</span> /&gt;)<br>      &#125; <span class="hljs-keyword">else</span> &#123;<br>        vnodes.<span class="hljs-keyword">push</span>(&lt;svg-icon icon-<span class="hljs-keyword">class</span>=&#123;icon&#125; /&gt;)<br>      &#125;<br>    &#125;<br><br><br></code></pre></td></tr></table></figure>
+
+<p>加 下面的代码</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs gradle"><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (icon.<span class="hljs-keyword">includes</span>(<span class="hljs-string">&#x27;icon-&#x27;</span>)) &#123;<br>        vnodes.<span class="hljs-keyword">push</span>(&lt;i <span class="hljs-keyword">class</span>=&#123;[icon, <span class="hljs-string">&#x27;iconfont&#x27;</span>]&#125; style=<span class="hljs-string">&quot;margin-right:10px&quot;</span> /&gt;)<br>      &#125;<br></code></pre></td></tr></table></figure>
+
+<p>当  icon.includes(‘icon-‘  根据  路由配置里的</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs stylus">meta: &#123;<br>            title: <span class="hljs-string">&#x27;系统管理&#x27;</span>,<br>            <span class="hljs-attribute">icon</span>: <span class="hljs-string">&#x27;icon-gengduo&#x27;</span>,<br>            roles: <span class="hljs-selector-attr">[<span class="hljs-string">&#x27;admin&#x27;</span>, <span class="hljs-string">&#x27;editor&#x27;</span>]</span> <span class="hljs-comment">// you can set roles in root nav</span><br>        &#125;,<br></code></pre></td></tr></table></figure>
+
+<p>去判断<br>执行</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">vnodes<span class="hljs-selector-class">.push</span>(&lt;<span class="hljs-selector-tag">i</span> class=&#123;<span class="hljs-selector-attr">[icon, <span class="hljs-string">&#x27;iconfont&#x27;</span>]</span>&#125; style=<span class="hljs-string">&quot;margin-right:10px&quot;</span> /&gt;)<br></code></pre></td></tr></table></figure>
+
+<p>5去配置路由   src\router\index.js   路由配置文件</p>
+<h3 id="左侧菜单折叠后对不齐问题"><a href="#左侧菜单折叠后对不齐问题" class="headerlink" title="左侧菜单折叠后对不齐问题"></a>左侧菜单折叠后对不齐问题</h3><p>修改这个文件    src\styles\sidebar.scss   </p>
+<p>加这么一个样式</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-selector-id">#app</span> <span class="hljs-selector-class">.hideSidebar</span> <span class="hljs-selector-class">.el-scrollbar__view</span> .iconfont&#123;<br>		<span class="hljs-attribute">margin-right</span>: <span class="hljs-number">16px</span> <span class="hljs-meta">!important</span>;<br>        <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">20px</span> <span class="hljs-meta">!important</span>;<br><br>&#125;  <br><br></code></pre></td></tr></table></figure>
+
+<p>后来发现在这里控制    加入新的图标类名  和样式   原来的是.svg-icon  加新图标后   类名变了  所以之前的样式不生效了</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.iconfont</span> &#123;<br>  <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">16px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">src</span>\styles\sidebar<span class="hljs-selector-class">.scss</span><br><br>  <span class="hljs-selector-class">.hideSidebar</span> &#123;<br>    <span class="hljs-selector-class">.sidebar-container</span> &#123;<br>      <span class="hljs-attribute">width</span>: <span class="hljs-number">54px</span> <span class="hljs-meta">!important</span>;<br>    &#125;<br><br>    <span class="hljs-selector-class">.main-container</span> &#123;<br>      <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">54px</span>;<br>    &#125;<br><br>    <span class="hljs-selector-class">.submenu-title-noDropdown</span> &#123;<br>      <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> <span class="hljs-meta">!important</span>;<br>      <span class="hljs-attribute">position</span>: relative;<br><br>      <span class="hljs-selector-class">.el-tooltip</span> &#123;<br>        <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> <span class="hljs-meta">!important</span>;<br>        <span class="hljs-attribute">display</span>: flex <span class="hljs-meta">!important</span>;<br>        <span class="hljs-attribute">justify-content</span>: center <span class="hljs-meta">!important</span>;<br><br>        <span class="hljs-selector-class">.iconfont</span> &#123;<br>          <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">16px</span>;<br>        &#125;<br>        <span class="hljs-selector-class">.svg-icon</span> &#123;<br>          <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">20px</span>;<br>        &#125;<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="修改框架布局"><a href="#修改框架布局" class="headerlink" title="修改框架布局"></a>修改框架布局</h3><p>找到这个文件   src\layout\index.vue</p>
+<p>进行布局 修改</p>
+<h3 id="样式修改"><a href="#样式修改" class="headerlink" title="样式修改"></a>样式修改</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;scss&quot;</span>&gt;</span><span class="language-css"></span><br><span class="language-css">　　<span class="hljs-selector-class">.form</span> &#123;</span><br><span class="language-css">　　　　<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#fff</span>;</span><br><span class="language-css">　　　　/deep/ <span class="hljs-selector-class">.list</span>&#123;</span><br><span class="language-css">　　　　　　<span class="hljs-attribute">font-size</span>: <span class="hljs-number">18px</span>;</span><br><span class="language-css">　　　　&#125;</span><br><span class="language-css">　　&#125;</span><br><span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>scss文件中使用深度选择器&#x2F;deep&#x2F;报错 Expected selector解决方法<br>记得sass中使用&#x2F;deep&#x2F;没问题，但是在scss中使用&#x2F;deep&#x2F;报错了。<br>找到vue官网关于深度选择器是这样说的：</p>
+<p>有些像 Sass 之类的预处理器无法正确解析 &gt;&gt;&gt;。这种情况下你可以使用 &#x2F;deep&#x2F; 或 ::v-deep 操作符取而代之——两者都是 &gt;&gt;&gt; 的别名，同样可以正常工作。</p>
+<p>于是用 ::v-deep 就可以了</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css">::v-deep .el-checkbox__input&#123;<br>  <span class="hljs-attribute">display</span>: none;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Cookies-存储-配合-vuex"><a href="#Cookies-存储-配合-vuex" class="headerlink" title="Cookies 存储 配合  vuex"></a>Cookies 存储 配合  vuex</h3><p>src\utils\auth.js    文件</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs ada">import Cookies from <span class="hljs-symbol">&#x27;js</span>-cookie&#x27;<br><br>const TokenKey = <span class="hljs-symbol">&#x27;Admin</span>-Token&#x27;<br><br>export <span class="hljs-keyword">function</span> <span class="hljs-title">getToken</span>() &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-type">Cookies.get(TokenKey)</span><br>&#125;<br><br>export <span class="hljs-keyword">function</span> <span class="hljs-title">setToken</span>(token) &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-type">Cookies.set(TokenKey,</span> token)<br>&#125;<br><br>export <span class="hljs-keyword">function</span> <span class="hljs-title">removeToken</span>() &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-type">Cookies.remove(TokenKey)</span><br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<p>  src\permission.js  文件   使用 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> &#123; getToken &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/utils/auth&#x27;</span> <span class="hljs-comment">// get token from cookie</span><br><br><br>  <span class="hljs-keyword">const</span> hasToken = <span class="hljs-title function_">getToken</span>()<br></code></pre></td></tr></table></figure>
+
+<p>src\store\modules\user.js  vuex文件</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">import</span> &#123; <span class="hljs-keyword">login</span>, logout, getInfo &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/api/user&#x27;</span><br><span class="hljs-keyword">import</span> &#123; getToken, setToken, removeToken, getMenuEd &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/utils/auth&#x27;</span><br><span class="hljs-keyword">import</span> router, &#123; resetRouter &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/router&#x27;</span><br><br>const state = &#123;<br>  token: getToken(),<br>  <span class="hljs-type">name</span>: <span class="hljs-string">&#x27;&#x27;</span>,<br>  avatar: <span class="hljs-string">&#x27;&#x27;</span>,<br>  introduction: <span class="hljs-string">&#x27;&#x27;</span>,<br>  roles: [],<br>  xtMenuEd: <span class="hljs-string">&#x27;xtsz&#x27;</span>,<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="跨域代理配置"><a href="#跨域代理配置" class="headerlink" title="跨域代理配置"></a>跨域代理配置</h3><p>vue.config.js</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">&#x27;<span class="hljs-string">/api</span>&#x27;: &#123; <span class="hljs-string">//</span> 拦截以 <span class="hljs-string">/api</span> 开头的url接口<br>     <span class="hljs-string">//</span> target: &#x27;http:<span class="hljs-string">//192.168.1.22</span><span class="hljs-function">:8088</span>/meeting&#x27;,<span class="hljs-string">//</span>代理的地址和端口 志阳<br>     target: process.env.VUE_APP_BASE_FILE_API,<span class="hljs-string">//</span>冀川<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">devServer: &#123;<br>    <span class="hljs-string">//</span> port: port,<br>    <span class="hljs-string">//</span> open: <span class="hljs-literal">true</span>,<br>    <span class="hljs-string">//</span> overlay: &#123;<br>    <span class="hljs-string">//</span>   warnings: <span class="hljs-literal">false</span>,<br>    <span class="hljs-string">//</span>   errors: <span class="hljs-literal">true</span><br>    <span class="hljs-string">//</span> &#125;,<br>    <span class="hljs-string">//</span> before: require<span class="hljs-params">(&#x27;./mock/mock-server.js&#x27;)</span><br>    <span class="hljs-string">//</span> 新。。。。。。。。。。。。。。。。。。。<br>    host: &#x27;0.0.0.0&#x27;,<span class="hljs-string">//</span>本地ip0.0.0.0&#x27;==192.168.1.18（我的）<br>    port: 3001,<span class="hljs-string">//</span>本地端口<br>    https: <span class="hljs-literal">false</span>, <span class="hljs-string">//</span>是否启用HTTPS协议<br>    <span class="hljs-string">//</span> <span class="hljs-string">//</span> hot: <span class="hljs-literal">true</span>, <span class="hljs-string">//</span>是否开启热加载<br>    open: <span class="hljs-literal">true</span>, <span class="hljs-string">//</span>配置自动启动浏览器<br>    proxy: &#123; <span class="hljs-string">//</span>目的是解决跨域，若测试环境不需要跨域，则不需要进行该配置<br>      &#x27;<span class="hljs-string">/api</span>&#x27;: &#123; <span class="hljs-string">//</span> 拦截以 <span class="hljs-string">/api</span> 开头的url接口<br>        <span class="hljs-string">//</span> target: &#x27;http:<span class="hljs-string">//192.168.1.22</span><span class="hljs-function">:8088</span>/meeting&#x27;,<span class="hljs-string">//</span>代理的地址和端口 志阳<br>        target: process.env.VUE_APP_BASE_FILE_API,<span class="hljs-string">//</span>冀川<br>        changeOrigin: <span class="hljs-literal">true</span>, <span class="hljs-string">//</span>是否跨域<br>        ws: <span class="hljs-literal">true</span>, <span class="hljs-string">//</span>如果要代理 websockets，配置这个参数<br>        secure: <span class="hljs-literal">false</span>, <span class="hljs-string">//</span> 如果是https接口，需要配置这个参数<br>        <span class="hljs-string">//</span> 标识替换<br>        <span class="hljs-string">//</span> 原请求地址为 <span class="hljs-string">/api/getData</span> 将&#x27;<span class="hljs-string">/api</span>&#x27;替换&#x27;&#x27;时，<br>        <span class="hljs-string">//</span> 代理后的请求地址为： http:<span class="hljs-string">//xxx.xxx.xxx/getData</span><br>        <span class="hljs-string">//</span> 若替换为&#x27;<span class="hljs-string">/other</span>&#x27;,则代理后的请求地址为 http:<span class="hljs-string">//xxx.xxx.xxx/other/getData</span><br>        <span class="hljs-string">//</span> rewrite: <span class="hljs-params">(path)</span> =&gt; path.replace<span class="hljs-params">(/^\/api/, &#x27;&#x27;)</span>,<br>        pathRewrite: &#123;<br>          <span class="hljs-string">//</span>重写接口 后台接口指向不统一  所以指向所有&#x27;&#x27;<br>          &#x27;^<span class="hljs-string">/api</span>&#x27;: &#x27;&#x27;<br>        &#125;<br>      &#125;,<br>    &#125;,<br>  &#125;,<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h3><p>.env.development</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-comment"># just a flag</span><br><span class="hljs-attr">ENV</span> = <span class="hljs-string">&#x27;development&#x27;</span><br><br><span class="hljs-attr">VUE_APP_BASE_API</span> = <span class="hljs-string">&#x27;/api&#x27;</span><br><span class="hljs-attr">VUE_APP_BASE_FILE_API</span> = <span class="hljs-string">&#x27;http://192.168.1.103:9999/&#x27;</span><br><br><br></code></pre></td></tr></table></figure>
+
+<p>axios   请求  配置<br>src\utils\request.js</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><br>const service = axios<span class="hljs-selector-class">.create</span>(&#123;<br>  baseURL: process<span class="hljs-selector-class">.env</span><span class="hljs-selector-class">.VUE_APP_BASE_API</span>, <span class="hljs-comment">// url = base url + request url</span><br>  <span class="hljs-comment">// withCredentials: true, // send cookies when cross-domain requests</span><br>  timeout: <span class="hljs-number">5000</span> <span class="hljs-comment">// request timeout</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<h3 id="图片地址代理"><a href="#图片地址代理" class="headerlink" title="图片地址代理"></a>图片地址代理</h3><p>src\utils\request.js</p>
+<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs smali">// create an axios<span class="hljs-built_in"> instance</span><br><span class="hljs-built_in"></span>const service = axios.create(&#123;<br>  baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url<br>  // baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url<br>  // withCredentials: true, // send cookies when cross-domain requests<br>  timeout: 5000 // request timeout<br>&#125;)<br><br></code></pre></td></tr></table></figure>
+
+<p> <strong>process.env.VUE_APP_BASE_API</strong><br><strong>本地.env.development没有的时候是空</strong></p>
+<p>vue.config.js</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs awk">proxy: &#123;<br>      <span class="hljs-regexp">//</span> 如果地址以 /api开头 就会请求到目标 ip<br>      <span class="hljs-string">&quot;/pc&quot;</span>: &#123;<br>        <span class="hljs-regexp">//</span> 目标代理服务器地址<br>        target: process.env.VUE_APP_BASE_API2,<span class="hljs-regexp">//</span>https:<span class="hljs-regexp">//</span>huzhou-safecode-nx.spacecig.com:<span class="hljs-number">8443</span><br>        <span class="hljs-regexp">//</span> 开启代理，本地创建一个虚拟服务器 允许跨域<br>        changeOrigin: true,<br>        <span class="hljs-regexp">//</span> 如果要代理 websockets，配置这个参数<br>        ws: true,<br>        <span class="hljs-regexp">//</span> 如果是https接口，需要配置这个参数<br>        secure: true,<br>        <span class="hljs-regexp">//</span> 标识替换<br>        <span class="hljs-regexp">//</span> 原请求地址为 <span class="hljs-regexp">/api/g</span>etData 将<span class="hljs-string">&#x27;/api&#x27;</span>替换<span class="hljs-string">&#x27;&#x27;</span>时，<br>        <span class="hljs-regexp">//</span> 代理后的请求地址为： http:<span class="hljs-regexp">//</span>xxx.xxx.xxx/getData<br>        <span class="hljs-regexp">//</span> 若替换为<span class="hljs-string">&#x27;/other&#x27;</span>,则代理后的请求地址为 http:<span class="hljs-regexp">//</span>xxx.xxx.xxx<span class="hljs-regexp">/other/g</span>etData <br>        <span class="hljs-regexp">//</span> 接口本身有api就注释掉<br>        pathRewrite: &#123;<br>          <span class="hljs-regexp">//</span>重写接口 后台接口指向不统一  所以指向所有<span class="hljs-string">&#x27;&#x27;</span><br>          <span class="hljs-string">&#x27;^/pc&#x27;</span>: <span class="hljs-string">&#x27;/pc&#x27;</span><br>        &#125;<br>      &#125;,<br>      <span class="hljs-string">&quot;/mini&quot;</span>: &#123;<br>        <span class="hljs-regexp">//</span> 目标代理服务器地址<br>        target: process.env.VUE_APP_BASE_API2,<span class="hljs-regexp">//</span>https:<span class="hljs-regexp">//</span>huzhou-safecode-nx.spacecig.com:<span class="hljs-number">8443</span><br>        <span class="hljs-regexp">//</span> 开启代理，本地创建一个虚拟服务器 允许跨域<br>        changeOrigin: true,<br>        <span class="hljs-regexp">//</span> 如果要代理 websockets，配置这个参数<br>        ws: true,<br>        <span class="hljs-regexp">//</span> 如果是https接口，需要配置这个参数<br>        secure: true,<br>        <span class="hljs-regexp">//</span> 标识替换<br>        <span class="hljs-regexp">//</span> 原请求地址为 <span class="hljs-regexp">/api/g</span>etData 将<span class="hljs-string">&#x27;/api&#x27;</span>替换<span class="hljs-string">&#x27;&#x27;</span>时，<br>        <span class="hljs-regexp">//</span> 代理后的请求地址为： http:<span class="hljs-regexp">//</span>xxx.xxx.xxx/getData<br>        <span class="hljs-regexp">//</span> 若替换为<span class="hljs-string">&#x27;/other&#x27;</span>,则代理后的请求地址为 http:<span class="hljs-regexp">//</span>xxx.xxx.xxx<span class="hljs-regexp">/other/g</span>etData <br>        <span class="hljs-regexp">//</span> 接口本身有api就注释掉<br>        pathRewrite: &#123;<br>          <span class="hljs-regexp">//</span>重写接口 后台接口指向不统一  所以指向所有<span class="hljs-string">&#x27;&#x27;</span><br>          <span class="hljs-string">&#x27;^/mini&#x27;</span>: <span class="hljs-string">&#x27;&#x27;</span><br>        &#125;<br>      &#125;,<br>    &#125;<br><br></code></pre></td></tr></table></figure>
+
+<p>.env.production</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-comment"># just a flag</span><br><span class="hljs-attr">ENV</span> = <span class="hljs-string">&#x27;production&#x27;</span><br><br><span class="hljs-comment"># base api</span><br><span class="hljs-comment"># VUE_APP_BASE_API = &#x27;/prod-api&#x27;</span><br><span class="hljs-attr">VUE_APP_BASE_API</span> = <span class="hljs-string">&#x27;/mini&#x27;</span><br><span class="hljs-attr">VUE_APP_BASE_API2</span> = <span class="hljs-string">&#x27;https://wsq.tjxwyun.com/mini&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p>.env.development</p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs autoit"><br><span class="hljs-meta"># just a flag</span><br>ENV = <span class="hljs-string">&#x27;development&#x27;</span><br><br><span class="hljs-meta"># base api</span><br><span class="hljs-meta"># VUE_APP_BASE_API = <span class="hljs-string">&#x27;/dev-api&#x27;</span></span><br><span class="hljs-meta"># VUE_APP_BASE_API = <span class="hljs-string">&#x27;/mini&#x27;</span></span><br>VUE_APP_BASE_API2 = <span class="hljs-string">&#x27;https://wsq.tjxwyun.com/mini&#x27;</span><br><span class="hljs-meta"># VUE_APP_BASE_API2 = <span class="hljs-string">&#x27;http://192.168.1.39:9095/mini&#x27;</span></span><br><span class="hljs-meta"># VUE_APP_BASE_API2 = <span class="hljs-string">&#x27;http://192.168.1.22:9095/mini&#x27;</span></span><br><br></code></pre></td></tr></table></figure>
+
+<p>vue文件   <strong>&#96;&#x2F;mini</strong></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">&lt;img :<span class="hljs-attribute">src</span>=<span class="hljs-string">&quot;`/mini<span class="hljs-variable">$&#123;item.cusHead&#125;</span>`&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-string">&quot;&quot;</span>&gt;<br></code></pre></td></tr></table></figure>
+
+<p>知识点vue.config.js  只代理本地地址生效，线上地址不生效（需要后端代理</p>
+<h3 id="每个请求设置token"><a href="#每个请求设置token" class="headerlink" title="每个请求设置token"></a>每个请求设置token</h3><p> config.headers[‘Token’] &#x3D; getToken()</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs stata">src\utils\request.js<br><br><br><br>service.interceptors.request.<span class="hljs-keyword">use</span>(<br>  config =&gt; &#123;<br>    <span class="hljs-comment">// do something before request is sent</span><br><br>    <span class="hljs-keyword">if</span> (store.getters.<span class="hljs-keyword">token</span>) &#123;<br>      <span class="hljs-comment">// let each request carry token</span><br>      <span class="hljs-comment">// [&#x27;X-Token&#x27;] is a custom headers key</span><br>      <span class="hljs-comment">// please modify it according to the actual situation</span><br>      <span class="hljs-comment">// config.headers[&#x27;X-Token&#x27;] = getToken()</span><br>      config.headers[&#x27;<span class="hljs-keyword">Token</span>&#x27;] = <span class="hljs-keyword">getToken</span>()<br>    &#125;<br>    <span class="hljs-keyword">return</span> config<br>  &#125;,<br>  <span class="hljs-keyword">error</span> =&gt; &#123;<br>    <span class="hljs-comment">// do something with request error</span><br>    console.<span class="hljs-built_in">log</span>(<span class="hljs-keyword">error</span>) <span class="hljs-comment">// for debug</span><br>    <span class="hljs-keyword">return</span> Promise.reject(<span class="hljs-keyword">error</span>)<br>  &#125;<br>)<br></code></pre></td></tr></table></figure>
+
+<h3 id="git-post请求"><a href="#git-post请求" class="headerlink" title="git post请求"></a>git post请求</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs php">import request <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/utils/request&#x27;</span><br><br><br><span class="hljs-comment">// 登陆</span><br>export <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">login</span>(<span class="hljs-params">data</span>) </span>&#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-title function_ invoke__">request</span>(&#123;<br>    <span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;zljc-auth/login&#x27;</span>,<br>    <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;post&#x27;</span>,<br>    data<br>  &#125;)<br>&#125;<br><span class="hljs-comment">// 查询系统路由权限</span><br>export <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getuser</span>(<span class="hljs-params">data</span>) </span>&#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-title function_ invoke__">request</span>(&#123;<br>    <span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;/zljc-system/menu/user&#x27;</span>,<br>    <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;get&#x27;</span>,<br>    <span class="hljs-attr">params</span>: data<br>  &#125;)<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="路由meta-操作"><a href="#路由meta-操作" class="headerlink" title="路由meta  操作"></a>路由meta  操作</h3><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs haxe"><span class="hljs-built_in">this</span>.<span class="hljs-variable">$route</span>.meta<br></code></pre></td></tr></table></figure>
+
+<h3 id="菜单三级子集路由嵌套"><a href="#菜单三级子集路由嵌套" class="headerlink" title="菜单三级子集路由嵌套"></a>菜单三级子集路由嵌套</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">要再第二级  加   <span class="hljs-keyword">index</span>.vue<br><br><br>&lt;<span class="hljs-keyword">template</span>&gt;<br>  &lt;router-<span class="hljs-keyword">view</span> /&gt;<br>&lt;/<span class="hljs-keyword">template</span>&gt;<br><br></code></pre></td></tr></table></figure>
+
+<p>修改hmlt页面标题和图标</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs ruby">src\settings.js<br><br><span class="hljs-keyword">module</span>.exports = &#123;<br>  <span class="hljs-symbol">title:</span> <span class="hljs-string">&#x27;微社区后台管理系统&#x27;</span>,<br>  <span class="hljs-regexp">//</span> <span class="hljs-symbol">title:</span> <span class="hljs-string">&#x27;Vue Element Admin&#x27;</span>,<br><br><br><br>图标<br><span class="hljs-keyword">public</span>\favicon.ico<br><br>把图片放这里  <span class="hljs-keyword">public</span>  文件夹下<br><br><br><br><span class="hljs-keyword">public</span>\index.html<br><br><br>修改图片名称<br>&lt;link rel=<span class="hljs-string">&quot;icon&quot;</span> href=<span class="hljs-string">&quot;&lt;%= BASE_URL %&gt;favicon.ico&quot;</span>&gt;<br></code></pre></td></tr></table></figure>
+
+<h3 id="el-input"><a href="#el-input" class="headerlink" title="el-input"></a>el-input</h3><p>input  记忆连锁导致背景色bug</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs css">::v-deep .el-input input:-webkit-autofill&#123;<br>      webkit-<span class="hljs-attribute">box-shadow</span>:none;<br>      <span class="hljs-attribute">box-shadow</span>:none <span class="hljs-meta">!important</span>;<br>	//文字颜色<br>      -webkit-text-fill-<span class="hljs-attribute">color</span>:<span class="hljs-number">#000</span> <span class="hljs-meta">!important</span>;<br>      //背景色<br>    -webkit-<span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0px</span> <span class="hljs-number">1000px</span> <span class="hljs-number">#fff</span> inset <span class="hljs-meta">!important</span>;<br>      <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#fff</span> <span class="hljs-meta">!important</span>;<br>      <br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<p>只能输入数字并限制输入范围</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs routeros">&lt;el-input <span class="hljs-attribute">onkeyup</span>=<span class="hljs-string">&quot;value=value.replace(/[^\d||/.]/g,&#x27;&#x27;)&quot;</span><br>                            <span class="hljs-attribute">oninput</span>=<span class="hljs-string">&quot;if(value)&#123;value=value.replace(/[^\d]/g,&#x27;&#x27;)&#125; if(value&lt;=0)&#123;value= &#x27;&#x27;&#125; if(value&gt;60)&#123;value=60&#125;&quot;</span><br>                             <span class="hljs-attribute">v-model</span>=<span class="hljs-string">&quot;input&quot;</span>  <span class="hljs-attribute">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-string">&quot;请输入内容&quot;</span>&gt;&lt;/el-input&gt;<br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/blog/categories/element-Ui/" class="category-chain-item">element-Ui</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/blog/tags/element-Ui/" class="print-no-link">#element-Ui</a>
+      
+        <a href="/blog/tags/vue-element-admin/" class="print-no-link">#vue-element-admin</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>vue-element-admin遇到的问题和解决记录</div>
+      <div>https://gitee.com/dong-wanyang/blog/2024/01/10/vue-element-admin遇到的问题和解决记录/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>幸福来敲门</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>January 10, 2024</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/blog/2024/02/07/Google%E8%B8%A9%E5%9D%91/" title="Google踩坑_后台打印是vue路径显示变为cjs.js">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Google踩坑_后台打印是vue路径显示变为cjs.js</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/2024/01/09/canvas%E7%94%BB%E7%BA%BF/" title="canvas画线">
+                        <span class="hidden-mobile">canvas画线</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Luck</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>幸福来敲门</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/blog/js/events.js" ></script>
+<script  src="/blog/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/blog/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/blog/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/blog/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+  <!-- 动态背景 -->
+<script color="0,0,0" opacity='0.7' zIndex="-2" count="200" type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

@@ -1,0 +1,811 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/blog/img/avatar2.jpg">
+  <link rel="icon" href="/blog/img/avatar2.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="幸福来敲门">
+  <meta name="keywords" content="幸福来敲门,博客,技术贴,前端,后端,vue,hexo,html,css,小程序,uni-app,后台,移动端,建站,论坛,bootstrap,安卓,ios,技术前沿，技术博客,mui,ant-design,elementui,java,javaStrpict,sass,scss,less,React,Angular,jQuery">
+  
+    <meta name="description" content="CSS高级技巧元素的显示与隐藏display 显示display:block 除了转换为块级元素之外，同时还有显示元素的意思。display : none 隐藏对象特点： 隐藏之后，不再保留位置。悬停显示 opacity和display：none区别    什么时候使用 display:none        在不涉及到js情况下，想让一个元素做显示或者隐藏要实现动画，使用display：none">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3随笔2进阶">
+<meta property="og:url" content="https://gitee.com/dong-wanyang/blog/2018/10/29/CSS3%E9%9A%8F%E7%AC%942/index.html">
+<meta property="og:site_name" content="幸福来敲门">
+<meta property="og:description" content="CSS高级技巧元素的显示与隐藏display 显示display:block 除了转换为块级元素之外，同时还有显示元素的意思。display : none 隐藏对象特点： 隐藏之后，不再保留位置。悬停显示 opacity和display：none区别    什么时候使用 display:none        在不涉及到js情况下，想让一个元素做显示或者隐藏要实现动画，使用display：none">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/blog/img/myimg10.jpg">
+<meta property="article:published_time" content="2018-10-29T04:11:01.000Z">
+<meta property="article:modified_time" content="2024-03-27T08:00:00.611Z">
+<meta property="article:author" content="幸福来敲门">
+<meta property="article:tag" content="H5C3">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gitee.com/blog/img/myimg10.jpg">
+  
+  
+  
+  <title>CSS3随笔2进阶 - 幸福来敲门</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/blog/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/blog/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/blog/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/blog/css/font_gd7ak9jx13f/iconfont.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"gitee.com","root":"/blog/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/blog/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/blog/js/utils.js" ></script>
+  <script  src="/blog/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/blog/">
+      <strong>幸福来敲门</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/commonweal/" target="_self">
+                <i class="iconfont icon-gongyi"></i>
+                <span>公益</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/guestbook/" target="_self">
+                <i class="iconfont icon-B-liuyan"></i>
+                <span>留言</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/blog/img/default.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="CSS3随笔2进阶"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2018-10-29 12:11" pubdate>
+          2018年10月29日 12:11:01
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          2.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          19 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+    <script type="text/javascript" src="/js/love.js"></script>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">CSS3随笔2进阶</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="CSS高级技巧"><a href="#CSS高级技巧" class="headerlink" title="CSS高级技巧"></a>CSS高级技巧</h2><h3 id="元素的显示与隐藏"><a href="#元素的显示与隐藏" class="headerlink" title="元素的显示与隐藏"></a>元素的显示与隐藏</h3><h4 id="display-显示"><a href="#display-显示" class="headerlink" title="display 显示"></a>display 显示</h4><p>display:block 除了转换为块级元素之外，同时还有显示元素的意思。<br>display : none 隐藏对象<br>特点： 隐藏之后，不再保留位置。<br>悬停显示</p>
+<p>opacity和display：none区别<br>    什么时候使用 display:none<br>        在不涉及到js情况下，想让一个元素做显示或者隐藏要实现动画，使用display：none<br>    什么时候使用opacity<br>        在涉及js中，要让元素显示和隐藏，做动画，opacity:0，对应，两个都可以，不做动画对应的是show和hide</p>
+<h4 id="visibility-可见性"><a href="#visibility-可见性" class="headerlink" title="visibility 可见性"></a>visibility 可见性</h4><p>visible : 　对象可视<br>hidden : 　对象隐藏<br>特点： 隐藏之后，继续保留原有位置。</p>
+<h4 id="overflow-溢出"><a href="#overflow-溢出" class="headerlink" title="overflow 溢出"></a>overflow 溢出</h4><p>visible : 　不剪切内容也不添加滚动条。<br>auto : 　 超出自动显示滚动条，不超出不显示滚动条<br>hidden : 　不显示超过对象尺寸的内容，超出的部分隐藏掉<br>scroll : 　不管超出内容否，总是显示滚动条</p>
+<h3 id="鼠标样式curso"><a href="#鼠标样式curso" class="headerlink" title="鼠标样式curso"></a>鼠标样式curso</h3><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arduino">cursor :  <span class="hljs-keyword">default</span>  小白 | pointer  小手  | move  移动  |  text  文本<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="轮廓-outline"><a href="#轮廓-outline" class="headerlink" title="轮廓 outline"></a>轮廓 outline</h3><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima">outline : outline-<span class="hljs-built_in">color</span> ||outline-<span class="hljs-built_in">style</span> || outline-<span class="hljs-built_in">width</span> <br></code></pre></td></tr></table></figure>
+
+
+<p>但是我们都不关心可以设置多少，我们平时都是去掉的<br>最直接的写法是 ：  outline: 0;   或者  outline: none;</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">&lt;input  <span class="hljs-attribute">type</span>=<span class="hljs-string">&quot;text&quot;</span>  <span class="hljs-attribute">style</span>=<span class="hljs-string">&quot;outline: 0;&quot;</span>/&gt;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="防止拖拽文本域resize"><a href="#防止拖拽文本域resize" class="headerlink" title="防止拖拽文本域resize"></a>防止拖拽文本域resize</h3><p>resize：none    这个单词可以防止 火狐 谷歌等浏览器随意的拖动 文本域。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">textarea</span>  <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;resize: none;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="vertical-align-垂直对齐3"><a href="#vertical-align-垂直对齐3" class="headerlink" title="vertical-align 垂直对齐3"></a>vertical-align 垂直对齐3</h3><p>vertical-align : baseline |top |middle |bottom<br>vertical-align 不影响块级元素中的内容对齐，它只针对于 行内元素或者行内块元素，特别是行内块元素， 通常用来控制图片&#x2F;表单与文字的对齐。</p>
+<h3 id="去除图片底侧空白缝隙"><a href="#去除图片底侧空白缝隙" class="headerlink" title="去除图片底侧空白缝隙"></a>去除图片底侧空白缝隙</h3><p>解决方法<br>给img vertical-align:middle | top等等。  让图片不要和基线对齐<br>给img 添加 display：block; 转换为块级元素就不会存在问题了。</p>
+<h3 id="溢出的文字隐藏"><a href="#溢出的文字隐藏" class="headerlink" title="溢出的文字隐藏"></a>溢出的文字隐藏</h3><p>white-space<br>normal : 　默认处理方式<br>nowrap : 　强制在同一行内显示所有文本，直到文本结束或者遭遇br标签对象才换行。</p>
+<p>可以处理中文</p>
+<p>text-overflow 文字溢出</p>
+<p>clip : 　<br>不显示省略标记（…），而是简单的裁切<br>ellipsis :<br>当对象内文本溢出时显示省略标记（…）</p>
+<h3 id="CSS精灵技术（sprite）-小妖精-雪碧"><a href="#CSS精灵技术（sprite）-小妖精-雪碧" class="headerlink" title="CSS精灵技术（sprite） 小妖精   雪碧"></a>CSS精灵技术（sprite） 小妖精   雪碧</h3><pre><code class="hljs">&lt;style&gt;
+    div &#123;
+        width: 25px;
+        height: 26px;
+        border: 1px solid red;
+        background: url(images/sprite1.png) no-repeat 0 -351px;
+        background-position: 0 50px;
+    &#125;
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h2><blockquote>
+<p>​	::before 在被选元素的内容前面插入内容<br>        attr(属性名) 将元素某一个属性的内容作为插入的内容<br>    ::after 在被选元素的内容后面插入内容<br>        attr(属性名) 将元素某一个属性的内容作为插入的内容<br>    :empty 选择内容为空的元素<br>    :not 排除选择器<br>    :last-child 选择某一个元素父级下的最后一个子元素<br>    :first-child 选择某一个元素父级下的第一的子元素<br>    :nth-child(length) 选择某个元素父级下面的第length个子元素</p>
+</blockquote>
+<h2 id="背景设置"><a href="#背景设置" class="headerlink" title="背景设置"></a>背景设置</h2><h3 id="背景尺寸"><a href="#背景尺寸" class="headerlink" title="背景尺寸"></a>背景尺寸</h3><blockquote>
+<p>background-size 设置背景图片尺寸<br>auto： 背景图像的真实大小。<br>cover： 背景图片等比例缩放到铺满盒子子主题 3<br>contain： 背景图片拉伸以适应盒子大小直接设置大小 background-size: 100px 100px; 或者backgound-size: 10% 10%;</p>
+</blockquote>
+<h3 id="背景重复"><a href="#背景重复" class="headerlink" title="背景重复"></a>背景重复</h3><p>round</p>
+<p>如果背景图片在平铺的时候 有部分区域被截取 round会将图片本身缩小 以达到完全显示图片的目的</p>
+<p>space</p>
+<p>在水平方向上和竖直方向上 能平铺多少张图片就平铺多少张图片 剩余的空隙平均分配</p>
+<h3 id="多背景"><a href="#多背景" class="headerlink" title="多背景"></a>多背景</h3><figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs coq">.el &#123;<br>    background: <br>        url(img/bg1.png) no-<span class="hljs-built_in">repeat</span> <span class="hljs-built_in">left</span> <span class="hljs-built_in">top</span>,<br>        url(img/bg2.png) no-<span class="hljs-built_in">repeat</span> <span class="hljs-built_in">right</span> <span class="hljs-built_in">top</span>,<br>        url(img/bg3.png) no-<span class="hljs-built_in">repeat</span> <span class="hljs-built_in">left</span> <span class="hljs-built_in">bottom</span>,<br>        url(img/bg4.png) no-<span class="hljs-built_in">repeat</span> <span class="hljs-built_in">right</span> <span class="hljs-built_in">bottom</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="background-origin-定义背景显示区域"><a href="#background-origin-定义背景显示区域" class="headerlink" title="background-origin  定义背景显示区域"></a>background-origin  定义背景显示区域</h3><blockquote>
+<p>参数<br>border-box背景从边框开始，也就是压在边框上<br>padding-box背景从内边距开始（相当于默认值）<br>content-box背景从内容区开始（比如内边距是20px那就会在盒子内20px的位置开始渲染背景）</p>
+</blockquote>
+<h3 id="background-clip"><a href="#background-clip" class="headerlink" title="background-clip"></a>background-clip</h3><blockquote>
+<p>参数<br>border-box默认值，从边框向外裁剪</p>
+<p>padding-box向内填充向外裁剪<br>content-box从内容区域外裁剪背景<br>no-clip不裁切</p>
+</blockquote>
+<h3 id="background-size"><a href="#background-size" class="headerlink" title="background-size"></a>background-size</h3><blockquote>
+<p>auto</p>
+<p>自适应</p>
+<p>长度值px</p>
+<p>可以设置宽高值，当只有一个值时默认为宽度高度等比缩放</p>
+<p>百分比</p>
+<p>将背景图标的宽高变成容器宽高的百分比</p>
+<p>cover</p>
+<p>背景缩放到覆盖整个容器</p>
+<p>contain</p>
+<p>背景缩放到覆盖容器的一边为止</p>
+</blockquote>
+<h2 id="内减盒模型"><a href="#内减盒模型" class="headerlink" title="内减盒模型"></a>内减盒模型</h2><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima"><span class="hljs-built_in">box</span>-sizing： <span class="hljs-built_in">content</span>-<span class="hljs-built_in">box</span> / <span class="hljs-built_in">border</span>-<span class="hljs-built_in">box</span>;<br></code></pre></td></tr></table></figure>
+
+<h2 id="过渡"><a href="#过渡" class="headerlink" title="过渡"></a>过渡</h2><h3 id="过渡属性"><a href="#过渡属性" class="headerlink" title="过渡属性"></a>过渡属性</h3><p>transition-property: 过渡属性;<br>transition-duration: 动画时间;<br>transition-timing-function: 动画执行的速度效果;<br>transition-delay: 延迟</p>
+<h3 id="复合属性"><a href="#复合属性" class="headerlink" title="复合属性"></a>复合属性</h3><p>transition: all 1s linear 1s;</p>
+<h3 id="动画速度效果"><a href="#动画速度效果" class="headerlink" title="动画速度效果"></a>动画速度效果</h3><p>linear：匀速运动<br>ease： 慢快慢（默认值）<br>ease-in： 由慢到快<br>ease-out： 由快到慢<br>steps(integer)： 分多少步完成</p>
+<h2 id="2D转换"><a href="#2D转换" class="headerlink" title="2D转换"></a>2D转换</h2><p>​	缩放 scale()<br>    平移translate(x, y)<br>    旋转rotate(0deg)<br>    变形- skew(x, y)<br>    中心点transform-origin</p>
+<p>缩放 scale()</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs scss">- <span class="hljs-built_in">scale</span>(x, y) ：在x、y轴上对元素进行缩放，如果第二个参数未提供，取第一个参数的值。 <br>- <span class="hljs-built_in">scaleX</span>() ：指定元素在X轴的缩放（水平方向） <br>- <span class="hljs-built_in">scaleY</span>() ：指定元素在Y轴的缩放（垂直方向） <br>- 以自己的中心点进行缩放<br></code></pre></td></tr></table></figure>
+
+<p>平移translate(x, y)</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs scss">- <span class="hljs-built_in">translate</span>(x, y)： 在x、y轴上对元素进行移动，如果第二个参数未提供，则默认值为<span class="hljs-number">0</span>。<br>- <span class="hljs-built_in">translateX</span>()： 指定元素在X轴的移动 （水平方向）<br>- <span class="hljs-built_in">translateY</span>()： 指定元素在Y轴的移动 （垂直方向）<br>- 中心点水平或垂直移动<br><br></code></pre></td></tr></table></figure>
+
+<p>旋转rotate(0deg)</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">rotate</span><span class="hljs-params">(<span class="hljs-number">0deg</span>)</span></span>： 指定元素的旋转角度。<br></code></pre></td></tr></table></figure>
+
+<p>变形- skew(x, y)</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs scss">- <span class="hljs-built_in">skew</span>(x, y)： 在x、y轴上对元素进行扭曲（斜切）操作。如果第二个参数未提供，则默认值为<span class="hljs-number">0</span>。<br>- <span class="hljs-built_in">skewX</span>()： 指定元素在X轴的扭曲（水平方向） <br>- <span class="hljs-built_in">skewY</span>()： 指定元素在Y轴的扭曲（垂直方向） <br><br></code></pre></td></tr></table></figure>
+
+<p>中心点transform-origin</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">transform-origin</span>： 指定元素在<span class="hljs-number">2</span>D转换中的中心点。<br><br>- 语法： <span class="hljs-attribute">transform-origin</span>: x y;<br>- 值可以是关键字 <span class="hljs-attribute">left</span> <span class="hljs-attribute">right</span> <span class="hljs-attribute">top</span> <span class="hljs-attribute">bottom</span> 也可以是具体的像素值<br><br></code></pre></td></tr></table></figure>
+
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><h3 id="定义动画"><a href="#定义动画" class="headerlink" title="定义动画"></a>定义动画</h3><p>用@keyframes 动画名 {}定义一个动画</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-keyword">@keyframes</span> Hello &#123;<br>			<span class="hljs-selector-tag">from</span> &#123;<br>				<span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateX</span>(<span class="hljs-number">0</span>);<br>			&#125;<br>			<span class="hljs-selector-tag">to</span> &#123;<br>				<span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateX</span>(<span class="hljs-number">500px</span>);<br>			&#125;<br>		&#125;<br>	<span class="hljs-selector-tag">from</span>  <span class="hljs-selector-tag">to</span>   也可写成 <span class="hljs-number">0%</span> <span class="hljs-number">10%</span>  <span class="hljs-number">100%</span><br>可以被多个元素重复使用<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="调用动画"><a href="#调用动画" class="headerlink" title="调用动画"></a>调用动画</h3><p>animation: 动画名称 执行时间 运动形式 延迟时间 执行次数 是否反向运动;</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs css">元素 &#123;<br>						<span class="hljs-attribute">animation</span>: 动画名称 执行时间 运动形式 延迟时间 执行次数 是否反向运动;<br>					&#125;<br><br><br><br><span class="hljs-selector-class">.box</span> &#123;<br>			<span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;<br>			<span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;<br>			<span class="hljs-attribute">background</span>: green;<br>			<span class="hljs-comment">/*animation: Hello 2s;*/</span><br>			<span class="hljs-attribute">animation</span>: world <span class="hljs-number">5000ms</span> linear infinite alternate;<br>		&#125;<br><br><br>毫秒,秒都行<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="动画属性介绍"><a href="#动画属性介绍" class="headerlink" title="动画属性介绍"></a>动画属性介绍</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">-</span> animation-name：动画名称 <br><span class="hljs-bullet">-</span> animation-duration：动画的持续时间<br><span class="hljs-bullet">-</span> animation-timing-function： 动画的过渡类型 <br><span class="hljs-bullet">  -</span> linear： 线性过渡。等同于贝塞尔曲线(0.0, 0.0, 1.0, 1.0) <br><span class="hljs-bullet">  -</span> ease： 平滑过渡。等同于贝塞尔曲线(0.25, 0.1, 0.25, 1.0) <br><span class="hljs-bullet">  -</span> ease-in： 由慢到快。等同于贝塞尔曲线(0.42, 0, 1.0, 1.0) <br><span class="hljs-bullet">  -</span> ease-out： 由快到慢。等同于贝塞尔曲线(0, 0, 0.58, 1.0) <br><span class="hljs-bullet">  -</span> ease-in-out： 由慢到快再到慢。等同于贝塞尔曲线(0.42, 0, 0.58, 1.0) <br><span class="hljs-bullet">-</span> animation-delay： 动画延迟的时间 <br><span class="hljs-bullet">-</span> animation-iteration-count： 动画的循环次数 默认1次  infinite永久<br><span class="hljs-bullet">-</span> animation-direction： 动画是否反向运动 <br><span class="hljs-bullet">  -</span> normal： 正常方向 <br><span class="hljs-bullet">  -</span> reverse： 反方向运行, 从动画结束状态运行到动画开始状态 <br><span class="hljs-bullet">  -</span> alternate： 动画先正常运行再反方向运行，并持续交替运行 <br><span class="hljs-bullet">  -</span> alternate-reverse： 动画先反运行再正方向运行，并持续交替运行<br><span class="hljs-bullet">-</span> animation-fill-mode： 动画结束状态<br><span class="hljs-bullet">  -</span> forwards： 保存结束时状态<br><span class="hljs-bullet">  -</span> backwards：结束还原<br><span class="hljs-bullet">-</span> animation-play-state 设置动画的运行状态<br><span class="hljs-bullet">  -</span> paused 暂停<br><span class="hljs-bullet">  -</span> running 播放<br><span class="hljs-bullet">-</span> animation: 复合写法<br><span class="hljs-bullet">  -</span> anmatiton： boxAnimation 1s linear 2s 10 reverse forwards;<br><span class="hljs-bullet">  -</span> 解释： 延迟两秒(2s)， 匀速(linerar) 反方向(reverse) 执行 boxAnimation 动画， 时长为1秒(1s)， 重复10次(10)。<br><br></code></pre></td></tr></table></figure>
+
+<h2 id="CSS中的渐变"><a href="#CSS中的渐变" class="headerlink" title="CSS中的渐变"></a>CSS中的渐变</h2><h3 id="形状"><a href="#形状" class="headerlink" title="形状"></a>形状</h3><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs scss">circle  圆形，中心点保持圆形<br>ellipse	(默认值)渐变颜色形状会随着容器而变化<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="位置"><a href="#位置" class="headerlink" title="位置"></a>位置</h3><figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs coq"><span class="hljs-built_in">left</span><br><span class="hljs-built_in">right</span><br><span class="hljs-built_in">top</span><br><span class="hljs-built_in">bottom</span><br>可以直接写像素值<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="大小"><a href="#大小" class="headerlink" title="大小"></a>大小</h3><p>定义：从起点到终点过渡，一个颜色过渡到另一个颜色<br>closest-side：最近边，从中心点网最近的地方去拉<br>farthest-side: 最远边，从中心往最远的地方去拉<br>closest-corner: 最近角<br>farthest-corner : 最远角（默认值）<br>background-image: radial-gradient()–&gt;方向<br>background-image: linear-gradient(to top, red, blue, green);*&#x2F;<br>&#x2F;<em>background-image: linear-gradient(45deg, red 0%, red 50%, blue 50%, blue 100%);</em>&#x2F;<br>&#x2F;<em>background-image: linear-gradient(to right, red 0%, blue 30%, yellow 80%, pink 100%);</em>&#x2F;<br>&#x2F;<em>background-image: radial-gradient(ellipse at 100px 100px, red 0%, blue 50%, pink 100%);</em>&#x2F;<br>background-image: radial-gradient(circle farthest-corner at 100px 100px, red, blue);</p>
+<h3 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h3><h4 id="文字阴影"><a href="#文字阴影" class="headerlink" title="文字阴影"></a>文字阴影</h4><p>text-shadow<br>text-shadow: offsetX offsetY blur color;<br>阴影x轴位置偏移 阴影y轴位置偏移 阴影的模糊程度 阴影颜色</p>
+<h4 id="盒子阴影"><a href="#盒子阴影" class="headerlink" title="盒子阴影"></a>盒子阴影</h4><p>box-shadow</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/blog/categories/H5C3/" class="category-chain-item">H5C3</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/blog/tags/H5C3/" class="print-no-link">#H5C3</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>CSS3随笔2进阶</div>
+      <div>https://gitee.com/dong-wanyang/blog/2018/10/29/CSS3随笔2/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>幸福来敲门</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>October 29, 2018</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/blog/2019/02/23/javascripts%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A2%B3%E7%90%861/" title="javascripts知识点梳理1">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">javascripts知识点梳理1</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/2018/10/20/CSS3%E9%9A%8F%E7%AC%943%E8%BF%87%E6%B8%A1%E5%92%8C%E5%8A%A8%E7%94%BB/" title="CSS3随笔3过渡和动画">
+                        <span class="hidden-mobile">CSS3随笔3过渡和动画</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Luck</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>幸福来敲门</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/blog/js/events.js" ></script>
+<script  src="/blog/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/blog/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/blog/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/blog/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+  <!-- 动态背景 -->
+<script color="0,0,0" opacity='0.7' zIndex="-2" count="200" type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

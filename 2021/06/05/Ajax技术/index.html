@@ -1,0 +1,755 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/blog/img/avatar2.jpg">
+  <link rel="icon" href="/blog/img/avatar2.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="幸福来敲门">
+  <meta name="keywords" content="幸福来敲门,博客,技术贴,前端,后端,vue,hexo,html,css,小程序,uni-app,后台,移动端,建站,论坛,bootstrap,安卓,ios,技术前沿，技术博客,mui,ant-design,elementui,java,javaStrpict,sass,scss,less,React,Angular,jQuery">
+  
+    <meta name="description" content="Ajax技术简介ajax就是在页面没有刷新或者没有跳转的情况下还能更新页面的某一部分数据  Ajax:  Asynchronous  javascript  and  xml (异步javascript和xml)。 &#x3D;&#x3D;Ajax并不是一种新技术，而是已有技术的集合。JavaScript是核心载体&#x3D;&#x3D;。 Ajax优势：在不刷新页面的情况下，更新页面数据，提升用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ajax技术">
+<meta property="og:url" content="https://gitee.com/dong-wanyang/blog/2021/06/05/Ajax%E6%8A%80%E6%9C%AF/index.html">
+<meta property="og:site_name" content="幸福来敲门">
+<meta property="og:description" content="Ajax技术简介ajax就是在页面没有刷新或者没有跳转的情况下还能更新页面的某一部分数据  Ajax:  Asynchronous  javascript  and  xml (异步javascript和xml)。 &#x3D;&#x3D;Ajax并不是一种新技术，而是已有技术的集合。JavaScript是核心载体&#x3D;&#x3D;。 Ajax优势：在不刷新页面的情况下，更新页面数据，提升用">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/blog/img/myimg6.jpg">
+<meta property="article:published_time" content="2021-06-05T03:20:06.000Z">
+<meta property="article:modified_time" content="2024-03-27T07:44:05.093Z">
+<meta property="article:author" content="幸福来敲门">
+<meta property="article:tag" content="Ajax">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gitee.com/blog/img/myimg6.jpg">
+  
+  
+  
+  <title>Ajax技术 - 幸福来敲门</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/blog/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/blog/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/blog/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/blog/css/font_gd7ak9jx13f/iconfont.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"gitee.com","root":"/blog/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/blog/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/blog/js/utils.js" ></script>
+  <script  src="/blog/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/blog/">
+      <strong>幸福来敲门</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/commonweal/" target="_self">
+                <i class="iconfont icon-gongyi"></i>
+                <span>公益</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/guestbook/" target="_self">
+                <i class="iconfont icon-B-liuyan"></i>
+                <span>留言</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/blog/img/default.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Ajax技术"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-06-05 11:20" pubdate>
+          2021年06月05日 11:20:06
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          2.3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          19 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+    <script type="text/javascript" src="/js/love.js"></script>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Ajax技术</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Ajax技术"><a href="#Ajax技术" class="headerlink" title="Ajax技术"></a>Ajax技术</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>ajax就是在页面没有刷新或者没有跳转的情况下还能更新页面的某一部分数据</p>
+<ul>
+<li>Ajax:  Asynchronous  javascript  and  xml (异步javascript和xml)。</li>
+<li>&#x3D;&#x3D;Ajax并不是一种新技术，而是已有技术的集合。JavaScript是核心载体&#x3D;&#x3D;。</li>
+<li>Ajax优势：在不刷新页面的情况下，更新页面数据，提升用户体验。</li>
+<li>&#x3D;&#x3D;Ajax就像一个小秘书&#x3D;&#x3D;，能够实现异步工作。</li>
+</ul>
+<h2 id="1-发送Ajax请求-原生方法"><a href="#1-发送Ajax请求-原生方法" class="headerlink" title="1-发送Ajax请求-原生方法"></a>1-发送Ajax请求-原生方法</h2><h3 id="实例化ajax对象"><a href="#实例化ajax对象" class="headerlink" title="实例化ajax对象"></a>实例化ajax对象</h3><p> var xhr &#x3D; new ActiveXObject(‘Msxml2.XMLHTTP’);</p>
+<p> var xhr &#x3D; new XMLHttpRequest();</p>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs haxe"><span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">getXhr</span> </span>() &#123;<br>    <span class="hljs-keyword">var</span> xmlhttp;<br><br>    <span class="hljs-keyword">if</span> (window.XMLHttpRequest) &#123;<br>        <span class="hljs-comment">//IE7+ 和 非IE 中都有 XMLHttpRequest对象</span><br>        xmlhttp = <span class="hljs-keyword">new</span> <span class="hljs-type">XMLHttpRequest</span>();<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        xmlhttp = <span class="hljs-keyword">new</span> <span class="hljs-type">ActiveXObject</span>(<span class="hljs-string">&#x27;Msxml2.XMLHTTP&#x27;</span>);<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> xmlhttp;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p> 创建XMLHTTPRequest对象要分为(低版本) IE和&#x3D;&#x3D;非IE两种方式(主流)&#x3D;&#x3D;：</p>
+<p>   IE浏览器（IE7之前） :  </p>
+<pre><code class="hljs">var xhr = new ActiveXObject(&#39;Msxml2.XMLHTTP&#39;);
+</code></pre>
+<p>   非IE浏览器（chrome、firefox、safair、搜狗等，包括IE7+之后） (主流浏览器):</p>
+<pre><code class="hljs">var xhr = new XMLHttpRequest();
+</code></pre>
+<h3 id="核心方法"><a href="#核心方法" class="headerlink" title="核心方法"></a>核心方法</h3><p> open(var1, var2, var3): 准备Ajax请求</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"> var1: 请求方式  <span class="hljs-keyword">get</span>/post<br> var2: 请求的后端程序地址<br> var3: 异步(<span class="hljs-keyword">true</span>)/同步(<span class="hljs-keyword">false</span>)，可选参数，默认为<span class="hljs-keyword">true</span><br><br>示例: xhr.<span class="hljs-keyword">open</span>(‘<span class="hljs-keyword">get</span>’, ‘<span class="hljs-keyword">index</span>.php’);   //准备以<span class="hljs-keyword">get</span>方式请求后端的<span class="hljs-keyword">index</span>.php文件<br></code></pre></td></tr></table></figure>
+
+<p> send(var): 发送ajax请求</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">var: 分为两种情况。 如果是<span class="hljs-built_in">get</span>请求，则填写<span class="hljs-literal">null</span>。 如果是<span class="hljs-built_in">post</span>请求，则填写要发送到后端的数据。<br> 示例: xhr.<span class="hljs-built_in">send</span>(<span class="hljs-literal">null</span>); <br></code></pre></td></tr></table></figure>
+
+<h3 id="接收后端响应结果"><a href="#接收后端响应结果" class="headerlink" title="接收后端响应结果"></a>接收后端响应结果</h3><h4 id="核心属性-—-readyState"><a href="#核心属性-—-readyState" class="headerlink" title="核心属性 — readyState"></a>核心属性 — readyState</h4><p>Ajax的整个过程有5个状态，对应readyState的5个值：0-4</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">0 </span>－ （未初始化）还没有调用send()方法 <br><br><span class="hljs-symbol">1 </span>－ （载入）已调用send()方法，正在发送请求 <br><br><span class="hljs-symbol">2 </span>－ （载入完成）send()方法执行完成，已经接收到全部响应内容 <br><br><span class="hljs-symbol">3 </span>－ （交互）正在解析响应内容 <br><br><span class="hljs-symbol">4 </span>－ （完成）响应内容解析完成，可以在客户端调用了 <br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="核心事件"><a href="#核心事件" class="headerlink" title="核心事件"></a>核心事件</h4><p>onreadystatechange<br>onreadystatechange事件:  readyState的值每次发生变化都会触发该事件。</p>
+<h4 id="其他重要属性"><a href="#其他重要属性" class="headerlink" title="其他重要属性"></a>其他重要属性</h4><p>responseText<br>以字符串形式接收后端程序的返回值。</p>
+<p> 以PHP为例: PHP程序最终会被解释程序一段字符串，responseText接收的就是这段字符串</p>
+<h4 id="响应案例-—-index-php"><a href="#响应案例-—-index-php" class="headerlink" title="响应案例 — index.php"></a>响应案例 — index.php</h4><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs axapta"><span class="hljs-keyword">index</span>.php：返回字符串“Hello Ajax”给前端 --- 就是  echo <span class="hljs-string">&quot;Hello Ajax&quot;</span><br><br>   <span class="hljs-keyword">index</span>.html： 将Hello Wrold 显示在页面的<span class="hljs-keyword">div</span>中<br></code></pre></td></tr></table></figure>
+
+<h3 id="三大步骤"><a href="#三大步骤" class="headerlink" title="三大步骤:"></a>三大步骤:</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs markdown">1) 前端静态页面发送ajax请求。<br><br><span class="hljs-code">      ① 创建 XMLHttpRequest 对象</span><br><span class="hljs-code"></span><br><span class="hljs-code">      ② 调用open方法准备ajax请求</span><br><span class="hljs-code"></span><br><span class="hljs-code">      ③ 调用send方法发送ajax请求</span><br><span class="hljs-code"></span><br><span class="hljs-code">      ④ 调用onreadystatechange事件，判断readyState=4时，使用responseText接收后端返回数据</span><br><span class="hljs-code"></span><br> 2) 后端php页面，处理请求并返回结果<br><br> 3) 前端页面接收结果，显示在网页指定位置<br><br></code></pre></td></tr></table></figure>
+
+<p>发送请求案例</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs javascript"> <span class="hljs-number">1</span>) 创建按钮，绑定点击事件<br><br>  <span class="hljs-number">2</span>) 创建<span class="hljs-title class_">XMLHttpRequest</span>对象<br><br>   <span class="hljs-number">3</span>) 调用open方法准备ajax请求<br><br>   <span class="hljs-number">4</span>) 调用send方法发送ajax请求<br>	<br><span class="hljs-comment">//1. 获取按钮对象，绑定点击事件</span><br><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;btn&#x27;</span>).<span class="hljs-property">onclick</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-comment">//2. 请求index.php页面</span><br>    <span class="hljs-comment">//  ① 创建XMLHttpRequest对象</span><br>    <span class="hljs-keyword">var</span> xhr = <span class="hljs-title function_">getXhr</span>();<br><br>    <span class="hljs-comment">//建议将onreadystatechange事件写在实例化XMLHttpRequest对象之后</span><br>    <span class="hljs-comment">//此处可以检测到 readyState=1的状态值</span><br>    xhr.<span class="hljs-property">onreadystatechange</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>        <span class="hljs-comment">//0-1  触发第一次 ，此时readyState = 1</span><br>        <span class="hljs-comment">//1-2  触发第二次 ，此时readyState = 2</span><br>        <span class="hljs-comment">//2-3  触发第三次 ，此时readyState = 3</span><br>        <span class="hljs-comment">//3-4  触发第四次 ，此时readyState = 4</span><br>        <span class="hljs-comment">//alert(xhr.readyState);</span><br>        <span class="hljs-keyword">if</span> (xhr.<span class="hljs-property">readyState</span> == <span class="hljs-number">4</span>) &#123;<br>            <span class="hljs-comment">//以字符串形式接收后端返回值</span><br>            <span class="hljs-title function_">alert</span>(xhr.<span class="hljs-property">responseText</span>);<br>        &#125;<br><br>    &#125;<br><br>    <span class="hljs-comment">//  ② 调用open方法准备请求</span><br>    xhr.<span class="hljs-title function_">open</span>(<span class="hljs-string">&#x27;get&#x27;</span>, <span class="hljs-string">&#x27;./a.txt&#x27;</span>);<br>    <span class="hljs-comment">//  ③ 调用send方法发送请求</span><br>    xhr.<span class="hljs-title function_">send</span>(<span class="hljs-literal">null</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">    <span class="hljs-keyword">var</span> div = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;div&#x27;</span>);</span><br><span class="language-javascript">    div.<span class="hljs-property">onclick</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;</span><br><span class="language-javascript">        <span class="hljs-comment">// 创建ajax请求</span></span><br><span class="language-javascript">        <span class="hljs-keyword">var</span> xmlhttp = <span class="hljs-number">0</span></span><br><span class="language-javascript">        <span class="hljs-keyword">if</span>(<span class="hljs-variable language_">window</span>.<span class="hljs-property">XMLHttpRequest</span>)&#123;</span><br><span class="language-javascript">            xmlhttp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();</span><br><span class="language-javascript">        &#125;<span class="hljs-keyword">else</span>&#123;</span><br><span class="language-javascript">            xmlhttp = <span class="hljs-title class_">ActiveXObject</span>(<span class="hljs-string">&#x27;Msxml2&#x27;</span>,<span class="hljs-string">&#x27;XMLHTTP&#x27;</span>);</span><br><span class="language-javascript">        &#125;</span><br><span class="language-javascript">        <span class="hljs-comment">// 准备ajax请求</span></span><br><span class="language-javascript">        xmlhttp.<span class="hljs-title function_">open</span>(<span class="hljs-string">&#x27;get&#x27;</span>,<span class="hljs-string">&#x27;ls.php&#x27;</span>);</span><br><span class="language-javascript">        <span class="hljs-comment">// 发送ajax请求</span></span><br><span class="language-javascript">        xmlhttp.<span class="hljs-title function_">send</span>(<span class="hljs-literal">null</span>);</span><br><span class="language-javascript">        <span class="hljs-comment">// 接受ajax请求</span></span><br><span class="language-javascript">        xmlhttp.<span class="hljs-property">onreadystatechange</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;</span><br><span class="language-javascript">            <span class="hljs-keyword">if</span>(xmlhttp.<span class="hljs-property">readyState</span>==<span class="hljs-number">4</span>)&#123;</span><br><span class="language-javascript">                <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(xmlhttp.<span class="hljs-property">responseText</span>);</span><br><span class="language-javascript">            &#125; </span><br><span class="language-javascript">        &#125;</span><br><span class="language-javascript">    &#125;</span><br><span class="language-javascript">    <span class="hljs-comment">// onreadystatechange  准备声明改变</span></span><br><span class="language-javascript">    <span class="hljs-comment">// readyState  准备声明</span></span><br><span class="language-javascript">    <span class="hljs-comment">// respongseText   响应文本</span></span><br><span class="language-javascript">    </span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="虚拟主机配置"><a href="#虚拟主机配置" class="headerlink" title="虚拟主机配置"></a>虚拟主机配置</h2><h3 id="什么是虚拟主机"><a href="#什么是虚拟主机" class="headerlink" title="什么是虚拟主机"></a>什么是虚拟主机</h3><p>虚拟主机，也叫“网站空间”，就是把一台运行在互联网上的物理服务器划分成多个“虚拟”服务器，每一个虚拟服务器都能独立运行一个网站</p>
+<h3 id="虚拟主机配置3步骤"><a href="#虚拟主机配置3步骤" class="headerlink" title="虚拟主机配置3步骤"></a>虚拟主机配置3步骤</h3><p>案例: 配置 <a target="_blank" rel="noopener" href="http://www.study.com/">www.study.com</a>  虚拟主机</p>
+<ol>
+<li>修改apache配置文件(httpd.conf)，引入apache的虚拟主机配置文件(httpd-vhost.conf)<br> 去掉该句前的 # 号</li>
+<li>修改虚拟主机配置文件<br> d:\phpstudy\Apache\conf\extra\httpd-vhosts.conf</li>
+<li>修改host文件 (使用管理员权限修改)<br> c:&#x2F;windows&#x2F;system32&#x2F;drivers&#x2F;etc&#x2F;hosts<br>&#x3D;&#x3D;重启Apche服务器&#x3D;&#x3D;‘<br>注意：  <a target="_blank" rel="noopener" href="http://www.study.com/">www.study.com</a> 指向  d:&#x2F;phpstudy&#x2F;WWW&#x2F;study 目录</li>
+</ol>
+<h2 id="ajax跨域"><a href="#ajax跨域" class="headerlink" title="ajax跨域"></a>ajax跨域</h2><h3 id="什么是ajax跨域"><a href="#什么是ajax跨域" class="headerlink" title="什么是ajax跨域"></a>什么是ajax跨域</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css">简单来说，就是网站<span class="hljs-selector-tag">A</span>去调用网站<span class="hljs-selector-tag">B</span>的数据。<br>常见案例： hao123<span class="hljs-selector-class">.com</span>的天气预报。<br><br>但是Ajax跨域存在一个问题 --- 浏览器的同源策略，该策略会阻止ajax跨域访问<br>同源策略（Same origin policy）是一种约定，它是浏览器的一种安全功能。 <br>同源:  同协议，同域名，同端口；   不同源则为跨域<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="解决跨域问题有三种方式："><a href="#解决跨域问题有三种方式：" class="headerlink" title="解决跨域问题有三种方式："></a>解决跨域问题有三种方式：</h3><h4 id="服务器代理"><a href="#服务器代理" class="headerlink" title="服务器代理"></a>服务器代理</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs awk"> 核心思想:  php中有一个函数  ==file_get_contents==。 该函数能够获取到其他网站的数据。<br> file_get_contents(<span class="hljs-string">&#x27;http://www.baidu.com/index.html&#x27;</span>);<br><br><br><span class="hljs-number">1</span>)创建  www.study.com<span class="hljs-regexp">/proxy/i</span>ndex.html<br>在该文件中发送ajax请求，请求同服务器(www.study.com)下的 proxy.php文件<br><br><span class="hljs-number">2</span>)创建  www.study.com<span class="hljs-regexp">/proxy/</span>proxy.php <br>在该文件中使用 file_get_contents函数，读取远程服务器<span class="hljs-number">1</span>.php中的内容<br><br><span class="hljs-number">3</span>)创建  www.demo.com/<span class="hljs-number">1</span>.php<br></code></pre></td></tr></table></figure>
+
+<h4 id="cors-（跨域资源共享）"><a href="#cors-（跨域资源共享）" class="headerlink" title="cors （跨域资源共享）"></a>cors （跨域资源共享）</h4><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">cors: 跨域资源共享。<br>  同源策略是浏览器的策略。但是如果服务器允许其他网站的页面进行跨域访问，那么浏览器就不会对返回的数据进行限制了。<br>  ==核心方法: 在服务器端(PHP文件中)声明不用进行同源限制==<br>如果设置为 * 则是所有外部网站都可以获取数据<br><span class="hljs-keyword">header</span>(<span class="hljs-string">&#x27;Access-Control-Allow-origin: *&#x27;</span>); <br>只允许www.study.com网站访问并获取数据<br><span class="hljs-keyword">header</span>(<span class="hljs-string">&#x27;Access-Control-Allow-origin: http://www.study.com&#x27;</span>); <br><br><br><br><span class="hljs-number">1</span>)创建 www.study.com/cors/<span class="hljs-keyword">index</span>.html文件 发送ajax请求<br><span class="hljs-number">2</span>)创建 www.demo.com/cors.php<br></code></pre></td></tr></table></figure>
+
+<h4 id="jsonp"><a href="#jsonp" class="headerlink" title="jsonp"></a>jsonp</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs bash">核心思想:<br>   浏览器虽然有同源策略，但是 src 和 href 两个属性却可以跨域访问。 可以利用这一“漏洞”发送ajax请求。<br><br>案例: <br>www.study.com/jsonp/index.html文件中通过script标签的src属性，跨域访问www.demo.com/jsonp.php文件中的数据<br>1) 创建 www.study.com/json/index.html ,使用 script标签引入了  www.demo.com/jsonp.php文件<br>2) 创建 www.demo.com/jsonp.php文件 输出个 123<br>3) 调整后台返回数据的方式 --- 返回了一个 ==函数字符串 例如: <span class="hljs-string">&#x27;aaa(123)&#x27;</span>== <br>4) 在前端页面提前定义好 函数 aaa()<br>5) 丰富一下后台返回数据的类型<br><br>html文件<br>&lt;script&gt;<br>    <span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">aa</span></span>()&#123;<br>        alert();<br>    &#125;<br>&lt;/script&gt;<br>&lt;script src=<span class="hljs-string">&quot;http://www.demo.com/1.php&quot;</span>&gt;&lt;/script&gt;<br><br>php文件<br></code></pre></td></tr></table></figure>
+
+<h3 id="ajax方法跨域操作-—-jsonp方式"><a href="#ajax方法跨域操作-—-jsonp方式" class="headerlink" title="$.ajax方法跨域操作 — jsonp方式"></a>$.ajax方法跨域操作 — jsonp方式</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs php">$.post  $.get $.ajax都能发送跨域请求。但是，$.post和$.get是要依靠cors方式的，只有$.ajax能使用jsonp方式<br><br>核心:<br>必须设置请求类型为get ---  type: ‘get’<br>必须设置dataType为jsonp --- dataType: ‘jsonp’<br>必须额外设置一个jsonp参数，该参数值可以是任何英文字符串，常用callback。 jsonp: <span class="hljs-string">&#x27;callback&#x27;</span><br>       ==该参数会产生一个随机字符串==<br>       ==前端使用该字符串创建一个函数==<br>       ==后端接收该字符串作为返回函数的名称==<br><br>示例:<br><span class="hljs-number">1</span>) 使用jsonp发送跨域请求<br>$.<span class="hljs-title function_ invoke__">ajax</span>(&#123;<br>    <span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;http://www.study.com/test/3.php&#x27;</span>,<br>    <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;get&#x27;</span>,   <br>    <span class="hljs-attr">dataType</span>: <span class="hljs-string">&#x27;jsonp&#x27;</span>,   <br>    <span class="hljs-attr">jsonp</span>: <span class="hljs-string">&#x27;callback&#x27;</span>,  //解决前后端函数名统一的问题   <br>    <span class="hljs-attr">success</span>: function(msg)&#123;<br>        <span class="hljs-title function_ invoke__">alert</span>(msg);<br>        <span class="hljs-title function_ invoke__">alert</span>(msg.name);<br>    &#125;<br>&#125;)<br><br><span class="hljs-number">2</span>) 后端拼接函数字符串<br><span class="hljs-meta">&lt;?php</span> <br><span class="hljs-comment">// 函数名</span><br><span class="hljs-variable">$callback</span> = <span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;callback&#x27;</span>];<br><span class="hljs-variable">$str</span> = <span class="hljs-string">&quot;$.ajax---&gt;jsonp&quot;</span>;<br><span class="hljs-keyword">echo</span> <span class="hljs-variable">$callback</span> . <span class="hljs-string">&quot;(&#x27;<span class="hljs-subst">$str</span>&#x27;)&quot;</span>;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h3><p>但是Ajax跨域存在一个问题 — 浏览器的同源策略，该策略会阻止ajax跨域访问</p>
+<p>同源策略（Same origin policy）是一种约定，它是浏览器的一种安全功能。 </p>
+<p>同源:  同协议，同域名，同端口；   不同源则为跨域</p>
+<h2 id="FormData表单对象"><a href="#FormData表单对象" class="headerlink" title="FormData表单对象"></a>FormData表单对象</h2><figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs oxygene">FormData对象优势就是能够一次性将表单中的所有数据全部取出，包括文件域的文件对象。<br><span class="hljs-number">1</span>)创建表单 --- form标签很重要， <span class="hljs-keyword">method</span>和<span class="hljs-title function_">action</span>不重要<br><br>   每个表单域需要设置<span class="hljs-title function_">name</span>值<br>2)发送<span class="hljs-title function_">ajax</span>请求<br><br>①将表单数据取出 --- <span class="hljs-title function_">FormData</span><br><br><span class="hljs-title function_">i</span>.获取<span class="hljs-title function_">form</span>表单对象:        <span class="hljs-keyword">var</span> fm = document.getElementById(‘mainForm’)<span class="hljs-punctuation">;</span>  <span class="hljs-comment">//DOM对象</span><br><br>ii.实例化FormData对象:  <span class="hljs-keyword">var</span> fd = <span class="hljs-keyword">new</span> FormData(fm)<span class="hljs-punctuation">;</span><br><br>②发送ajax请求<br><br>   使用FormData对象以后，必须使用post方式来发送ajax请求。<br><br>   将FormData对象，作为参数传入 send方法中  xhr.send(fd)<span class="hljs-punctuation">;</span><br><br>③ 使用FormData对象提交表单时，不需要设置 setRequestHeader方法<br><br><br>注意点: <br><br>   ① form标签要给id值，方便获取form标签的DOM对象<br><br>   ② 每个域都要给 name值<br><br>   ③ 提交按钮必须用 button，因为submit有跳转功能<br><br><span class="hljs-number">2</span>) 使用FormData对象获取所有表单的数据，并发送ajax请求<br><span class="hljs-number">3</span>) 在formdata.php页面，接收数据<br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/blog/categories/Ajax/" class="category-chain-item">Ajax</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/blog/tags/Ajax/" class="print-no-link">#Ajax</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Ajax技术</div>
+      <div>https://gitee.com/dong-wanyang/blog/2021/06/05/Ajax技术/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>幸福来敲门</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>June 5, 2021</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/blog/2021/09/03/axios%E6%8F%92%E4%BB%B6/" title="axios插件">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">axios插件</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/2021/05/10/chrome%E8%B0%83%E8%AF%95%E6%8F%92%E4%BB%B6/" title="chrome调试插件">
+                        <span class="hidden-mobile">chrome调试插件</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Luck</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>幸福来敲门</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/blog/js/events.js" ></script>
+<script  src="/blog/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/blog/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/blog/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/blog/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+  <!-- 动态背景 -->
+<script color="0,0,0" opacity='0.7' zIndex="-2" count="200" type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

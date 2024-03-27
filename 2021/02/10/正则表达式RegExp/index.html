@@ -1,0 +1,767 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/blog/img/avatar2.jpg">
+  <link rel="icon" href="/blog/img/avatar2.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="幸福来敲门">
+  <meta name="keywords" content="幸福来敲门,博客,技术贴,前端,后端,vue,hexo,html,css,小程序,uni-app,后台,移动端,建站,论坛,bootstrap,安卓,ios,技术前沿，技术博客,mui,ant-design,elementui,java,javaStrpict,sass,scss,less,React,Angular,jQuery">
+  
+    <meta name="description" content="正则表达式RegExp用于对字符串进行处理操作，匹配、替换、提取 创建方式构造函数创建方式var reg &#x3D; new RegExp(‘abc’); 字面量形式var reg &#x3D; &#x2F;abc&#x2F;; test方法12用于对字符串进行匹配操作，参数为字符串，返回值为true或falseconsole.log(reg.test(&#x27;shdabcgeys&amp;#x27">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式RegExp">
+<meta property="og:url" content="https://gitee.com/dong-wanyang/blog/2021/02/10/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8FRegExp/index.html">
+<meta property="og:site_name" content="幸福来敲门">
+<meta property="og:description" content="正则表达式RegExp用于对字符串进行处理操作，匹配、替换、提取 创建方式构造函数创建方式var reg &#x3D; new RegExp(‘abc’); 字面量形式var reg &#x3D; &#x2F;abc&#x2F;; test方法12用于对字符串进行匹配操作，参数为字符串，返回值为true或falseconsole.log(reg.test(&#x27;shdabcgeys&amp;#x27">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/blog/img/myimg1.jpg">
+<meta property="article:published_time" content="2021-02-10T02:01:20.000Z">
+<meta property="article:modified_time" content="2024-03-27T07:42:03.643Z">
+<meta property="article:author" content="幸福来敲门">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="RegExp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gitee.com/blog/img/myimg1.jpg">
+  
+  
+  
+  <title>正则表达式RegExp - 幸福来敲门</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/blog/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/blog/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/blog/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/blog/css/font_gd7ak9jx13f/iconfont.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"gitee.com","root":"/blog/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/blog/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/blog/js/utils.js" ></script>
+  <script  src="/blog/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/blog/">
+      <strong>幸福来敲门</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/commonweal/" target="_self">
+                <i class="iconfont icon-gongyi"></i>
+                <span>公益</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/guestbook/" target="_self">
+                <i class="iconfont icon-B-liuyan"></i>
+                <span>留言</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/blog/img/default.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="正则表达式RegExp"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-02-10 10:01" pubdate>
+          2021年02月10日 10:01:20
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          1.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          14 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+    <script type="text/javascript" src="/js/love.js"></script>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">正则表达式RegExp</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="正则表达式RegExp"><a href="#正则表达式RegExp" class="headerlink" title="正则表达式RegExp"></a>正则表达式RegExp</h1><p>用于对字符串进行处理操作，匹配、替换、提取</p>
+<h2 id="创建方式"><a href="#创建方式" class="headerlink" title="创建方式"></a>创建方式</h2><h3 id="构造函数创建方式"><a href="#构造函数创建方式" class="headerlink" title="构造函数创建方式"></a>构造函数创建方式</h3><p>var reg &#x3D; new RegExp(‘abc’);</p>
+<h3 id="字面量形式"><a href="#字面量形式" class="headerlink" title="字面量形式"></a>字面量形式</h3><p>var reg &#x3D; &#x2F;abc&#x2F;;</p>
+<h3 id="test方法"><a href="#test方法" class="headerlink" title="test方法"></a>test方法</h3><figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs arcade">用于对字符串进行匹配操作，参数为字符串，返回值为<span class="hljs-literal">true</span>或<span class="hljs-literal">false</span><br><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(reg.test(<span class="hljs-string">&#x27;shdabcgeys&#x27;</span>));<br></code></pre></td></tr></table></figure>
+
+<h2 id="正则语法"><a href="#正则语法" class="headerlink" title="正则语法"></a>正则语法</h2><h3 id="简单类"><a href="#简单类" class="headerlink" title="简单类"></a>简单类</h3><p>对内部的字符进行查询,找到后返回true</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs arcade"><span class="hljs-comment">// 正则在js中采用内置对象方式进行实现的。</span><br><br>		<span class="hljs-comment">// 1 构造函数创建方式</span><br>		<span class="hljs-comment">// var reg = new RegExp(&#x27;abc&#x27;);</span><br><br>		<span class="hljs-comment">// 2 字面量形式</span><br>		<span class="hljs-comment">// var reg = /abc/;</span><br><br>		<span class="hljs-comment">// test方法，用于对字符串进行匹配操作，参数为字符串，返回值为true或false</span><br>		<span class="hljs-keyword">var</span> reg = <span class="hljs-regexp">/abc/</span>;<br>		<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(reg.test(<span class="hljs-string">&#x27;ftgyabchuijko&#x27;</span>)); <span class="hljs-comment">// true</span><br>		<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(reg.test(<span class="hljs-string">&#x27;abcftgyhuijko&#x27;</span>)); <span class="hljs-comment">// true</span><br>		<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(reg.test(<span class="hljs-string">&#x27;ftgyahbcuijko&#x27;</span>)); <span class="hljs-comment">// false</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="字符类"><a href="#字符类" class="headerlink" title="字符类"></a>字符类</h3><p>&#x2F;[xxx]&#x2F;   []表示要字符串中存在方括号中的’任一个’则为真</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs 1c"><span class="hljs-comment">// 1 在正则中使用[]表示要使用字符类功能</span><br>		<span class="hljs-comment">// []整体表示一位字符，内部的多个字符表示当前位置的多种情况。</span><br>		/*var reg = /[abc]/;<br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;zzazzz&#x27;)); <span class="hljs-comment">// true</span><br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;zzbzzz&#x27;)); <span class="hljs-comment">// true</span><br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;zzczzz&#x27;)); <span class="hljs-comment">// true</span><br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;zzzzz&#x27;)); <span class="hljs-comment">// false</span><br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;zzabczzz&#x27;)); <span class="hljs-comment">// true*/</span><br></code></pre></td></tr></table></figure>
+
+<p>反向类 </p>
+<p> &#x2F;[^xxx]&#x2F;   表示字符串中出现’任一’方括号之外的字符可以匹配成功</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs arcade"><span class="hljs-comment">// 2 反向类的标识方式是在字符类的[后面紧跟一个^</span><br><span class="hljs-comment">//    作用：表示除内部字符外的其他字符可以匹配成功</span><br><span class="hljs-keyword">var</span> reg = <span class="hljs-regexp">/[^abc]/</span>;<br><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(reg.test(<span class="hljs-string">&#x27;aaaaaaa&#x27;</span>)); <span class="hljs-comment">// false</span><br><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(reg.test(<span class="hljs-string">&#x27;aaaazaaa&#x27;</span>)); <span class="hljs-comment">// true</span><br><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(reg.test(<span class="hljs-string">&#x27;123&#x27;</span>)); <span class="hljs-comment">// true</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="范围类"><a href="#范围类" class="headerlink" title="范围类"></a>范围类</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">/<span class="hljs-selector-attr">[a-z]</span>/  <span class="hljs-selector-attr">[A-Z]</span><span class="hljs-selector-attr">[0-9]</span>   <span class="hljs-selector-attr">[\u4e00-\u9fa5]</span> 可以反向<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs 1c"><span class="hljs-comment">// 范围类用于书写字符范围：</span><br>		<span class="hljs-comment">// var reg = /[c-h]/;</span><br>		/*console.<span class="hljs-built_in">log</span>(reg.test(&#x27;zzzeeezzz&#x27;));<br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;zzzgggggzzz&#x27;));<br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;zzzhhhzzz&#x27;));<br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;zzzabjkzzz&#x27;));*/<br><br>		<span class="hljs-comment">//    /[a-z]/  表示所有小写字母  /[A-Z]/ 表示所有大写字母  /[0-9]/ 表示所有数字字符</span><br><br>		<span class="hljs-comment">// 组合类：</span><br>		<span class="hljs-comment">// 用于同时设置多种检测条件</span><br>		var reg = /[<span class="hljs-number">3</span>-<span class="hljs-number">7</span>a-xB-F]/;<br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;456&#x27;)); <span class="hljs-comment">// true</span><br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;bcd&#x27;)); <span class="hljs-comment">// true </span><br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;CDE&#x27;)); <span class="hljs-comment">// true</span><br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;012yzHIJK&#x27;)); <span class="hljs-comment">// false</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="组合类"><a href="#组合类" class="headerlink" title="组合类"></a>组合类</h3><p>  同时检测多种条件 [a-z0-9]中间不加符号</p>
+<h3 id="转义符"><a href="#转义符" class="headerlink" title="转义符"></a>转义符</h3><p> \ 可以将普通字符与特殊字符互相转换</p>
+<pre><code class="hljs">// \ 这是一个转义符，作用是对字符进行转义：
+//1 对普通字符加\可以让这个字符具有特殊功能。
+//2 对具有特殊功能的字符添加\可以让这个字符变成普通字符。
+</code></pre>
+<h3 id="预定义类"><a href="#预定义类" class="headerlink" title="预定义类"></a>预定义类</h3><p>​	\d 用于匹配数字字符0-9<br>    \D 用于匹配非数字字符  &#x2F;[^0-9]&#x2F;<br>    \w   用于匹配单词字符&#x2F;[a-zA-Z0-9_]&#x2F;<br>    \W 用于匹配非单词字符<br>    \s 用于匹配不可见字符  包括空格和\n<br>    \S   用于匹配可见字符   空格和\n返回假<br>    &#x2F;.&#x2F;  匹配可见字符,认为空格为可见</p>
+<p>案例</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs 1c"><span class="hljs-comment">// \d	用于匹配数字字符</span><br>		/*var reg = /\d/;<br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;abcd123&#x27;)); <span class="hljs-comment">// true</span><br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;abcd&#x27;)); <span class="hljs-comment">// false*/</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ruby">/<span class="hljs-regexp">/  \D 用于匹配非数字字符 /</span>[^<span class="hljs-number">0</span>-<span class="hljs-number">9</span>]/<br>	<span class="hljs-regexp">/*var reg = /</span>\D/;<br>	console.log(reg.test(<span class="hljs-string">&#x27;abcd123&#x27;</span>)); <span class="hljs-regexp">//</span> <span class="hljs-literal">true</span><br>	console.log(reg.test(<span class="hljs-string">&#x27;123&#x27;</span>)); <span class="hljs-regexp">//</span> <span class="hljs-literal">false</span>*<span class="hljs-regexp">/</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs 1c"><span class="hljs-comment">//  \w 用于匹配单词字符  /[a-zA-Z0-9_]/</span><br>		/*var reg = /\w/;<br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;adwda&#x27;)); <span class="hljs-comment">// true</span><br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;DWDAWD&#x27;)); <span class="hljs-comment">// true</span><br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;<span class="hljs-number">123321</span>3&#x27;)); <span class="hljs-comment">// true</span><br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;____&#x27;)); <span class="hljs-comment">// true</span><br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;!$%#^&amp;*()-=&#x27;)); <span class="hljs-comment">// false*/</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs 1c"><span class="hljs-comment">// \s 用于匹配不可见字符</span><br>	<span class="hljs-comment">//   用于匹配空格和换行</span><br>	/*var reg = /\s/;<br>	console.<span class="hljs-built_in">log</span>(reg.test(&#x27; &#x27;)); <span class="hljs-comment">// true</span><br>	console.<span class="hljs-built_in">log</span>(reg.test(&#x27;\n&#x27;)); <span class="hljs-comment">// true</span><br>	console.<span class="hljs-built_in">log</span>(reg.test(&#x27;fghjkl<span class="hljs-number">5678</span>GHJK_&gt;&lt;?^%$#@&#x27;)); <span class="hljs-comment">// false*/</span><br><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs 1c"><span class="hljs-comment">// \S 用于匹配可见字符 (把他忘了，谢谢)</span><br>		/*<br>			var reg = /\S/;<br>			console.<span class="hljs-built_in">log</span>(reg.test(&#x27; &#x27;)); <span class="hljs-comment">// false</span><br>			console.<span class="hljs-built_in">log</span>(reg.test(&#x27;\n&#x27;)); <span class="hljs-comment">// false</span><br>			console.<span class="hljs-built_in">log</span>(reg.test(&#x27;fghjkl<span class="hljs-number">5678</span>GHJK_&gt;&lt;?^%$#@&#x27;)); <span class="hljs-comment">// true</span><br>		*/<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs 1c"><span class="hljs-comment">// . 用于匹配可见字符 (常用方式)</span><br>		<span class="hljs-comment">// .匹配时认为空格是可见字符，可以用于对用户输入的内容进行匹配</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="边界"><a href="#边界" class="headerlink" title="边界"></a>边界</h3><p>&#x2F;^abc&#x2F;指定开头字符串</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs 1c"><span class="hljs-comment">// 1 匹配开始位置：</span><br>		<span class="hljs-comment">//		在正则最开始位置书写^，用于匹配以指定内容开头的字符串</span><br>		/*var reg = /^abc/;<br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;abcfghjkl&#x27;)); <span class="hljs-comment">// true</span><br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;ghjkabcfghjkl&#x27;)); <span class="hljs-comment">// false*/</span><br></code></pre></td></tr></table></figure>
+
+<p>&#x2F;abc$&#x2F;指定内容结束的字符串</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs 1c"><span class="hljs-comment">// 2 匹配结束位置：</span><br>		<span class="hljs-comment">//    在正则最后位置书写$，用于匹配以指定内容结束的字符串</span><br>		/*var reg = /abc$/;<br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;dfghjkabc&#x27;)); <span class="hljs-comment">// true</span><br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;dfghjkabcdwad&#x27;)); <span class="hljs-comment">// false*/</span><br></code></pre></td></tr></table></figure>
+
+<p>&#x2F;^abc$&#x2F;严格匹配</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs arcade"><span class="hljs-comment">// 3 将^和$同时使用，表示严格匹配，必须与内容的内容完全一致</span><br><span class="hljs-keyword">var</span> reg = <span class="hljs-regexp">/^abc$/</span>;<br>		<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(reg.test(<span class="hljs-string">&#x27;abc&#x27;</span>)); <span class="hljs-comment">// true</span><br>		<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(reg.test(<span class="hljs-string">&#x27;abcabc&#x27;</span>)); <span class="hljs-comment">// false</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h3><h4 id="重复指定次数n"><a href="#重复指定次数n" class="headerlink" title="重复指定次数n"></a>重复指定次数n</h4><p>&#x2F;^a{n}$&#x2F;</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs 1c"><span class="hljs-comment">// 1 重复指定次数</span><br>		<span class="hljs-comment">//   &#123;n&#125;</span><br>		/*var reg = /^a&#123;<span class="hljs-number">3</span>&#125;$/;<br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;aa&#x27;)); <span class="hljs-comment">// false</span><br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;aaa&#x27;)); <span class="hljs-comment">// true</span><br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;aaaa&#x27;)); <span class="hljs-comment">// false*/</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="重复至少n次"><a href="#重复至少n次" class="headerlink" title="重复至少n次"></a>重复至少n次</h4><p>&#x2F;^a{n,}$&#x2F;</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs arcade"><span class="hljs-comment">// 2 重复至少几次</span><br><span class="hljs-comment">//   &#123;n,&#125;</span><br><span class="hljs-keyword">var</span> reg = <span class="hljs-regexp">/^a&#123;3,&#125;$/</span>;<br>    <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(reg.test(<span class="hljs-string">&#x27;aa&#x27;</span>));<span class="hljs-comment">//false</span><br>    <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(reg.test(<span class="hljs-string">&#x27;aaa&#x27;</span>));<span class="hljs-comment">//true</span><br>    <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(reg.test(<span class="hljs-string">&#x27;aaaa&#x27;</span>));<span class="hljs-comment">//true</span><br>    <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(reg.test(<span class="hljs-string">&#x27;aaaaaaa&#x27;</span>)); <span class="hljs-comment">//true</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="指定重复范围"><a href="#指定重复范围" class="headerlink" title="指定重复范围"></a>指定重复范围</h4><p>&#x2F;^a{n,m}$&#x2F;</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs 1c"><span class="hljs-comment">// 3 指定重复的范围</span><br>		<span class="hljs-comment">//   &#123;n,m&#125;</span><br>		/*var reg = /^a&#123;<span class="hljs-number">3</span>,<span class="hljs-number">5</span>&#125;$/;<br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;aa&#x27;)); <br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;aaa&#x27;)); <br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;aaaa&#x27;)); <br>		console.<span class="hljs-built_in">log</span>(reg.test(&#x27;aaaaaaa&#x27;)); */<br></code></pre></td></tr></table></figure>
+
+<h4 id="代表出现0-n次"><a href="#代表出现0-n次" class="headerlink" title="*代表出现0-n次"></a>*代表出现0-n次</h4><p>&#x2F;^s*$&#x2F;   </p>
+<h4 id="代表出现1-n次"><a href="#代表出现1-n次" class="headerlink" title="+代表出现1-n次"></a>+代表出现1-n次</h4><p>&#x2F;^a+$&#x2F;</p>
+<h4 id="出现0或1次"><a href="#出现0或1次" class="headerlink" title="?  出现0或1次"></a>?  出现0或1次</h4><p>&#x2F;^a?$&#x2F;</p>
+<h3 id="或者-代表或者"><a href="#或者-代表或者" class="headerlink" title="或者       | 代表或者"></a>或者       | 代表或者</h3><p>&#x2F;ab|bcd|cd&#x2F;  含有ab或bcd或cd均可</p>
+<h3 id="正则相关方法"><a href="#正则相关方法" class="headerlink" title="正则相关方法"></a>正则相关方法</h3><p>g   全局匹配  可以匹配到所有满足条件的内容</p>
+<p>i   忽略大小写</p>
+<p>字符串.replace()  替换</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arcade">str.<span class="hljs-built_in">replace</span>(<span class="hljs-regexp">/v/ig</span>, <span class="hljs-string">&#x27;z&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>字符串.match(正则表达式)   提取</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">提取字符串<span class="hljs-built_in">str</span>中的邮箱内容，注意，需要在正则的最后添加匹配模式g，不要设置严格匹配。输出一个数组<br><span class="hljs-built_in">str</span>.<span class="hljs-keyword">match</span>(/\w+@\w+\.\w+/g)<br></code></pre></td></tr></table></figure>
+
+<p>正则.exec(字符串)   单次提取</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs arcade">使用时必须使用同一个正则对一个字符串进行操作<br>每次调用会得到新一轮匹配的结果（每次调用的结果是不相同的，而且是累计的）<br>如果完整的一轮匹配完毕，再次调用，会得到<span class="hljs-literal">null</span><br>加括号后可以再次匹配<br><span class="hljs-keyword">var</span> reg = <span class="hljs-regexp">/(\w+)@(\w+\.\w+)/g</span>;<br><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(reg.exec(str));<br><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(reg.exec(str));<br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/blog/categories/javascript/" class="category-chain-item">javascript</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/blog/tags/javascript/" class="print-no-link">#javascript</a>
+      
+        <a href="/blog/tags/RegExp/" class="print-no-link">#RegExp</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>正则表达式RegExp</div>
+      <div>https://gitee.com/dong-wanyang/blog/2021/02/10/正则表达式RegExp/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>幸福来敲门</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>February 10, 2021</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/blog/2021/02/11/H5C3%E5%B0%8F%E5%8A%9F%E8%83%BD%E6%A1%88%E4%BE%8B%E5%88%86%E4%BA%AB/" title="H5C3小功能案例分享">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">H5C3小功能案例分享</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/2020/10/15/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7/" title="html自定义属性">
+                        <span class="hidden-mobile">html自定义属性</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Luck</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>幸福来敲门</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/blog/js/events.js" ></script>
+<script  src="/blog/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/blog/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/blog/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/blog/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+  <!-- 动态背景 -->
+<script color="0,0,0" opacity='0.7' zIndex="-2" count="200" type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

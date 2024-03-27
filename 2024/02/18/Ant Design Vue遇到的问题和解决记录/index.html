@@ -1,0 +1,759 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/blog/img/avatar2.jpg">
+  <link rel="icon" href="/blog/img/avatar2.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="幸福来敲门">
+  <meta name="keywords" content="幸福来敲门,博客,技术贴,前端,后端,vue,hexo,html,css,小程序,uni-app,后台,移动端,建站,论坛,bootstrap,安卓,ios,技术前沿，技术博客,mui,ant-design,elementui,java,javaStrpict,sass,scss,less,React,Angular,jQuery">
+  
+    <meta name="description" content="简介开箱即用的高质量 Vue 组件。 安装使用 npm 或 yarn 安装 # 我们推荐使用 npm 或 yarn 的方式进行开发，不仅可在开发环境轻松调试，也可放心地在生产环境打包部署使用，享受整个生态圈和工具链带来的诸多好处。 12$ npm install ant-design-vue --save$ yarn add ant-design-vue  如果你的网络环境不佳，推荐使用 cnpm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ant Design Vue遇到的问题和解决记录">
+<meta property="og:url" content="https://gitee.com/dong-wanyang/blog/2024/02/18/Ant%20Design%20Vue%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="幸福来敲门">
+<meta property="og:description" content="简介开箱即用的高质量 Vue 组件。 安装使用 npm 或 yarn 安装 # 我们推荐使用 npm 或 yarn 的方式进行开发，不仅可在开发环境轻松调试，也可放心地在生产环境打包部署使用，享受整个生态圈和工具链带来的诸多好处。 12$ npm install ant-design-vue --save$ yarn add ant-design-vue  如果你的网络环境不佳，推荐使用 cnpm">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/blog/img/myimg2.jpg">
+<meta property="article:published_time" content="2024-02-18T12:20:16.000Z">
+<meta property="article:modified_time" content="2024-03-27T08:21:41.331Z">
+<meta property="article:author" content="幸福来敲门">
+<meta property="article:tag" content="Ant Design Vue">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gitee.com/blog/img/myimg2.jpg">
+  
+  
+  
+  <title>Ant Design Vue遇到的问题和解决记录 - 幸福来敲门</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/blog/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/blog/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/blog/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/blog/css/font_gd7ak9jx13f/iconfont.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"gitee.com","root":"/blog/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/blog/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/blog/js/utils.js" ></script>
+  <script  src="/blog/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/blog/">
+      <strong>幸福来敲门</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/commonweal/" target="_self">
+                <i class="iconfont icon-gongyi"></i>
+                <span>公益</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/guestbook/" target="_self">
+                <i class="iconfont icon-B-liuyan"></i>
+                <span>留言</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/blog/img/default.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Ant Design Vue遇到的问题和解决记录"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-02-18 20:20" pubdate>
+          2024年02月18日 20:20:16
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          4.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          35 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+    <script type="text/javascript" src="/js/love.js"></script>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Ant Design Vue遇到的问题和解决记录</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>开箱即用的高质量 Vue 组件。</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>使用 npm 或 yarn 安装 <a target="_blank" rel="noopener" href="https://1x.antdv.com/docs/vue/introduce-cn/#%E4%BD%BF%E7%94%A8-npm-%E6%88%96-yarn-%E5%AE%89%E8%A3%85">#</a></p>
+<p><strong>我们推荐使用 npm 或 yarn 的方式进行开发</strong>，不仅可在开发环境轻松调试，也可放心地在生产环境打包部署使用，享受整个生态圈和工具链带来的诸多好处。</p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs gauss">$ npm install ant-<span class="hljs-built_in">design</span>-vue --<span class="hljs-keyword">save</span><br>$ yarn add ant-<span class="hljs-built_in">design</span>-vue<br></code></pre></td></tr></table></figure>
+
+<p>如果你的网络环境不佳，推荐使用 <a target="_blank" rel="noopener" href="https://github.com/cnpm/cnpm">cnpm</a>。</p>
+<h1 id="树形图"><a href="#树形图" class="headerlink" title="树形图"></a>树形图</h1><h2 id="折叠展开-控制展开指定节点"><a href="#折叠展开-控制展开指定节点" class="headerlink" title="折叠展开-控制展开指定节点"></a>折叠展开-控制展开指定节点</h2><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs kotlin">&lt;a-tree<br>        v-model=<span class="hljs-string">&quot;checkedKeys&quot;</span><br>        checkable<br>        draggable<br>        :blockNode=<span class="hljs-string">&quot;true&quot;</span><br>        :tree-<span class="hljs-keyword">data</span>=<span class="hljs-string">&quot;treeData&quot;</span><br>        show-icon<br>        :expandedKeys=<span class="hljs-string">&quot;expandedKeys&quot;</span><br>        <span class="hljs-meta">@select</span>=<span class="hljs-string">&quot;onSelect&quot;</span><br>        <span class="hljs-meta">@expand</span>=<span class="hljs-string">&quot;onExpand&quot;</span><br>        <span class="hljs-meta">@dragenter</span>=<span class="hljs-string">&quot;onDragEnter&quot;</span><br>        <span class="hljs-meta">@drop</span>=<span class="hljs-string">&quot;onDrop&quot;</span><br>        <span class="hljs-meta">@check</span>=<span class="hljs-string">&quot;onCheck&quot;</span><br>      &gt;<br><br><span class="hljs-keyword">data</span>() &#123;<br>    <span class="hljs-keyword">return</span> &#123;<br>		 <span class="hljs-comment">// 控制展开节点</span><br>      expandedKeys: [],<br>	&#125;<br>&#125;<br><br>expandedKeys  折叠展开的节点<br>onExpand  点击折叠展开触发的方法<br><br><br> <span class="hljs-comment">// 折叠展开时</span><br>    onExpand(<span class="hljs-keyword">val</span>) &#123;<br>      console.log(<span class="hljs-string">&#x27;Trigger Expand&#x27;</span>, <span class="hljs-keyword">val</span>)<br>      <span class="hljs-keyword">this</span>.expandedKeys = <span class="hljs-keyword">val</span><br>    &#125;,<br></code></pre></td></tr></table></figure>
+
+<h2 id="渲染数据后-默认展开无效"><a href="#渲染数据后-默认展开无效" class="headerlink" title="渲染数据后-默认展开无效"></a>渲染数据后-默认展开无效</h2><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs elixir">分析原因：antdesignvue的前端是一次性渲染的，所以defaultExpandedRowKeys等只在渲染时有效。<br>解决方法：添加判断v-<span class="hljs-keyword">if</span>你的<span class="hljs-title class_">DataSource</span>长度，如果为<span class="hljs-number">0</span>则不渲染。<br>动态解决方法：在<span class="hljs-title class_">DataSource</span>赋值的时候，使用splice将其长度变为<span class="hljs-number">0</span><br><br>this.<span class="hljs-title class_">DataSource</span>.splice(<span class="hljs-number">0</span>)<br><span class="hljs-number">1</span><br>		&lt;a-row class=<span class="hljs-string">&quot;tree-box&quot;</span>&gt;<br>              &lt;a-col&gt;<br>                &lt;a-tree<br>                  v-<span class="hljs-keyword">if</span>=<span class="hljs-string">&quot;DataSource.length&gt;0&quot;</span><br>                  v-model=<span class="hljs-string">&quot;checkedKeys&quot;</span><br>                  checkable<br>                  <span class="hljs-symbol">:auto-expand-parent=<span class="hljs-string">&quot;autoExpandParent&quot;</span></span><br>                  defaultExpandAll<br>                  <span class="hljs-symbol">:tree-data=<span class="hljs-string">&quot;DataSource&quot;</span></span><br>                /&gt;<br>              &lt;/a-col&gt;<br>            &lt;/a-row&gt;<br>————————————————<br>版权声明：本文为<span class="hljs-title class_">CSDN</span>博主「三个人工作室」的原创文章，遵循<span class="hljs-title class_">CC</span> <span class="hljs-number">4.0</span> <span class="hljs-title class_">BY</span>-<span class="hljs-title class_">SA</span>版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<span class="hljs-symbol">https:</span>//blog.csdn.net/wwppp987/article/details/<span class="hljs-number">113737659</span><br><br>dwy案例     v-<span class="hljs-keyword">if</span>=<span class="hljs-string">&quot;treeData.length &gt; 0&quot;</span>  就可以了<br>&lt;a-tree<br>        v-<span class="hljs-keyword">if</span>=<span class="hljs-string">&quot;treeData.length &gt; 0&quot;</span><br>        <span class="hljs-symbol">:default-expanded-keys=<span class="hljs-string">&quot;showkeys&quot;</span></span><br>        <span class="hljs-symbol">:show-line=<span class="hljs-string">&quot;true&quot;</span></span><br>        <span class="hljs-symbol">:tree-data=<span class="hljs-string">&quot;treeData&quot;</span></span><br>        <span class="hljs-symbol">:replaceFields=<span class="hljs-string">&quot;replaceFields&quot;</span></span><br>        <span class="hljs-symbol">:selected-keys=<span class="hljs-string">&quot;selectedKeys&quot;</span></span><br>        <span class="hljs-variable">@select</span>=<span class="hljs-string">&quot;onSelect&quot;</span><br>      &gt;<br>&lt;/a-tree&gt;<br></code></pre></td></tr></table></figure>
+
+<h1 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h1><h3 id="表单验证规则"><a href="#表单验证规则" class="headerlink" title="表单验证规则"></a>表单验证规则</h3><p>prop&#x3D;”poolName   和  v-model&#x3D;”formData.poolName” 对应  必须要有v-model</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">&lt;a-form-model<br>          <span class="hljs-keyword">ref</span>=&quot;ruleForm&quot;<br>          :rules=&quot;rules&quot;<br>          :model=&quot;formData&quot;<br>          :label-col=&quot;formItemLayout.labelCol&quot;<br>          :<span class="hljs-keyword">wrapper</span>-col=&quot;formItemLayout.wrapperCol&quot;&gt;<br>        &lt;a-form-model-item label=&quot;人才库名称&quot; prop=&quot;poolName&quot;&gt;<br>          &lt;a-<span class="hljs-keyword">input</span> v-model=&quot;formData.poolName&quot;/&gt;<br>        &lt;/a-form-model-item&gt;<br>&lt;/a-form-model&gt;<br></code></pre></td></tr></table></figure>
+
+<p>rules 代码参考</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs arcade">  rules: &#123;<br>        <span class="hljs-attr">poolName</span>: [&#123;<br>          <span class="hljs-attr">validator</span>: <span class="hljs-function">(<span class="hljs-params">rule, value, callback</span>) =&gt;</span> &#123;<br>            <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;rule&#x27;</span>,rule);<br>            <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;value&#x27;</span>,value);<br>            <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;callback&#x27;</span>,callback);<br>            <span class="hljs-keyword">if</span> (value) &#123;<br>              <br>              <span class="hljs-keyword">if</span>(value.<span class="hljs-built_in">length</span> &gt; <span class="hljs-number">10</span>)&#123;<br>                callback(<span class="hljs-keyword">new</span> Error(<span class="hljs-string">&#x27;限制10个字符以内&#x27;</span>));<br>              &#125;<span class="hljs-keyword">else</span>&#123;<br>                callback();<br>              &#125;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>              callback(<span class="hljs-keyword">new</span> Error(<span class="hljs-string">&#x27;请填写选项名称&#x27;</span>));<br>            &#125;<br>          &#125;, <span class="hljs-attr">trigger</span>: [<span class="hljs-string">&#x27;change&#x27;</span>, <span class="hljs-string">&#x27;blur&#x27;</span>]<br>        &#125;],<br>        <span class="hljs-attr">poolColor</span>: [&#123;<br>          <span class="hljs-attr">validator</span>: <span class="hljs-function">(<span class="hljs-params">rule, value, callback</span>) =&gt;</span> &#123;<br>            <span class="hljs-keyword">if</span> (value) &#123;<br>              callback();<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>              callback(<span class="hljs-keyword">new</span> Error(<span class="hljs-string">&#x27;请选择颜色&#x27;</span>));<br>            &#125;<br>          &#125;, <span class="hljs-attr">trigger</span>: [<span class="hljs-string">&#x27;change&#x27;</span>, <span class="hljs-string">&#x27;blur&#x27;</span>]<br>        &#125;],<br>		<span class="hljs-comment">//或者</span><br>		 severName: [<br>          		&#123; <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;请输入目标服务器&#x27;</span>, <span class="hljs-attr">trigger</span>: <span class="hljs-string">&#x27;blur&#x27;</span>, <span class="hljs-attr">whitespace</span>: <span class="hljs-literal">true</span> &#125;<br>       		 ]<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="InputNumber-数字输入框-只能输入数字"><a href="#InputNumber-数字输入框-只能输入数字" class="headerlink" title="InputNumber 数字输入框 只能输入数字"></a>InputNumber 数字输入框 只能输入数字</h3><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey">:formatter=<span class="hljs-string">&quot;value =&gt; `$&#123;value&#125;`.replace(/\D/g, &#x27;&#x27;)&quot;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">a-form-model-item</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;排序&quot;</span>&gt;</span></span><br><span class="language-xml">          <span class="hljs-tag">&lt;<span class="hljs-name">a-input-number</span></span></span><br><span class="hljs-tag"><span class="language-xml">            <span class="hljs-attr">:formatter</span>=<span class="hljs-string">&quot;value =&gt; `$</span></span></span><span class="hljs-template-variable">&#123;value&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">`.replace(/\D/g, &#x27;&#x27;)&quot;</span></span></span><br><span class="hljs-tag"><span class="language-xml">            <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;formData.roleSort&quot;</span></span></span><br><span class="hljs-tag"><span class="language-xml">            <span class="hljs-attr">:min</span>=<span class="hljs-string">&quot;1&quot;</span></span></span><br><span class="hljs-tag"><span class="language-xml">            <span class="hljs-attr">:precision</span>=<span class="hljs-string">&quot;0&quot;</span></span></span><br><span class="hljs-tag"><span class="language-xml">            <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;</span></span></span><br><span class="hljs-string"><span class="hljs-tag"><span class="language-xml">              width: 100%;</span></span></span><br><span class="hljs-string"><span class="hljs-tag"><span class="language-xml">              height: 48px;</span></span></span><br><span class="hljs-string"><span class="hljs-tag"><span class="language-xml">              background-color: #f7f9fb !important;</span></span></span><br><span class="hljs-string"><span class="hljs-tag"><span class="language-xml">              border-radius: 4px;</span></span></span><br><span class="hljs-string"><span class="hljs-tag"><span class="language-xml">              border: none;</span></span></span><br><span class="hljs-string"><span class="hljs-tag"><span class="language-xml">            &quot;</span></span></span><br><span class="hljs-tag"><span class="language-xml">          /&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;/<span class="hljs-name">a-form-model-item</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<h3 id="验证规则参考"><a href="#验证规则参考" class="headerlink" title="验证规则参考"></a>验证规则参考</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> rulesItem = &#123;<br>              <span class="hljs-attr">validator</span>: <span class="hljs-function">(<span class="hljs-params">rule, value, callback</span>) =&gt;</span> &#123;<br>                <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;value&#x27;</span>,value);<br>                <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;value.length&#x27;</span>,value.<span class="hljs-property">length</span>);<br>                <span class="hljs-keyword">if</span>(that.<span class="hljs-property">title</span> == <span class="hljs-string">&#x27;能力素质&#x27;</span>)&#123;<br>                  <span class="hljs-keyword">if</span> (value &lt;= <span class="hljs-number">100</span>) &#123;<br>                    <span class="hljs-title function_">callback</span>();<br>                  &#125; <span class="hljs-keyword">else</span> &#123;<br>                    <span class="hljs-title function_">callback</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">`<span class="hljs-subst">$&#123;item.dictLabel&#125;</span>不能大于100`</span>));<br>                  &#125;<br>                &#125;<br>                <span class="hljs-keyword">if</span> (<span class="hljs-title class_">Array</span>.<span class="hljs-title function_">isArray</span>(value)) &#123;<br>                  <span class="hljs-keyword">if</span> (value.<span class="hljs-property">length</span>) &#123;<br>                    <span class="hljs-title function_">callback</span>();<br>                  &#125; <span class="hljs-keyword">else</span> &#123;<br>                    <span class="hljs-title function_">callback</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">`请完善<span class="hljs-subst">$&#123;item.dictLabel&#125;</span>`</span>));<br>                  &#125;<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                  <span class="hljs-keyword">if</span> (value) &#123;<br>                    <span class="hljs-title function_">callback</span>();<br>                  &#125; <span class="hljs-keyword">else</span> &#123;<br>                    <span class="hljs-title function_">callback</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">`请完善<span class="hljs-subst">$&#123;item.dictLabel&#125;</span>`</span>));<br>                  &#125;<br>                &#125;<br>              &#125;,<br>            &#125;;<br>            <span class="hljs-keyword">if</span> (item.<span class="hljs-property">cssClass</span> == <span class="hljs-number">1</span>) &#123;<br>              rulesItem.<span class="hljs-property">trigger</span> = <span class="hljs-string">&quot;change&quot;</span>;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (item.<span class="hljs-property">cssClass</span> == <span class="hljs-number">2</span>) &#123;<br>              rulesItem.<span class="hljs-property">trigger</span> = <span class="hljs-string">&quot;change&quot;</span>;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (item.<span class="hljs-property">cssClass</span> == <span class="hljs-number">3</span>) &#123;<br>              rulesItem.<span class="hljs-property">trigger</span> = <span class="hljs-string">&quot;blur&quot;</span>;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (item.<span class="hljs-property">cssClass</span> == <span class="hljs-number">4</span>) &#123;<br>              rulesItem.<span class="hljs-property">trigger</span> = <span class="hljs-string">&quot;change&quot;</span>;<br>            &#125;<br>            rules[<span class="hljs-string">`formData<span class="hljs-subst">$&#123;index&#125;</span>`</span>] = rulesItem;<br>          &#125;);<br>          <span class="hljs-variable language_">this</span>.<span class="hljs-property">form</span> = form;<br>          <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">form</span>);<br>          <span class="hljs-variable language_">this</span>.<span class="hljs-property">rules</span> = rules;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><code class="hljs prolog">rules: &#123;<br>        nickName: [<br>          &#123;<br>            required: true,<br>            message: <span class="hljs-string">&quot;请填写用户姓名&quot;</span>,<br>            trigger: [<span class="hljs-string">&quot;change&quot;</span>, <span class="hljs-string">&quot;blur&quot;</span>],<br>          &#125;,<br>          &#123;<br>            validator: function (rule, value, callback) &#123;<br>              if (value.length &lt; <span class="hljs-number">10</span>) &#123;<br>                callback();<br>              &#125; else &#123;<br>                callback(<span class="hljs-string">&quot;最多10个字符&quot;</span>);<br>              &#125;<br>            &#125;,<br>            trigger: [<span class="hljs-string">&quot;change&quot;</span>, <span class="hljs-string">&quot;blur&quot;</span>],<br>          &#125;,<br>        ],<br>        deptId: [<br>          &#123;<br>            required: true,<br>            message: <span class="hljs-string">&quot;请选择部门&quot;</span>,<br>            trigger: [<span class="hljs-string">&quot;change&quot;</span>, <span class="hljs-string">&quot;blur&quot;</span>],<br>          &#125;,<br>        ],<br>        postId: [<br>          &#123;<br>            required: true,<br>            message: <span class="hljs-string">&quot;请选择岗位&quot;</span>,<br>            trigger: [<span class="hljs-string">&quot;change&quot;</span>, <span class="hljs-string">&quot;blur&quot;</span>],<br>          &#125;,<br>        ],<br>        // <span class="hljs-symbol">MBdeptId</span>: [<br>        //   &#123;<br>        //     required: true,<br>        //     message: <span class="hljs-string">&quot;请选择目标部门&quot;</span>,<br>        //     trigger: [<span class="hljs-string">&quot;change&quot;</span>, <span class="hljs-string">&quot;blur&quot;</span>],<br>        //   &#125;,<br>        // ],<br>        <span class="hljs-symbol">MBpostId</span>: [<br>          &#123;<br>            required: true,<br>            message: <span class="hljs-string">&quot;请选择目标岗位&quot;</span>,<br>            trigger: [<span class="hljs-string">&quot;change&quot;</span>, <span class="hljs-string">&quot;blur&quot;</span>],<br>          &#125;,<br>        ],<br>        email: [<br>          // &#123;<br>          //   required: true,<br>          //   message: <span class="hljs-string">&quot;请填写电子邮箱&quot;</span>,<br>          //   trigger: [<span class="hljs-string">&quot;change&quot;</span>, <span class="hljs-string">&quot;blur&quot;</span>],<br>          // &#125;,<br>          &#123;<br>            validator: function (rule, value, callback) &#123;<br>              if (value) &#123;<br>                var emailRegExp =<br>                  /^[a-zA-<span class="hljs-symbol">Z0</span><span class="hljs-number">-9</span><span class="hljs-symbol">_</span>-]+@[a-zA-<span class="hljs-symbol">Z0</span><span class="hljs-number">-9</span><span class="hljs-symbol">_</span>-]+(\.[a-zA-<span class="hljs-symbol">Z0</span><span class="hljs-number">-9</span><span class="hljs-symbol">_</span>-]+)+$/;<br>                if (emailRegExp.test(value)) &#123;<br>                  callback();<br>                &#125; else &#123;<br>                  callback(<span class="hljs-string">&quot;电子邮箱格式错误&quot;</span>);<br>                &#125;<br>              &#125;else&#123;<br>                callback();<br>              &#125;<br>            &#125;,<br>            trigger: [<span class="hljs-string">&quot;change&quot;</span>, <span class="hljs-string">&quot;blur&quot;</span>],<br>          &#125;,<br>        ],<br>        phonenumber: [<br>          &#123;<br>            required: true,<br>            message: <span class="hljs-string">&quot;请填写手机号码&quot;</span>,<br>            trigger: [<span class="hljs-string">&quot;change&quot;</span>, <span class="hljs-string">&quot;blur&quot;</span>],<br>          &#125;,<br>          &#123;<br>            validator: function (rule, value, callback) &#123;<br>              const phonenumberREP = /^<span class="hljs-number">1</span>[<span class="hljs-number">0</span><span class="hljs-number">-9</span>]&#123;<span class="hljs-number">10</span>&#125;$/;<br>              if (phonenumberREP.test(value)) &#123;<br>                callback();<br>              &#125; else &#123;<br>                callback(<span class="hljs-string">&quot;手机号码格式错误&quot;</span>);<br>              &#125;<br>            &#125;,<br>            trigger: [<span class="hljs-string">&quot;change&quot;</span>, <span class="hljs-string">&quot;blur&quot;</span>],<br>          &#125;,<br>        ],<br>        roleId: [<br>          &#123;<br>            required: true,<br>            message: <span class="hljs-string">&quot;请选择角色&quot;</span>,<br>            trigger: [<span class="hljs-string">&quot;change&quot;</span>, <span class="hljs-string">&quot;blur&quot;</span>],<br>          &#125;,<br>        ],<br>        perNo: [<br>          &#123;<br>            required: true,<br>            message: <span class="hljs-string">&quot;请填员工编号&quot;</span>,<br>            trigger: [<span class="hljs-string">&quot;change&quot;</span>, <span class="hljs-string">&quot;blur&quot;</span>],<br>          &#125;,<br>        ],<br>        userLevel: [<br>          &#123;<br>            required: true,<br>            message: <span class="hljs-string">&quot;请选择用户等级&quot;</span>,<br>            trigger: [<span class="hljs-string">&quot;change&quot;</span>, <span class="hljs-string">&quot;blur&quot;</span>],<br>          &#125;,<br>        ],<br>        userWorkType: [<br>          &#123;<br>            required: true,<br>            message: <span class="hljs-string">&quot;请选择用户等级&quot;</span>,<br>            trigger: [<span class="hljs-string">&quot;change&quot;</span>, <span class="hljs-string">&quot;blur&quot;</span>],<br>          &#125;,<br>        ],<br>      &#125;,<br></code></pre></td></tr></table></figure>
+
+<h3 id="表格多选及验证"><a href="#表格多选及验证" class="headerlink" title="表格多选及验证"></a>表格多选及验证</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">&lt;a-form-model <span class="hljs-keyword">ref</span>=&quot;formModel&quot; id=&quot;components-form&quot; :model=&quot;form&quot; :rules=&quot;rules&quot;&gt;<br><br><br>&lt;a-form-model-item label=&quot;报表内容&quot; prop=&quot;BBcontent&quot; <span class="hljs-keyword">ref</span>=&quot;BBcontent&quot; :label-col=&quot;&#123; span: 3 &#125;&quot;<br>              :<span class="hljs-keyword">wrapper</span>-col=&quot;&#123; span: 20, offset: 1 &#125;&quot;&gt;<br>              &lt;div <span class="hljs-keyword">class</span>=&quot;bbnr&quot;&gt;<br>                &lt;a-checkbox-<span class="hljs-keyword">group</span> :<span class="hljs-keyword">options</span>=&quot;checkboxData&quot; v-model=&quot;form.BBcontent&quot; @change=&quot;BBonChange&quot; /&gt;<br>              &lt;/div&gt;<br>            &lt;/a-form-model-item&gt;<br><br> &lt;/a-form-model&gt;<br><br><br>form: &#123;<br>        BBcontent: [], // 报表内容<br>      &#125;,<br><br>checkboxData: [<br>        &#123; <span class="hljs-keyword">value</span>: <span class="hljs-string">&#x27;1&#x27;</span>, label: <span class="hljs-string">&#x27;服务器运行情况&#x27;</span> &#125;,<br>        &#123; <span class="hljs-keyword">value</span>: <span class="hljs-string">&#x27;2&#x27;</span>, label: <span class="hljs-string">&#x27;GPU使用情况&#x27;</span> &#125;,<br>        &#123; <span class="hljs-keyword">value</span>: <span class="hljs-string">&#x27;分布式存储使用情况&#x27;</span>, label: <span class="hljs-string">&#x27;分布式存储使用情况&#x27;</span> &#125;,<br>        &#123; <span class="hljs-keyword">value</span>: <span class="hljs-string">&#x27;IB网络使用情况&#x27;</span>, label: <span class="hljs-string">&#x27;IB网络使用情况&#x27;</span> &#125;,<br>        &#123; <span class="hljs-keyword">value</span>: <span class="hljs-string">&#x27;RoCE网络使用情况&#x27;</span>, label: <span class="hljs-string">&#x27;RoCE网络使用情况&#x27;</span> &#125;,<br>        &#123; <span class="hljs-keyword">value</span>: <span class="hljs-string">&#x27;交换机使用情况&#x27;</span>, label: <span class="hljs-string">&#x27;交换机使用情况&#x27;</span> &#125;,<br>        &#123; <span class="hljs-keyword">value</span>: <span class="hljs-string">&#x27;防火墙使用情况&#x27;</span>, label: <span class="hljs-string">&#x27;防火墙使用情况&#x27;</span> &#125;,<br>        &#123; <span class="hljs-keyword">value</span>: <span class="hljs-string">&#x27;堡垒机使用情况&#x27;</span>, label: <span class="hljs-string">&#x27;堡垒机使用情况&#x27;</span> &#125;,<br>        &#123; <span class="hljs-keyword">value</span>: <span class="hljs-string">&#x27;报警事件情况&#x27;</span>, label: <span class="hljs-string">&#x27;报警事件情况&#x27;</span> &#125;,<br>      ],<br><br> // 验证规则<br>      rules: &#123;<br>        // 报表内容<br>        BBcontent: [&#123;<br>          <span class="hljs-keyword">type</span>: <span class="hljs-string">&#x27;array&#x27;</span>,<br>          required: <span class="hljs-keyword">true</span>,<br>          message: <span class="hljs-string">&#x27;请选择报表内容&#x27;</span>,<br>          <span class="hljs-keyword">trigger</span>: <span class="hljs-string">&#x27;change&#x27;</span>,<br>          whitespace: <span class="hljs-keyword">true</span><br>        &#125;],<br>&#125;<br><br><br>  methods: &#123;<br>    BBonChange(val) &#123;<br>      console.log(<span class="hljs-string">&#x27;val&#x27;</span>, val);<br>      this.form.BBcontent = val<br>    &#125;,<br>&#125;<br><br><br></code></pre></td></tr></table></figure>
+
+<h3 id="验证事件触发后没有触发验证规则问题"><a href="#验证事件触发后没有触发验证规则问题" class="headerlink" title="验证事件触发后没有触发验证规则问题"></a>验证事件触发后没有触发验证规则问题</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs typescript">正确格式<br> &lt;a-row <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;form_li&quot;</span> <span class="hljs-keyword">type</span>=<span class="hljs-string">&quot;flex&quot;</span> justify=<span class="hljs-string">&quot;center&quot;</span>&gt;<br>          <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">a-col</span> <span class="hljs-attr">:xs</span>=<span class="hljs-string">&quot;formW&quot;</span> <span class="hljs-attr">:sm</span>=<span class="hljs-string">&quot;formW&quot;</span> <span class="hljs-attr">:md</span>=<span class="hljs-string">&quot;formW&quot;</span> <span class="hljs-attr">:lg</span>=<span class="hljs-string">&quot;formW&quot;</span> <span class="hljs-attr">:xl</span>=<span class="hljs-string">&quot;formW&quot;</span>&gt;</span></span><br><span class="language-xml">            <span class="hljs-tag">&lt;<span class="hljs-name">a-form-model-item</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;设备类型&quot;</span> <span class="hljs-attr">prop</span>=<span class="hljs-string">&quot;equipmentType&quot;</span>&gt;</span></span><br><span class="language-xml">              <span class="hljs-tag">&lt;<span class="hljs-name">a-select</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;form.equipmentType&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;请选择类型&quot;</span> <span class="hljs-attr">allowClear</span> @<span class="hljs-attr">change</span>=<span class="hljs-string">&quot;equipmentTypechange&quot;</span>&gt;</span></span><br><span class="language-xml">                  <span class="hljs-tag">&lt;<span class="hljs-name">a-select-option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;shanghai&quot;</span>&gt;</span></span><br><span class="language-xml">                    Zone one</span><br><span class="language-xml">                  <span class="hljs-tag">&lt;/<span class="hljs-name">a-select-option</span>&gt;</span></span><br><span class="language-xml">                  <span class="hljs-tag">&lt;<span class="hljs-name">a-select-option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;beijing&quot;</span>&gt;</span></span><br><span class="language-xml">                    Zone two</span><br><span class="language-xml">                  <span class="hljs-tag">&lt;/<span class="hljs-name">a-select-option</span>&gt;</span></span><br><span class="language-xml">                <span class="hljs-tag">&lt;/<span class="hljs-name">a-select</span>&gt;</span></span><br><span class="language-xml">            <span class="hljs-tag">&lt;/<span class="hljs-name">a-form-model-item</span>&gt;</span></span><br><span class="language-xml">          <span class="hljs-tag">&lt;/<span class="hljs-name">a-col</span>&gt;</span></span><br>        &lt;/a-row&gt;<br><br><br>错误格式    a-form-model-item里面多包了一层div  导致  验证事件触发后没有触发验证规则问题<br> <br>&lt;a-row <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;form_li&quot;</span> <span class="hljs-keyword">type</span>=<span class="hljs-string">&quot;flex&quot;</span> justify=<span class="hljs-string">&quot;center&quot;</span>&gt;<br>          <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">a-col</span> <span class="hljs-attr">:xs</span>=<span class="hljs-string">&quot;formW&quot;</span> <span class="hljs-attr">:sm</span>=<span class="hljs-string">&quot;formW&quot;</span> <span class="hljs-attr">:md</span>=<span class="hljs-string">&quot;formW&quot;</span> <span class="hljs-attr">:lg</span>=<span class="hljs-string">&quot;formW&quot;</span> <span class="hljs-attr">:xl</span>=<span class="hljs-string">&quot;formW&quot;</span>&gt;</span></span><br><span class="language-xml">            <span class="hljs-tag">&lt;<span class="hljs-name">a-form-model-item</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;设备类型&quot;</span> <span class="hljs-attr">prop</span>=<span class="hljs-string">&quot;equipmentType&quot;</span>&gt;</span></span><br><span class="language-xml">              <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">                <span class="hljs-tag">&lt;<span class="hljs-name">a-select</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;form.equipmentType&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;请选择类型&quot;</span> <span class="hljs-attr">allowClear</span> @<span class="hljs-attr">change</span>=<span class="hljs-string">&quot;equipmentTypechange&quot;</span>&gt;</span></span><br><span class="language-xml">                  <span class="hljs-tag">&lt;<span class="hljs-name">a-select-option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;shanghai&quot;</span>&gt;</span></span><br><span class="language-xml">                    Zone one</span><br><span class="language-xml">                  <span class="hljs-tag">&lt;/<span class="hljs-name">a-select-option</span>&gt;</span></span><br><span class="language-xml">                  <span class="hljs-tag">&lt;<span class="hljs-name">a-select-option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;beijing&quot;</span>&gt;</span></span><br><span class="language-xml">                    Zone two</span><br><span class="language-xml">                  <span class="hljs-tag">&lt;/<span class="hljs-name">a-select-option</span>&gt;</span></span><br><span class="language-xml">                <span class="hljs-tag">&lt;/<span class="hljs-name">a-select</span>&gt;</span></span><br><span class="language-xml">              <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">            <span class="hljs-tag">&lt;/<span class="hljs-name">a-form-model-item</span>&gt;</span></span><br><span class="language-xml">          <span class="hljs-tag">&lt;/<span class="hljs-name">a-col</span>&gt;</span></span><br>        &lt;/a-row&gt;<br><br><br><br> <span class="hljs-comment">// 验证规则</span><br>      <span class="hljs-attr">rules</span>: &#123;<br>        <span class="hljs-comment">// 设备类型</span><br>        <span class="hljs-attr">equipmentType</span>: [&#123;<br>          <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>,<br>          <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;请选择设备类型&#x27;</span>,<br>          <span class="hljs-attr">trigger</span>: <span class="hljs-string">&#x27;change&#x27;</span>,<br>          <span class="hljs-comment">// whitespace: true</span><br>        &#125;],<br></code></pre></td></tr></table></figure>
+
+<h3 id="多表单验证"><a href="#多表单验证" class="headerlink" title="多表单验证"></a>多表单验证</h3><figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs arcade">onSubmit() &#123;<br>      this.<span class="hljs-symbol">$refs</span>.formModel.validate(<span class="hljs-function"><span class="hljs-params">valid1</span> =&gt;</span> &#123;<br>        <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;表单1验证&#x27;</span>,valid1);<br>        <span class="hljs-keyword">if</span> (valid1) &#123;<br>          <br>          <span class="hljs-comment">// 发送通知</span><br>          <span class="hljs-keyword">if</span>(this.form.ifInform == <span class="hljs-number">2</span>)&#123;<br>            <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;进来&#x27;</span>);<br>            this.<span class="hljs-symbol">$refs</span>.formModel2.validate(<span class="hljs-function"><span class="hljs-params">valid2</span> =&gt;</span> &#123;<br>              <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;表单2验证&#x27;</span>,valid2);<br>            &#125;)<br>          &#125;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>          <span class="hljs-comment">// this.loading = false</span><br>          <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;error submit!!&#x27;</span>)<br>          <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>        &#125;<br>      &#125;)<br>    &#125;,<br></code></pre></td></tr></table></figure>
+
+<h3 id="下拉选择样式，文字过长时省略号"><a href="#下拉选择样式，文字过长时省略号" class="headerlink" title="下拉选择样式，文字过长时省略号"></a>下拉选择样式，文字过长时省略号</h3><figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">a-form-item</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;GPU类型：&quot;</span> <span class="hljs-attr">:label-col</span>=<span class="hljs-string">&quot;&#123; span: 7 &#125;&quot;</span> <span class="hljs-attr">:wrapperCol</span>=<span class="hljs-string">&quot;&#123; span: 14 &#125;&quot;</span>&gt;</span></span><br><span class="language-xml">                            <span class="hljs-tag">&lt;<span class="hljs-name">a-select</span> <span class="hljs-attr">:placeholder</span>=<span class="hljs-string">&quot;$t(&#x27;pSelectText&#x27;)&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;queryParam.gpuType&quot;</span> @<span class="hljs-attr">change</span>=<span class="hljs-string">&quot;changetype&quot;</span>&gt;</span></span><br><span class="language-xml">                                <span class="hljs-tag">&lt;<span class="hljs-name">a-select-option</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;item in severstypeOptions&quot;</span> <span class="hljs-attr">:value</span>=<span class="hljs-string">&quot;item.id&quot;</span>&gt;</span></span><span class="hljs-template-variable">&#123;&#123;</span><br><span class="hljs-template-variable">                                    <span class="hljs-name">item.value</span> &#125;&#125;</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">a-select-option</span>&gt;</span></span><br><span class="language-xml">                            <span class="hljs-tag">&lt;/<span class="hljs-name">a-select</span>&gt;</span></span><br><span class="language-xml">                        <span class="hljs-tag">&lt;/<span class="hljs-name">a-form-item</span>&gt;</span></span><br><span class="language-xml"></span><br><span class="language-xml"></span><br><span class="language-xml">踩坑有bug  里面内容过长时  在不同尺寸下适配会有问题</span><br><span class="language-xml"></span><br><span class="language-xml">用的下面的解决方案</span><br><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">a-form-item</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;服务器所属分组：&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;selectbox1&quot;</span> &gt;</span></span><br><span class="language-xml">                <span class="hljs-tag">&lt;<span class="hljs-name">a-select</span> <span class="hljs-attr">:placeholder</span>=<span class="hljs-string">&quot;$t(&#x27;pSelectText&#x27;)&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;queryParam.groupId&quot;</span> @<span class="hljs-attr">change</span>=<span class="hljs-string">&quot;changeGroup&quot;</span>&gt;</span></span><br><span class="language-xml">                  <span class="hljs-tag">&lt;<span class="hljs-name">a-select-option</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;item in groupOptions&quot;</span> <span class="hljs-attr">:value</span>=<span class="hljs-string">&quot;item.aegId&quot;</span>&gt;</span></span><span class="hljs-template-variable">&#123;&#123; <span class="hljs-name">item.groupName</span></span><br><span class="hljs-template-variable">                  &#125;&#125;</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">a-select-option</span>&gt;</span></span><br><span class="language-xml">                <span class="hljs-tag">&lt;/<span class="hljs-name">a-select</span>&gt;</span></span><br><span class="language-xml">              <span class="hljs-tag">&lt;/<span class="hljs-name">a-form-item</span>&gt;</span></span><br><span class="language-xml"></span><br><span class="language-xml">单独设置左侧label  样式 和右侧盒子宽度</span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;less&quot;</span>&gt;</span><span class="language-css"></span></span><br><span class="language-css"><span class="language-xml">// 调整查询样式   服务器所属分组</span></span><br><span class="language-css"><span class="language-xml"><span class="hljs-selector-class">.selectbox1</span> <span class="hljs-selector-class">.ant-form-item-label</span> &#123;</span></span><br><span class="language-css"><span class="language-xml">  <span class="hljs-attribute">width</span>: <span class="hljs-number">112px</span>;</span></span><br><span class="language-css"><span class="language-xml"></span></span><br><span class="language-css"><span class="language-xml">&#125;</span></span><br><span class="language-css"><span class="language-xml"></span></span><br><span class="language-css"><span class="language-xml"><span class="hljs-selector-class">.selectbox1</span> <span class="hljs-selector-class">.ant-form-item-control-wrapper</span> &#123;</span></span><br><span class="language-css"><span class="language-xml">  <span class="hljs-attribute">width</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">100%</span> - <span class="hljs-number">112px</span>);</span></span><br><span class="language-css"><span class="language-xml"></span></span><br><span class="language-css"><span class="language-xml">&#125;</span></span><br><span class="language-css"><span class="language-xml"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<h1 id="深度样式修改-v-deep"><a href="#深度样式修改-v-deep" class="headerlink" title="深度样式修改::v-deep"></a>深度样式修改::v-deep</h1><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ruby"><span class="hljs-symbol">:</span><span class="hljs-symbol">:v-deep</span> .ant-tabs-nav-scroll &#123;<br></code></pre></td></tr></table></figure>
+
+<h1 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs javascript">阿里字体 包下载<br><br>main.<span class="hljs-property">js</span><br><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">Vue</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">Icon</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;ant-design-vue&#x27;</span><br><span class="hljs-keyword">import</span> iconFont <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./assets/icons/iconfont.js&#x27;</span><br><span class="hljs-keyword">import</span> iconFontCss <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./assets/icons/iconfont.css&#x27;</span><br><br><br><span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">use</span>(iconFontCss)<br><br><br><span class="hljs-keyword">const</span> myicon = <span class="hljs-title class_">Icon</span>.<span class="hljs-title function_">createFromIconfontCN</span>(&#123;<br>  <span class="hljs-attr">scriptUrl</span>: iconFont<br>&#125;)<br><span class="hljs-comment">//引用</span><br><span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">component</span>(<span class="hljs-string">&#x27;icon-font&#x27;</span>, myicon)<br><br><br>参考<br><span class="hljs-attr">https</span>:<span class="hljs-comment">//blog.csdn.net/sinat_40470998/article/details/110531033</span><br><br><br></code></pre></td></tr></table></figure>
+
+<h1 id="树形表格折叠不管用bug"><a href="#树形表格折叠不管用bug" class="headerlink" title="树形表格折叠不管用bug"></a>树形表格折叠不管用bug</h1><p>核心  expandedRowsChange   官方文档没有</p>
+<figure class="highlight nestedtext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><code class="hljs nestedtext">&lt;a-table :columns=&quot;columns&quot; :data-source=&quot;data&quot; :row-selection=&quot;rowSelection&quot; @expandedRowsChange=&quot;jkl&quot;<br>                        :expanded-row-keys.sync=&quot;expandedRowKeys&quot; /&gt;<br><br><span class="hljs-attribute">核心  expandedRowsChange   官方文档没有</span><br><span class="hljs-attribute"></span><br><span class="hljs-attribute"> data() &#123;</span><br><span class="hljs-attribute">        return &#123;</span><br><span class="hljs-attribute">            expandedRowKeys</span><span class="hljs-punctuation">:</span> <span class="hljs-string">[],</span><br><br><br><br><br><br>jkl(e) &#123;<br>            console.log(&#x27;this.expandedRowKeys&#x27;,this.expandedRowKeys);<br>            console.log(&#x27;e&#x27;,e);<br>            // this.expandedRowKeys = [...this.expandedRowKeys, ...e]<br>            this.expandedRowKeys = e<br>        &#125;,<br><br>:row-selection=&quot;rowSelection  控制多选的  可以不要<br><br><br><br><span class="hljs-attribute">数据</span><br><span class="hljs-attribute"> data</span><span class="hljs-punctuation">:</span> <span class="hljs-string">[</span><br>                <span class="hljs-attribute">&#123;</span><br><span class="hljs-attribute">                    key</span><span class="hljs-punctuation">:</span> <span class="hljs-string">1,</span><br>                    <span class="hljs-attribute">name</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&#x27;John Brown sr.&#x27;,</span><br>                    <span class="hljs-attribute">age</span><span class="hljs-punctuation">:</span> <span class="hljs-string">60,</span><br>                    <span class="hljs-attribute">address</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&#x27;New York No. 1 Lake Park&#x27;,</span><br>                    <span class="hljs-attribute">children</span><span class="hljs-punctuation">:</span> <span class="hljs-string">[</span><br>                        <span class="hljs-attribute">&#123;</span><br><span class="hljs-attribute">                            key</span><span class="hljs-punctuation">:</span> <span class="hljs-string">11,</span><br>                            <span class="hljs-attribute">name</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&#x27;John Brown&#x27;,</span><br>                            <span class="hljs-attribute">age</span><span class="hljs-punctuation">:</span> <span class="hljs-string">42,</span><br>                            <span class="hljs-attribute">address</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&#x27;New York No. 2 Lake Park&#x27;,</span><br>                        <span class="hljs-attribute">&#125;,</span><br><span class="hljs-attribute">                        &#123;</span><br><span class="hljs-attribute">                            key</span><span class="hljs-punctuation">:</span> <span class="hljs-string">12,</span><br>                            <span class="hljs-attribute">name</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&#x27;John Brown jr.&#x27;,</span><br>                            <span class="hljs-attribute">age</span><span class="hljs-punctuation">:</span> <span class="hljs-string">30,</span><br>                            <span class="hljs-attribute">address</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&#x27;New York No. 3 Lake Park&#x27;,</span><br>                        <span class="hljs-attribute">&#125;,</span><br><span class="hljs-attribute">                    ],</span><br><span class="hljs-attribute">                &#125;,</span><br><span class="hljs-attribute">                &#123;</span><br><span class="hljs-attribute">                    key</span><span class="hljs-punctuation">:</span> <span class="hljs-string">2,</span><br>                    <span class="hljs-attribute">name</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&#x27;Joe Black&#x27;,</span><br>                    <span class="hljs-attribute">age</span><span class="hljs-punctuation">:</span> <span class="hljs-string">32,</span><br>                    <span class="hljs-attribute">address</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&#x27;Sidney No. 1 Lake Park&#x27;,</span><br>                <span class="hljs-attribute">&#125;,</span><br><span class="hljs-attribute">            ],</span><br><span class="hljs-attribute">            columns</span><span class="hljs-punctuation">:</span> <span class="hljs-string">[</span><br>                <span class="hljs-attribute">&#123;</span><br><span class="hljs-attribute">                    title</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&#x27;Name&#x27;,</span><br>                    <span class="hljs-attribute">dataIndex</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&#x27;name&#x27;,</span><br>                    <span class="hljs-attribute">key</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&#x27;name&#x27;,</span><br>                <span class="hljs-attribute">&#125;,</span><br><span class="hljs-attribute">                &#123;</span><br><span class="hljs-attribute">                    title</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&#x27;Age&#x27;,</span><br>                    <span class="hljs-attribute">dataIndex</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&#x27;age&#x27;,</span><br>                    <span class="hljs-attribute">key</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&#x27;age&#x27;,</span><br>                    <span class="hljs-attribute">width</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&#x27;12%&#x27;,</span><br>                <span class="hljs-attribute">&#125;,</span><br><span class="hljs-attribute">                &#123;</span><br><span class="hljs-attribute">                    title</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&#x27;Address&#x27;,</span><br>                    <span class="hljs-attribute">dataIndex</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&#x27;address&#x27;,</span><br>                    <span class="hljs-attribute">width</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&#x27;30%&#x27;,</span><br>                    <span class="hljs-attribute">key</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&#x27;address&#x27;,</span><br>                &#125;,<br>            ],<br></code></pre></td></tr></table></figure>
+
+<h1 id="树形表格折叠按钮自定义"><a href="#树形表格折叠按钮自定义" class="headerlink" title="树形表格折叠按钮自定义"></a>树形表格折叠按钮自定义</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><code class="hljs javascript">位置<br>&lt;a-table<br>      :columns=<span class="hljs-string">&quot;columns&quot;</span><br>      :data-source=<span class="hljs-string">&quot;data&quot;</span><br>      <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;components-table-demo-nested&quot;</span><br>      :expandIconColumnIndex=<span class="hljs-string">&quot;2&quot;</span><br>	:expandIcon=<span class="hljs-string">&quot;expandIcon&quot;</span><br>      :expandIconAsCell=<span class="hljs-string">&quot;false&quot;</span><br>&gt;&lt;/a-table&gt;<br><br>在原本代码的基础上，在&lt;a-table&gt;中添加<br><br>:expandIconColumnIndex=<span class="hljs-string">&quot;3&quot;</span><br> <br>:expandIconAsCell=<span class="hljs-string">&quot;false&quot;</span><br><br>想把展开按钮放在第几列，就给expandIconColumnIndex设置多少值（第<span class="hljs-number">1</span>列为<span class="hljs-number">0</span>，以此类推）<br><br>expandIconAsCell这个属性也要加，不加按钮换位不起作用<br><br>设置完后，展开按钮变为下图位置。<br><br><br>dwy测试不加:expandIconAsCell=<span class="hljs-string">&quot;false&quot;</span>  没发现问题<br><br>自定义按钮  可用阿里图表<br>:expandIcon=<span class="hljs-string">&quot;expandIcon&quot;</span><br><br> <span class="hljs-attr">methods</span>: &#123;<br>        <span class="hljs-comment">// 渲染打开子表格图标样式</span><br>        <span class="hljs-title function_">expandIcon</span>(<span class="hljs-params">props</span>) &#123;<br>            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;props&#x27;</span>, props); <span class="hljs-comment">//返回的是父表格中的所有数据内容</span><br>            <span class="hljs-keyword">if</span> (props.<span class="hljs-property">record</span>.<span class="hljs-property">children</span>) &#123;<br>                <span class="hljs-keyword">if</span> (props.<span class="hljs-property">record</span>.<span class="hljs-property">children</span>.<span class="hljs-property">length</span> &gt; <span class="hljs-number">0</span>) &#123;<br>                    <span class="hljs-comment">//props.record的内容是表格单行的所有数据，可以在这里判定子表格是否有数据。</span><br>                    <span class="hljs-keyword">if</span> (props.<span class="hljs-property">expanded</span>) &#123;<br>                        <span class="hljs-comment">//props.expanded的值是true或false，代表子表格是否展开</span><br>                        <span class="hljs-comment">//有数据展开时图标样式</span><br>                        <span class="hljs-keyword">return</span> (<br>                            <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span></span></span><br><span class="hljs-tag"><span class="language-xml">                                <span class="hljs-attr">onClick</span>=<span class="hljs-string">&#123;(e)</span> =&gt;</span> &#123;</span><br><span class="language-xml">                                    console.log(&#x27;e&#x27;, e);</span><br><span class="language-xml">                                    props.onExpand(props.record, e);</span><br><span class="language-xml">                                &#125;&#125;</span><br><span class="language-xml">                            &gt;</span><br><span class="language-xml">                                网卡参数 <span class="hljs-tag">&lt;<span class="hljs-name">icon-font</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;icon-xiangxia&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;font-size:18px;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">icon-font</span>&gt;</span></span><br><span class="language-xml"></span><br><span class="language-xml">                            <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span><br>                        );<br>                    &#125; <span class="hljs-keyword">else</span> &#123;<br>                        <span class="hljs-comment">//有数据且未展开时图标样式</span><br>                        <span class="hljs-keyword">return</span> (<br>                            <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span></span></span><br><span class="hljs-tag"><span class="language-xml">                                <span class="hljs-attr">onClick</span>=<span class="hljs-string">&#123;(e)</span> =&gt;</span> &#123;</span><br><span class="language-xml">                                    console.log(&#x27;e&#x27;, e);</span><br><span class="language-xml">                                    props.onExpand(props.record, e);</span><br><span class="language-xml">                                &#125;&#125;</span><br><span class="language-xml">                            &gt;</span><br><span class="language-xml">                                网卡参数 <span class="hljs-tag">&lt;<span class="hljs-name">icon-font</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;icon-xiangshang&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;font-size:18px;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">icon-font</span>&gt;</span></span><br><span class="language-xml"></span><br><span class="language-xml">                            <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span><br>                        );<br>                    &#125;<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    <span class="hljs-comment">//无数据时图标样式</span><br>                    <span class="hljs-keyword">return</span> (<br>                        <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span></span><br><span class="language-xml">                            无数据</span><br><span class="language-xml"></span><br><span class="language-xml">                        <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br>                    );<br>                &#125;<br>            &#125;<br><br>        &#125;,<br><br><br>参考地址<br><span class="hljs-attr">https</span>:<span class="hljs-comment">//blog.csdn.net/weixin_47437528/article/details/124870006</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><h2 id="表头样式自定义"><a href="#表头样式自定义" class="headerlink" title="表头样式自定义"></a>表头样式自定义</h2><h3 id="方法1-插槽"><a href="#方法1-插槽" class="headerlink" title="方法1   插槽"></a>方法1   插槽</h3><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs axapta">columns：[<br>&#123;<br>                    <span class="hljs-comment">// title: &#x27;ALL Errors&#x27;,</span><br>                    ikey:<span class="hljs-string">&#x27;ALL Errors&#x27;</span>,<br>                    align: <span class="hljs-string">&#x27;center&#x27;</span>,<br>                    ellipsis: <span class="hljs-literal">true</span>,<br>                    dataIndex: <span class="hljs-string">&#x27;losslessAllErrors&#x27;</span>,<br>                    slots: &#123; title: <span class="hljs-string">&#x27;customTitle_ALLErrors&#x27;</span> &#125;,<br>                    scopedSlots: &#123;<br>                        customRender: <span class="hljs-string">&#x27;customTitle_ALLErrors&#x27;</span>,<br>                    &#125;,<br>                &#125;,<br><br>]<br><br>html<br>&lt;<span class="hljs-keyword">div</span> slot=<span class="hljs-string">&quot;customTitle_ALLErrors&quot;</span>&gt;<br>                            &lt;<span class="hljs-keyword">div</span>&gt;ALL&lt;/<span class="hljs-keyword">div</span>&gt;<br>                            &lt;<span class="hljs-keyword">div</span>&gt;Errors&lt;/<span class="hljs-keyword">div</span>&gt;<br>                        &lt;/<span class="hljs-keyword">div</span>&gt;<br><br><br><br></code></pre></td></tr></table></figure>
+
+<h3 id="方法2-内部属性"><a href="#方法2-内部属性" class="headerlink" title="方法2  内部属性"></a>方法2  内部属性</h3><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript">columns：[<br><br>&#123;<br>                    title: <span class="hljs-string">&#x27;GPU使用率&#x27;</span>,<br>                    <br>                    align: <span class="hljs-string">&#x27;center&#x27;</span>,<br>                    ellipsis: <span class="hljs-literal">true</span>,<br>                    dataIndex: <span class="hljs-string">&#x27;gpuUsageRate&#x27;</span>,<br>                    title: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123;<br>                        <span class="hljs-keyword">return</span> &lt;a-tooltip placement=<span class="hljs-string">&quot;top&quot;</span> title=<span class="hljs-string">&quot;GPU使用率&quot;</span> &gt;GPU使用率&lt;/a-tooltip&gt;<br>                    &#125;,<br>                &#125;,<br><br>]<br></code></pre></td></tr></table></figure>
+
+<p>如果有排序的话，自定义表头和排序有冲突，只能升序不能降序 slots和sorter冲突</p>
+<p>表头自定义改用这个方法</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs css">&#123;<br>                    title: () =&gt; &#123;<br>                        return (<br>                            &lt;<span class="hljs-selector-tag">div</span>&gt;<br>                                &lt;<span class="hljs-selector-tag">div</span>&gt;<span class="hljs-attribute">ALL</span>&lt;/<span class="hljs-selector-tag">div</span>&gt;<br>                                &lt;<span class="hljs-selector-tag">div</span>&gt;Errors&lt;/<span class="hljs-selector-tag">div</span>&gt;<br>                            &lt;/<span class="hljs-selector-tag">div</span>&gt;<br>                        )<br>                    &#125;,<br>                    // title: <span class="hljs-string">&#x27;ALL Errors&#x27;</span>,<br>                    ikey: <span class="hljs-string">&#x27;ALL Errors&#x27;</span>,<br>                    align: <span class="hljs-string">&#x27;center&#x27;</span>,<br>                    ellipsis: true,<br>                    dataIndex: <span class="hljs-string">&#x27;losslessAllErrors&#x27;</span>,<br>                    orderFiled: <span class="hljs-string">&#x27;lossless_all_errors&#x27;</span>,<br>                    // slots: &#123; title: <span class="hljs-string">&#x27;customTitle_ALLErrors&#x27;</span> &#125;,<br>                    sorter: (a, b) =&gt; a.losslessAllErrors - b.losslessAllErrors,<br>                    scopedSlots: &#123;<br>                        customRender: <span class="hljs-string">&#x27;customTitle_ALLErrors&#x27;</span>,<br>                    &#125;,<br><br>                &#125;,<br></code></pre></td></tr></table></figure>
+
+<p>排序 sorter<br>自定义排序 orderFiled  后台排序</p>
+<h3 id="方法3"><a href="#方法3" class="headerlink" title="方法3"></a>方法3</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs css"> colnums: [<br>               &#123;<br>          title: <span class="hljs-string">&#x27;长标题&#x27;</span>,<br>          dataIndex: <span class="hljs-string">&#x27;longTitle&#x27;</span>,<br>          scopedSlots: &#123;customRender: <span class="hljs-string">&#x27;longTitle&#x27;</span>&#125;,<br>          align: <span class="hljs-string">&#x27;center&#x27;</span>,<br>          width: <span class="hljs-number">120</span><br>          customHeaderCell: () =&gt; &#123;<br>            return &#123;<br>              style: &#123;<br>                wordWrap: <span class="hljs-string">&#x27;break-word&#x27;</span>,<br>                wordBreak: <span class="hljs-string">&#x27;break-all&#x27;</span>,<br>                whiteSpace: <span class="hljs-string">&#x27;normal&#x27;</span>,<br>                minHeight: <span class="hljs-string">&#x27;50px&#x27;</span>,<br>                width: <span class="hljs-string">&#x27;150px&#x27;</span>,<br>              &#125;<br>            &#125;<br>          &#125;<br>        &#125;<br>]<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="表体内容自定义"><a href="#表体内容自定义" class="headerlink" title="表体内容自定义"></a>表体内容自定义</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs ruby">columns：[<br>&#123;<br>                    <span class="hljs-regexp">//</span> <span class="hljs-symbol">title:</span> <span class="hljs-string">&#x27;ALL Errors&#x27;</span>,<br>                    <span class="hljs-symbol">ikey:</span><span class="hljs-string">&#x27;ALL Errors&#x27;</span>,<br>                    <span class="hljs-symbol">align:</span> <span class="hljs-string">&#x27;center&#x27;</span>,<br>                    <span class="hljs-symbol">ellipsis:</span> <span class="hljs-literal">true</span>,<br>                    <span class="hljs-symbol">dataIndex:</span> <span class="hljs-string">&#x27;losslessAllErrors&#x27;</span>,<br>                    <span class="hljs-symbol">slots:</span> &#123; <span class="hljs-symbol">title:</span> <span class="hljs-string">&#x27;customTitle_ALLErrors&#x27;</span> &#125;,<br>                    <span class="hljs-symbol">scopedSlots:</span> &#123;<br>                        <span class="hljs-symbol">customRender:</span> <span class="hljs-string">&#x27;customTitle_ALLErrors&#x27;</span>,<br>                    &#125;,<br>                &#125;,<br><br>]<br><br><br>&lt;span slot=<span class="hljs-string">&quot;customTitle_ALLErrors&quot;</span> slot-scope=<span class="hljs-string">&quot;text, record&quot;</span><br>                            <span class="hljs-symbol">:class=<span class="hljs-string">&quot;[distributedStorageId == record.distributedStorageId &amp;&amp; &#x27;selectedbar&#x27;]&quot;</span>&gt;</span><br>                            &#123;&#123; record.losslessAllErrors &#125;&#125;<br>                        &lt;<span class="hljs-regexp">/span&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="连用案例"><a href="#连用案例" class="headerlink" title="连用案例"></a>连用案例</h2><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs axapta">columns：[<br><br>&#123;<br>                    <span class="hljs-comment">// title: &#x27;ALL Errors&#x27;,</span><br>                    ikey:<span class="hljs-string">&#x27;ALL Errors&#x27;</span>,<br>                    align: <span class="hljs-string">&#x27;center&#x27;</span>,<br>                    ellipsis: <span class="hljs-literal">true</span>,<br>                    dataIndex: <span class="hljs-string">&#x27;losslessAllErrors&#x27;</span>,<br>                    slots: &#123; title: <span class="hljs-string">&#x27;customTitle_ALLErrors&#x27;</span> &#125;,<br>                    scopedSlots: &#123;<br>                        customRender: <span class="hljs-string">&#x27;customTitle_ALLErrors&#x27;</span>,<br>                    &#125;,<br>                &#125;,<br><br>]<br><br><br>html<br>&lt;<span class="hljs-keyword">div</span> slot=<span class="hljs-string">&quot;customTitle_ALLErrors&quot;</span>&gt;<br>                            &lt;<span class="hljs-keyword">div</span>&gt;ALL&lt;/<span class="hljs-keyword">div</span>&gt;<br>                            &lt;<span class="hljs-keyword">div</span>&gt;Errors&lt;/<span class="hljs-keyword">div</span>&gt;<br>                        &lt;/<span class="hljs-keyword">div</span>&gt;<br>                        &lt;span slot=<span class="hljs-string">&quot;customTitle_ALLErrors&quot;</span> slot-scope=<span class="hljs-string">&quot;text, record&quot;</span><br>                            :<span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;[distributedStorageId == record.distributedStorageId &amp;&amp; &#x27;selectedbar&#x27;]&quot;</span>&gt;<br>                            &#123;&#123; record.losslessAllErrors &#125;&#125;<br>                        &lt;/span&gt;<br></code></pre></td></tr></table></figure>
+
+<h1 id="修改样式无效"><a href="#修改样式无效" class="headerlink" title="修改样式无效"></a>修改样式无效</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css">::v-deep .ant-popover-inner .ant-popover-title&#123;<br>    <span class="hljs-attribute">display</span>: none <span class="hljs-meta">!important</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<p>加::v-deep</p>
+<p>如果还无效  例如浮层组件</p>
+<p>解决办法<br>在template模版里的代码写法<br>注意事项：在a-popover里加一个overlayClassName属性，其值可以自己定义卡片类名，定义卡片类型名之后就可以在style标签里进行修改卡片的样式了。<br>代码如下</p>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">a-popover</span>  <span class="hljs-attr">placement</span>=<span class="hljs-string">&quot;bottom&quot;</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">&quot;click&quot;</span> <span class="hljs-attr">overlayClassName</span>=<span class="hljs-string">&quot;poperlay-table1&quot;</span>&gt;</span></span><br><span class="language-xml">                                <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span></span><br><span class="language-xml">                                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Content<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="language-xml">                                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Content<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="language-xml">                                <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span><br><span class="language-xml">                                <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;title&quot;</span>&gt;</span></span><br><span class="language-xml">                                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">                                        123</span><br><span class="language-xml">                                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">                                <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span><br><span class="language-xml">                                <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">                                    </span><span class="hljs-template-variable">&#123;&#123; <span class="hljs-name">record.gpuUsageRate</span> &#125;&#125;</span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;record.gpuUsageRate&quot;</span>&gt;</span>%<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br><span class="language-xml">                                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">                            <span class="hljs-tag">&lt;/<span class="hljs-name">a-popover</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<p>在vue的组件里再加另一个style标签时不写scoped<br>注意事项：在自己所定义的卡片类名里，不加&#x2F;deep&#x2F;深度选择，才能进行样式的修改<br>代码如下</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs stata">&lt;style lang=<span class="hljs-string">&quot;less&quot;</span>&gt;<br>.poperlay-table1 .ant-popover-title&#123;<br>    <span class="hljs-keyword">display</span>: none !important;<br>&#125;<br>&lt;/style&gt;<br><br><br>a-tooltip    a-popove    都可用<br><br>a-<span class="hljs-keyword">form</span>-item  用   <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;selectbox1&quot;</span><br>dropdown-<span class="hljs-keyword">class</span>-name      &lt;a-<span class="hljs-keyword">form</span>-item <span class="hljs-keyword">label</span>=<span class="hljs-string">&quot;服务器所属分组：&quot;</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;selectbox1&quot;</span>&gt;<br></code></pre></td></tr></table></figure>
+
+<p>Tooltip如何只在内容溢出时显示，内容不溢出时不显示</p>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml">https://blog.csdn.net/licongmingli/article/details/134711481</span><br><span class="language-xml">给Tooltip添加鼠标移入事件mouseenter，当内容没有溢出时阻止鼠标事件。</span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">a-tooltip</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">&quot;topLeft&quot;</span> <span class="hljs-attr">:title</span>=<span class="hljs-string">&quot;list&quot;</span> @<span class="hljs-attr">mouseenter</span>=<span class="hljs-string">&quot;showTooltip&quot;</span>&gt;</span></span><br><span class="language-xml">  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tag-container&quot;</span>&gt;</span></span><br><span class="language-xml">     <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;(item, index) in list&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;index&quot;</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">a-tag</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;margin-bottom:6px;&quot;</span>&gt;</span></span><span class="hljs-template-variable">&#123;&#123; <span class="hljs-name">item</span> &#125;&#125;</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">a-tag</span>&gt;</span></span><br><span class="language-xml">     <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br><span class="language-xml">   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">a-tooltip</span>&gt;</span></span><br><span class="language-xml"></span><br><span class="language-xml"></span><br><span class="language-xml">补充知识点：</span><br><span class="language-xml">clientHeight ：元素像素实际高度。（内容有溢出时，理解为可视区域高度）</span><br><span class="language-xml">scollHeight：元素内容高度，包括溢出的不可见内容。（可视区域高度+被隐藏区域高度，当内容没有溢出时clientHeight ===&gt; scollHeight ）</span><br><span class="language-xml"></span><br><span class="language-xml"></span><br><span class="language-xml"></span><br><span class="language-xml">// 控制Tooltip的显示与隐藏</span><br><span class="language-xml">showTooltip(e)&#123;</span><br><span class="language-xml">  if(e.target.clientHeight === e.target.scollHeight)&#123;</span><br><span class="language-xml">    // 阻止鼠标事件</span><br><span class="language-xml">    e.target.style.pointerEvents = &#x27;none&#x27;</span><br><span class="language-xml">  &#125;</span><br><span class="language-xml">&#125;</span><br><span class="language-xml"></span><br><span class="language-xml">样式：内容垂直排列，最多显示2行，所以在上面代码中通过比较高度判断内容是否溢出</span><br><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="language-css"><span class="language-xml"><span class="hljs-selector-class">.tag-container</span> &#123;</span></span><br><span class="language-css"><span class="language-xml">  <span class="hljs-attribute">display</span>: -webkit-box; <span class="hljs-comment">/* 设置为弹性盒子*/</span></span></span><br><span class="language-css"><span class="language-xml">  -webkit-box-orient: vertical; <span class="hljs-comment">/* 垂直方向排列*/</span></span></span><br><span class="language-css"><span class="language-xml">  -webkit-line-clamp: <span class="hljs-number">2</span>; <span class="hljs-comment">/* 显示行数*/</span></span></span><br><span class="language-css"><span class="language-xml">  <span class="hljs-attribute">overflow</span>: hidden; <span class="hljs-comment">/*隐藏溢出内容 */</span></span></span><br><span class="language-css"><span class="language-xml">  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> <span class="hljs-number">8px</span>;</span></span><br><span class="language-css"><span class="language-xml">&#125;</span></span><br><span class="language-css"><span class="language-xml"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></span><br><span class="language-xml"></span><br><span class="language-xml"></span><br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/blog/categories/Ant-Design-Vue/" class="category-chain-item">Ant Design Vue</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/blog/tags/Ant-Design-Vue/" class="print-no-link">#Ant Design Vue</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Ant Design Vue遇到的问题和解决记录</div>
+      <div>https://gitee.com/dong-wanyang/blog/2024/02/18/Ant Design Vue遇到的问题和解决记录/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>幸福来敲门</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>February 18, 2024</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/2024/02/07/Google%E8%B8%A9%E5%9D%91/" title="Google踩坑_后台打印是vue路径显示变为cjs.js">
+                        <span class="hidden-mobile">Google踩坑_后台打印是vue路径显示变为cjs.js</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Luck</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>幸福来敲门</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/blog/js/events.js" ></script>
+<script  src="/blog/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/blog/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/blog/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/blog/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+  <!-- 动态背景 -->
+<script color="0,0,0" opacity='0.7' zIndex="-2" count="200" type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

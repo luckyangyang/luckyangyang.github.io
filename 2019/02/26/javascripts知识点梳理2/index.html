@@ -1,0 +1,727 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/blog/img/avatar2.jpg">
+  <link rel="icon" href="/blog/img/avatar2.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="幸福来敲门">
+  <meta name="keywords" content="幸福来敲门,博客,技术贴,前端,后端,vue,hexo,html,css,小程序,uni-app,后台,移动端,建站,论坛,bootstrap,安卓,ios,技术前沿，技术博客,mui,ant-design,elementui,java,javaStrpict,sass,scss,less,React,Angular,jQuery">
+  
+    <meta name="description" content="javascripts知识点梳理2load 事件123456789load 表示的是加载表示数据加载完成就会被触发如果我们需要将 js 代码放到 head 标签中, 那么就应该将 js 代码写在 load 事件里面 window.onload &#x3D; function () &#123;       &#x2F;&#x2F; 页面中所有的 内容 全部加载完毕       &#x2F;&#x2F; 那么就会触发, 而且只会触发一次&#125;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascripts知识点梳理2">
+<meta property="og:url" content="https://gitee.com/dong-wanyang/blog/2019/02/26/javascripts%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A2%B3%E7%90%862/index.html">
+<meta property="og:site_name" content="幸福来敲门">
+<meta property="og:description" content="javascripts知识点梳理2load 事件123456789load 表示的是加载表示数据加载完成就会被触发如果我们需要将 js 代码放到 head 标签中, 那么就应该将 js 代码写在 load 事件里面 window.onload &#x3D; function () &#123;       &#x2F;&#x2F; 页面中所有的 内容 全部加载完毕       &#x2F;&#x2F; 那么就会触发, 而且只会触发一次&#125;">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/blog/img/myimg18.jpg">
+<meta property="article:published_time" content="2019-02-26T03:26:06.000Z">
+<meta property="article:modified_time" content="2024-03-27T08:01:03.745Z">
+<meta property="article:author" content="幸福来敲门">
+<meta property="article:tag" content="javascript">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gitee.com/blog/img/myimg18.jpg">
+  
+  
+  
+  <title>javascripts知识点梳理2 - 幸福来敲门</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/blog/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/blog/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/blog/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/blog/css/font_gd7ak9jx13f/iconfont.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"gitee.com","root":"/blog/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/blog/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/blog/js/utils.js" ></script>
+  <script  src="/blog/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/blog/">
+      <strong>幸福来敲门</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/commonweal/" target="_self">
+                <i class="iconfont icon-gongyi"></i>
+                <span>公益</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/guestbook/" target="_self">
+                <i class="iconfont icon-B-liuyan"></i>
+                <span>留言</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/blog/img/default.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="javascripts知识点梳理2"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2019-02-26 11:26" pubdate>
+          2019年02月26日 11:26:06
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          1.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          14 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+    <script type="text/javascript" src="/js/love.js"></script>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">javascripts知识点梳理2</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="javascripts知识点梳理2"><a href="#javascripts知识点梳理2" class="headerlink" title="javascripts知识点梳理2"></a>javascripts知识点梳理2</h1><h2 id="load-事件"><a href="#load-事件" class="headerlink" title="load 事件"></a>load 事件</h2><figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs scilab"><span class="hljs-built_in">load</span> 表示的是加载<br>表示数据加载完成就会被触发<br><br>如果我们需要将 js 代码放到 head 标签中, 那么就应该将 js 代码写在 <span class="hljs-built_in">load</span> 事件里面<br> window.onload = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> &#123;</span><br>       <span class="hljs-comment">// 页面中所有的 内容 全部加载完毕</span><br>       <span class="hljs-comment">// 那么就会触发, 而且只会触发一次</span><br>&#125;;<br>        <br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h2><h3 id="顺序结构"><a href="#顺序结构" class="headerlink" title="顺序结构"></a>顺序结构</h3><p>概念： 由上至下的执行代码就是顺序结构。</p>
+<h3 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h3><h4 id="三元表达式"><a href="#三元表达式" class="headerlink" title="三元表达式  ?  :"></a>三元表达式  ?  :</h4><p>表达式1 ? 表达式2 : 表达式3</p>
+<h4 id="if-else"><a href="#if-else" class="headerlink" title="if else"></a>if else</h4><h4 id="switch-case-结构"><a href="#switch-case-结构" class="headerlink" title="switch case 结构"></a>switch case 结构</h4><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs actionscript"><span class="hljs-keyword">switch</span>( 变量 )&#123; <br>    <span class="hljs-keyword">case</span> value1:<br>        <span class="hljs-comment">//表达式结果 等于 value1 时 要执行的代码</span><br>        <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">case</span> value2:<br>        <span class="hljs-comment">//表达式结果 等于 value2 时 要执行的代码</span><br>        <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">default</span>:<br>        <span class="hljs-comment">//表达式结果 不等于任何一个 value 时 要执行的代码</span><br>&#125;<br><br><br><br><span class="hljs-keyword">var</span> strResult = <span class="hljs-string">&#x27;&#x27;</span>;<br><span class="hljs-keyword">var</span> usrNum = prompt(<span class="hljs-string">&#x27;请输入一个 1- 7 之间的数字：&#x27;</span>); <span class="hljs-comment">// 接收用户输入的一个数字字符串</span><br>usrNum = parseInt(usrNum);<span class="hljs-comment">// 将数字字符串 转成 整数数值</span><br><span class="hljs-keyword">switch</span>(usrNum)&#123;<br>    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:<br>        strResult = <span class="hljs-string">&#x27;星期一&#x27;</span>;<br>        <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:<br>        strResult = <span class="hljs-string">&#x27;星期二&#x27;</span>;<br>        <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">default</span>:<br>        strResult = <span class="hljs-string">&#x27;星期天&#x27;</span>;<br>&#125;<br>alert(<span class="hljs-string">&#x27;您输入的数字对应的是&#x27;</span> + strResult);<br></code></pre></td></tr></table></figure>
+
+<h4 id="switch-与-if-对比"><a href="#switch-与-if-对比" class="headerlink" title="switch 与 if 对比"></a>switch 与 if 对比</h4><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">- <span class="hljs-keyword">switch</span>...<span class="hljs-keyword">case</span>通常处理<span class="hljs-keyword">case</span>为常量的情况，而<span class="hljs-keyword">if</span>…<span class="hljs-keyword">else</span>…更加灵活有范围<br>- 当只有分支比较少的时候，<span class="hljs-keyword">if</span>效率比   <span class="hljs-keyword">switch</span>高<br>- <span class="hljs-keyword">switch</span> 进行一次条件判断后直接执行到程序的条件语句。而<span class="hljs-keyword">if</span>…<span class="hljs-keyword">else</span> 有几种条件，就得判断多少次。<br>- 分支比较多，是<span class="hljs-keyword">switch</span>的效率比较高，而且结构更清晰 <br></code></pre></td></tr></table></figure>
+
+<h3 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h3><h4 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h4><h5 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h5><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs scss"><span class="hljs-comment">//for 循环一般 用来 根据次数 循环 </span><br><span class="hljs-built_in">for</span>(初始化; 条件表达式; 自增表达式 )&#123;<br>    <span class="hljs-comment">//循环体</span><br>&#125;<br><span class="hljs-comment">//如：</span><br><span class="hljs-built_in">for</span>(var i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++)&#123;<br>    console<span class="hljs-selector-class">.log</span>(&#x27;i=&#x27;+i);<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<h5 id="例句"><a href="#例句" class="headerlink" title="例句"></a>例句</h5><figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs arcade">求<span class="hljs-number">1</span><span class="hljs-number">-100</span>之间所有偶数的和<br><span class="hljs-keyword">var</span> sumNum = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">1</span>;i &lt;= <span class="hljs-number">100</span>; i++)&#123;<br>    <span class="hljs-keyword">if</span>(i % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>)&#123; <span class="hljs-comment">// 如果 i 取模2 等于0，则 i 为 偶数</span><br>        sumNum += i;<br>    &#125;<br>&#125;<br><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;1-100之间所有偶数的和 = &#x27;</span> + sumNum);<br><br><br>求<span class="hljs-number">1</span> - <span class="hljs-number">100</span> 之间所有数的平均值<br><span class="hljs-comment">// var sum = 0;</span><br>        <span class="hljs-comment">// var average = 0;</span><br>        <span class="hljs-comment">// for (var i = 1; i &lt;= 100; i++) &#123;</span><br>        <span class="hljs-comment">//     sum += i;</span><br>        <span class="hljs-comment">// &#125;</span><br>        <span class="hljs-comment">// average = sum / 100;</span><br>        <span class="hljs-comment">// console.log(average);</span><br><br><br><br>同时求<span class="hljs-number">1</span> - <span class="hljs-number">100</span> 之间所有偶数和奇数的和<br><span class="hljs-keyword">var</span> evenSum = <span class="hljs-number">0</span>,<br>            oddSum = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">100</span>; i++) &#123;<br>            <span class="hljs-keyword">if</span> (i % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>) &#123;<br>                evenSum += i;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                oddSum += i;<br>            &#125;<br>        &#125;<br>        <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;偶数的和:&#x27;</span> + evenSum);<br>        <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;奇数的和:&#x27;</span> + oddSum);<br><br><br><br>求<span class="hljs-number">1</span><span class="hljs-number">-100</span>之间所有能被<span class="hljs-number">3</span>整除的数字的和<br><span class="hljs-keyword">var</span> <span class="hljs-built_in">sum</span> = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">100</span>; i++) &#123;<br>            <span class="hljs-keyword">if</span> (i % <span class="hljs-number">3</span> === <span class="hljs-number">0</span>) &#123;<br>                <span class="hljs-built_in">sum</span> += i;<br>            &#125;<br>        &#125;<br>        <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">sum</span>);<br></code></pre></td></tr></table></figure>
+
+<h4 id="while-循环"><a href="#while-循环" class="headerlink" title="while 循环"></a>while 循环</h4><h5 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h5><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs gcode"><span class="hljs-comment">//条件表达式为 true 时重复执行循环体代码</span><br><span class="hljs-comment">//条件表达式为 false 退出循环</span><br><span class="hljs-keyword">while</span> <span class="hljs-comment">(条件表达式)</span> &#123;<br>    <span class="hljs-comment">// 循环体代码 </span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="do…while-循环"><a href="#do…while-循环" class="headerlink" title="do…while 循环"></a>do…while 循环</h4><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs haxe"><span class="hljs-keyword">do</span>&#123;<br>    <span class="hljs-comment">// 循环体代码 - 条件表达式为 true 时重复执行循环体代码</span><br>&#125; <span class="hljs-keyword">while</span>(条件表达式);<br><br>执行顺序 先执行一次循环体代码，再判断 循环条件<br><br><span class="hljs-number">1.</span>先执行一次 循环体代码 <br><br><span class="hljs-number">2.</span>再执行 条件表达式 ，结果为 <span class="hljs-literal">true</span>，则 继续执行循环体代码<br><br>                                        如果为 <span class="hljs-literal">false</span>，则退出 循环，进入后面代码执行<br><br><br>课堂案例： 使用<span class="hljs-keyword">do</span>-<span class="hljs-keyword">while</span>循环：输出你喜欢我吗？(y/n):<span class="hljs-type"></span>&quot;，直到输入y退出，否则继续询问。（提示：使用 prompt ）<br><span class="hljs-keyword">do</span> &#123;<br>   <span class="hljs-keyword">var</span> ask = prompt(<span class="hljs-string">&#x27;你喜欢我吗？ y/n&#x27;</span>);<br>&#125; <span class="hljs-keyword">while</span> (ask !== <span class="hljs-string">&#x27;y&#x27;</span>);<br>alert(<span class="hljs-string">&#x27;我也喜欢你啊&#x27;</span>);<br><br><br>- <span class="hljs-keyword">do</span>..<span class="hljs-keyword">while</span> 循环和 <span class="hljs-keyword">while</span> 循环非常像，二者经常可以相互替代，但 <span class="hljs-keyword">do</span>..<span class="hljs-keyword">while</span> 的特点是不管条件成不成立，都会执行一次。<br>- <span class="hljs-keyword">do</span>...<span class="hljs-keyword">while</span> 语句就是先执行一遍，后面才根据 条件是否满足 决定执行次数；<br>- 和 <span class="hljs-keyword">while</span> 循环一样，在循环体内部，需要修改循环条件，否则会造成死循环。<br></code></pre></td></tr></table></figure>
+
+<h4 id="双重-for-循环"><a href="#双重-for-循环" class="headerlink" title="双重 for 循环"></a>双重 for 循环</h4><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs axapta"><span class="hljs-keyword">for</span> (外循环的初始; 外循环的条件; 外循环的增量) &#123;<br>    <br>    <span class="hljs-keyword">for</span> (内循环的初始; 内循环的条件; 内循环的增量) &#123;  <br><br>       需执行的代码;<br>   &#125;<br><br>&#125;<br><br><span class="hljs-number">1.</span> 内层循环可以看做外出循环的语句。 <br><span class="hljs-number">2.</span> 内层循环执行的顺序也要遵循<span class="hljs-keyword">for</span>循环的执行书序。 <br><span class="hljs-number">3.</span> 外层循环执行一次，则内层循环要执行全部次数（跑完毕）。<br><br><br>课堂案例 <span class="hljs-number">4</span> 使用 <span class="hljs-keyword">for</span>循环 打印 九九乘法表<br><span class="hljs-built_in">var</span> <span class="hljs-built_in">str</span> = <span class="hljs-string">&#x27;&#x27;</span><br><span class="hljs-keyword">for</span> (<span class="hljs-built_in">var</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">9</span>; i++) &#123; <span class="hljs-comment">//  外层for控制 行数  9行</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">var</span> j = <span class="hljs-number">1</span>; j &lt;= i; j++) &#123; <span class="hljs-comment">// j 控制列数    列数和行数是一样的  j &lt;= i </span><br>        <span class="hljs-comment">// 我们发现了一个非常好的规律   第一行有 一列   第二行有2列 第三行有3列  第9行有9列</span><br>        <span class="hljs-built_in">str</span> += j + <span class="hljs-string">&quot; × &quot;</span> + i + <span class="hljs-string">&quot; = &quot;</span> + i * j + <span class="hljs-string">&#x27;\t&#x27;</span>;<br>    &#125;<br>    <span class="hljs-built_in">str</span> += <span class="hljs-string">&#x27;\n&#x27;</span>;<br>&#125;<br>console.log(<span class="hljs-built_in">str</span>);<br></code></pre></td></tr></table></figure>
+
+<p>continue 跳出本次循环</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs arcade">- 概念：立即跳出本次循环，继续下一次循环（本次循环体 continu 之后的 代码 就都少执行这一次）<br>- 通俗： 吃<span class="hljs-number">5</span>个包子，第<span class="hljs-number">3</span>个有虫子，就扔掉第<span class="hljs-number">3</span>个，继续吃第<span class="hljs-number">4</span>个第<span class="hljs-number">5</span>个包子。<br><br><br>要求：模拟 吃<span class="hljs-number">5</span>个包子，第<span class="hljs-number">3</span>个有虫子，就扔掉第<span class="hljs-number">3</span>个，继续吃第<span class="hljs-number">4</span>个第<span class="hljs-number">5</span>个包子。<br><span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++)&#123;<br>    <span class="hljs-keyword">if</span>(i==<span class="hljs-number">2</span>)&#123;<br>        <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;f~! 第 &#x27;</span>+(i+<span class="hljs-number">1</span>)+<span class="hljs-string">&#x27; 个里面有虫子！扔掉！&#x27;</span>);<br>        continue;<span class="hljs-comment">//跳出 i == 2 这次循环，进入 i == 3 的循环</span><br>    &#125;<br>   	<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;哈哈哈，吃完了第 &#x27;</span>+ (i+<span class="hljs-number">1</span>) +<span class="hljs-string">&#x27; 个大包子~~！&#x27;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>break 退出整个循环</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-bullet">- </span>概念：理解跳出整个循环（循环结束），开始执行 循环后面的代码<br><span class="hljs-bullet">- </span>通俗： 吃5个包子，吃到第3个吃饱了，就不再吃后面的包子。<br><br></code></pre></td></tr></table></figure>
+
+<h2 id="调试JavaScript的方式"><a href="#调试JavaScript的方式" class="headerlink" title="调试JavaScript的方式"></a>调试JavaScript的方式</h2><h3 id="断点调试"><a href="#断点调试" class="headerlink" title="断点调试"></a>断点调试</h3><ul>
+<li>alert()</li>
+<li>console.log()<br>断点调试是指自己在程序的某一行设置一个断点，调试时，程序运行到这一行就会停住，然后你可以一步一步往下调试，调试过程中可以看各个变量当前的值，出错的话，调试到出错的代码行即显示错误，停下。</li>
+</ul>
+<p>浏览器中按F12–&gt;sources–&gt;找到需要调试的文件–&gt;在程序的某一行设置断点<br>Watch: 监视，通过watch可以监视变量的值的变化，非常的常用。<br>F11: 程序单步执行，让程序一行一行的执行，这个时候，观察watch中变量的值的变化。<br>F8：跳到下一个断点处，如果后面没有断点了，则程序执行结束。</p>
+<h3 id="调试错误的-步骤："><a href="#调试错误的-步骤：" class="headerlink" title="调试错误的 步骤："></a>调试错误的 步骤：</h3><ul>
+<li>1.先到 console 控制台 tab 页 去看 是不是 有 报错！（JS语法错误）</li>
+<li>2.如果 没有语法错误，就应该 resource  资源 tab页 去页面js代码中设置断点，并 f11 逐句调试。</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/blog/categories/javascript/" class="category-chain-item">javascript</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/blog/tags/javascript/" class="print-no-link">#javascript</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>javascripts知识点梳理2</div>
+      <div>https://gitee.com/dong-wanyang/blog/2019/02/26/javascripts知识点梳理2/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>幸福来敲门</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>February 26, 2019</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/blog/2019/03/03/javascripts%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A2%B3%E7%90%863/" title="javascripts知识点梳理3_数组和字符串处理">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">javascripts知识点梳理3_数组和字符串处理</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/2019/02/23/javascripts%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A2%B3%E7%90%861/" title="javascripts知识点梳理1">
+                        <span class="hidden-mobile">javascripts知识点梳理1</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Luck</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>幸福来敲门</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/blog/js/events.js" ></script>
+<script  src="/blog/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/blog/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/blog/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/blog/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+  <!-- 动态背景 -->
+<script color="0,0,0" opacity='0.7' zIndex="-2" count="200" type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

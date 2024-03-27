@@ -1,0 +1,815 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/blog/img/avatar2.jpg">
+  <link rel="icon" href="/blog/img/avatar2.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="幸福来敲门">
+  <meta name="keywords" content="幸福来敲门,博客,技术贴,前端,后端,vue,hexo,html,css,小程序,uni-app,后台,移动端,建站,论坛,bootstrap,安卓,ios,技术前沿，技术博客,mui,ant-design,elementui,java,javaStrpict,sass,scss,less,React,Angular,jQuery">
+  
+    <meta name="description" content="小程序开发指南申请账号进入小程序注册页 根据指引填写信息和提交相应的资料，就可以拥有自己的小程序账号。  Hello World第一步，请前往https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;debug&#x2F;wxadoc&#x2F;dev&#x2F;devtools&#x2F;download.html 微信开发者工具下载页面根据自己的操作系统下载对应的安装包进行安装。  第二步，打开微信开发者工具，选择新建小程序项目，我们先不需">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小程序的配置和代码构成">
+<meta property="og:url" content="https://gitee.com/dong-wanyang/blog/2022/01/02/%E5%B0%8F%E7%A8%8B%E5%BA%8F/index.html">
+<meta property="og:site_name" content="幸福来敲门">
+<meta property="og:description" content="小程序开发指南申请账号进入小程序注册页 根据指引填写信息和提交相应的资料，就可以拥有自己的小程序账号。  Hello World第一步，请前往https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;debug&#x2F;wxadoc&#x2F;dev&#x2F;devtools&#x2F;download.html 微信开发者工具下载页面根据自己的操作系统下载对应的安装包进行安装。  第二步，打开微信开发者工具，选择新建小程序项目，我们先不需">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/blog/img/myimg8.jpg">
+<meta property="article:published_time" content="2022-01-02T01:10:00.000Z">
+<meta property="article:modified_time" content="2024-03-27T08:05:01.203Z">
+<meta property="article:author" content="幸福来敲门">
+<meta property="article:tag" content="小程序">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gitee.com/blog/img/myimg8.jpg">
+  
+  
+  
+  <title>小程序的配置和代码构成 - 幸福来敲门</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/blog/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/blog/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/blog/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/blog/css/font_gd7ak9jx13f/iconfont.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"gitee.com","root":"/blog/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/blog/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/blog/js/utils.js" ></script>
+  <script  src="/blog/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/blog/">
+      <strong>幸福来敲门</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/commonweal/" target="_self">
+                <i class="iconfont icon-gongyi"></i>
+                <span>公益</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/guestbook/" target="_self">
+                <i class="iconfont icon-B-liuyan"></i>
+                <span>留言</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/blog/img/default.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="小程序的配置和代码构成"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-01-02 09:10" pubdate>
+          2022年01月02日 09:10:00
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          3.8k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          32 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+    <script type="text/javascript" src="/js/love.js"></script>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">小程序的配置和代码构成</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="小程序开发指南"><a href="#小程序开发指南" class="headerlink" title="小程序开发指南"></a>小程序开发指南</h1><h2 id="申请账号"><a href="#申请账号" class="headerlink" title="申请账号"></a>申请账号</h2><p>进入<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/wxopen/waregister?action=step1">小程序注册页</a> 根据指引填写信息和提交相应的资料，就可以拥有自己的小程序账号。 </p>
+<h2 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h2><p>第一步，请前往<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html">https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html</a> 微信开发者工具下载页面根据自己的操作系统下载对应的安装包进行安装。 </p>
+<p>第二步，打开微信开发者工具，选择新建小程序项目，我们先不需理解AppID的概念，新建项目时选择无AppID，并取消勾选“建立普通快速启动模板”的选项。 </p>
+<p>最后一步，我们来添加必要的代码。 </p>
+<p>在根目录下创建app.json，其内容如下。 </p>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs prolog">&#123;<br><br>  <span class="hljs-string">&quot;pages&quot;</span>: [<span class="hljs-string">&quot;pages/index/index&quot;</span>]<br><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>在根目录下新建pages目录，然后在pages目录下新建index目录，接着在index目录下创建两个文件index.wxml和index.js。</p>
+<p>index.wxml的内容如下所示。<code>&lt;text&gt;Hello World&lt;/text&gt;</code></p>
+<p>index.js的内容如下所示。<code>Page(&#123;&#125;)</code></p>
+<p>通过编写以上短短的几行代码，微信开发者工具的模拟器界面上显示出Hello World。</p>
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p>小程序包含一个描述整体程序的 <code>app</code> 和多个描述各自页面的 <code>page</code>。</p>
+<p>一个小程序主体部分由三个文件组成，必须放在项目的根目录，如下：</p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/app.html">app.js</a> 小程序逻辑 </p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html">app.json</a> 小程序公共配置 </p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html">app.wxss</a> 小程序公共样式表 </p>
+<p>一个小程序页面由四个文件组成，分别是： </p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/page.html">js</a> 页面逻辑 </p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/">wxml</a> 页面结构 </p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#%E9%A1%B5%E9%9D%A2%E9%85%8D%E7%BD%AE">json</a> 页面配置 </p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html">wxss</a> 页面样式表 </p>
+<h2 id="app-json配置"><a href="#app-json配置" class="headerlink" title="app.json配置"></a>app.json配置</h2><p>我们简单说一下这个配置各个项的含义:</p>
+<ol>
+<li><code>pages</code>字段 —— 用于描述当前小程序所有页面路径，这是为了让微信客户端知道当前你的小程序页面定义在哪个目录。</li>
+<li><code>window</code>字段 —— 定义小程序所有页面的顶部背景颜色，文字颜色定义等。</li>
+<li>tabBar如果小程序是一个多 tab 应用（客户端窗口的底部或顶部有 tab 栏可以切换页面），可以通过 tabBar 配置项指定 tab 栏的表现，以及 tab 切换时显示的对应页面。</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#entryPagePath">entryPagePath</a> 小程序默认启动首页 </p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#pages">pages</a> 页面路径列表 </p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#window">window</a> 全局的默认窗口表现 </p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#tabBar">tabBar</a> 底部 <code>tab</code> 栏的表现 </p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#networkTimeout">networkTimeout</a> 网络超时时间 </p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#debug">debug</a> 是否开启 debug 模式，默认关闭 </p>
+<p>等等。。。</p>
+<p>其他配置项细节可以参考文档 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html">小程序的配置 app.json</a> 。</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs n1ql">&#123;<br>  &quot;pages&quot;:[<br>    &quot;pages/<span class="hljs-keyword">index</span>/<span class="hljs-keyword">index</span><span class="hljs-string">&quot;,</span><br><span class="hljs-string">    &quot;</span>pages/logs/logs<span class="hljs-string">&quot;</span><br><span class="hljs-string">  ],</span><br><span class="hljs-string">  &quot;</span>tabBar<span class="hljs-string">&quot;: &#123;</span><br><span class="hljs-string">    &quot;</span>list<span class="hljs-string">&quot;: [&#123;</span><br><span class="hljs-string">      &quot;</span>pagePath<span class="hljs-string">&quot;: &quot;</span>pages/<span class="hljs-keyword">index</span>/<span class="hljs-keyword">index</span><span class="hljs-string">&quot;,</span><br><span class="hljs-string">      &quot;</span>text<span class="hljs-string">&quot;: &quot;</span>首页<span class="hljs-string">&quot;</span><br><span class="hljs-string">    &#125;, &#123;</span><br><span class="hljs-string">      &quot;</span>pagePath<span class="hljs-string">&quot;: &quot;</span>pages/logs/logs<span class="hljs-string">&quot;,</span><br><span class="hljs-string">      &quot;</span>text<span class="hljs-string">&quot;: &quot;</span>日志<span class="hljs-string">&quot;</span><br><span class="hljs-string">    &#125;]</span><br><span class="hljs-string">  &#125;,</span><br><span class="hljs-string">  &quot;</span>window<span class="hljs-string">&quot;:&#123;</span><br><span class="hljs-string">    &quot;</span>backgroundTextStyle<span class="hljs-string">&quot;:&quot;</span>light<span class="hljs-string">&quot;,</span><br><span class="hljs-string">    &quot;</span>navigationBarBackgroundColor<span class="hljs-string">&quot;: &quot;</span>#fff<span class="hljs-string">&quot;,</span><br><span class="hljs-string">    &quot;</span>navigationBarTitleText<span class="hljs-string">&quot;: &quot;</span>WeChat<span class="hljs-string">&quot;,</span><br><span class="hljs-string">    &quot;</span>navigationBarTextStyle<span class="hljs-string">&quot;:&quot;</span>black<span class="hljs-string">&quot;</span><br><span class="hljs-string">  &#125;</span><br><span class="hljs-string">&#125;</span><br></code></pre></td></tr></table></figure>
+
+
+<p>还需要注意的是 JSON 文件中无法使用注释，试图添加注释将会引发报错。</p>
+<p>window在取值时我用rgb未生效，变成默认白色<br>后转成16进制色生效<br><a target="_blank" rel="noopener" href="https://www.sioe.cn/yingyong/yanse-rgb-16/">https://www.sioe.cn/yingyong/yanse-rgb-16/</a></p>
+<p>全局配置项</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">https://developers.weixin.qq.com/miniprogram/dev/reference/<span class="hljs-keyword">configuration</span>/app.html<br><br>详细参数<br>坑：<br><br><br>tabBar   pagePath路径里一定要有一个<span class="hljs-keyword">index</span>否则不显示<br><br><br><br>&quot;tabBar&quot;: &#123;<br>      &quot;color&quot;: &quot;#a9b7b7&quot;,<br>      &quot;selectedColor&quot;: &quot;#02C8F9&quot;,<br>      &quot;borderStyle&quot;: &quot;black&quot;,<br>      &quot;list&quot;: [<br>         &#123;<br>            &quot;pagePath&quot;: &quot;pages/index/index&quot;,<br>            &quot;iconPath&quot;: &quot;pages/img/shouye.png&quot;,<br>            &quot;selectedIconPath&quot;: &quot;pages/img/shouye3.png&quot;,<br>            &quot;text&quot;: &quot;消息&quot;<br>         &#125;,<br>         &#123;<br>            &quot;pagePath&quot;: &quot;pages/page1/psage&quot;,<br>            &quot;iconPath&quot;: &quot;pages/img/wenda.png&quot;,<br>            &quot;selectedIconPath&quot;: &quot;pages/img/wenda2.png&quot;,<br>            &quot;text&quot;: &quot;通讯录&quot;<br>         &#125;,<br>         &#123;<br>            &quot;pagePath&quot;: &quot;pages/page2/page2&quot;,<br>            &quot;iconPath&quot;: &quot;pages/img/xianzhi.png&quot;,<br>            &quot;selectedIconPath&quot;: &quot;pages/img/xianzhi2.png&quot;,<br>            &quot;text&quot;: &quot;我的&quot;<br>         &#125;<br>      ]<br>   &#125;,<br><br>坑：<br><br><span class="hljs-keyword">window</span>里的标题<br>方法一：<br>如果改动其中一个页面的部分内容如名称，不要把<span class="hljs-keyword">window</span>整个复制给page1.json,只复制一条即可，否则无效<br><br>page1.json<br>&#123;<br>&quot;window&quot;: &#123;<br>      &quot;backgroundTextStyle&quot;: &quot;light&quot;,<br>      &quot;navigationBarBackgroundColor&quot;: &quot;#ccc&quot;,<br>      &quot;navigationBarTitleText&quot;: &quot;my_iM&quot;,<br>      &quot;navigationBarTextStyle&quot;: &quot;black&quot;<br>   &#125;,<br>&#125;<br>page1.json<br>&#123;<br>  &quot;usingComponents&quot;: &#123;&#125;,<br>  &quot;navigationBarTitleText&quot;: &quot;群组1&quot;<br>&#125;<br><br><br>方法二：<br>动态绑定<span class="hljs-keyword">window</span>里的标题<br><br><br>wx.setNavigationBarTitle(&#123;<br>         title: <span class="hljs-string">&#x27;修改后的导航栏标题&#x27;</span>,<br>         success: <span class="hljs-keyword">function</span> (res) &#123;<br>            // success<br>         &#125;<br>      &#125;)<br></code></pre></td></tr></table></figure>
+
+<p>状态栏沉浸式渲染</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs livescript"> <span class="hljs-string">&quot;window&quot;</span>: &#123;<br>    <span class="hljs-string">&quot;backgroundTextStyle&quot;</span>: <span class="hljs-string">&quot;light&quot;</span>,<br>    <span class="hljs-string">&quot;navigationBarBackgroundColor&quot;</span>: <span class="hljs-string">&quot;<span class="hljs-subst">#fff</span>&quot;</span>,<br>    <span class="hljs-string">&quot;navigationBarTitleText&quot;</span>: <span class="hljs-string">&quot;Weixin&quot;</span>,<br>    <span class="hljs-string">&quot;navigationBarTextStyle&quot;</span>: <span class="hljs-string">&quot;black&quot;</span>,<br>    <span class="hljs-string">&quot;navigationStyle&quot;</span>: <span class="hljs-string">&quot;custom&quot;</span><br>  &#125;,<br>navigationStyle<br></code></pre></td></tr></table></figure>
+
+<p>获取状态栏高度</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs javascript">js<br><span class="hljs-comment">// 在组件实例进入页面节点树时执行</span><br>      <span class="hljs-keyword">const</span> res = wx.<span class="hljs-title function_">getSystemInfoSync</span>()<br>      <span class="hljs-keyword">var</span> statusbarH = res.<span class="hljs-property">statusBarHeight</span><br>      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;res&#x27;</span>, res);<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setData</span>(&#123;<br>        <span class="hljs-attr">statusbar</span>: statusbarH<br>      &#125;)<br>      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;statusbar&#x27;</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">statusbar</span>);<br><br><br>html<br>&lt;view style=<span class="hljs-string">&quot;height:&#123;&#123;statusbar&#125;&#125;px&quot;</span>&gt;&lt;/view&gt;<br></code></pre></td></tr></table></figure>
+
+<p>自定义组件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">创建组件<br><br>新建组件文件夹components/statusbar<br>右键  新建组件component<br><br>需要引用组件的json文件引用组件<br> <span class="hljs-string">&quot;usingComponents&quot;</span>: &#123;<br>    <span class="hljs-string">&quot;statusbar&quot;</span>: <span class="hljs-string">&quot;../components/statusbar/statusbar&quot;</span><br>  &#125;,<br><br><br>使用组件<br>需要使用组件的xhml文件引用组件 <br> &lt;statusbar/&gt;<br></code></pre></td></tr></table></figure>
+
+<h2 id="工具配置-project-config-json"><a href="#工具配置-project-config-json" class="headerlink" title="工具配置 project.config.json"></a>工具配置 project.config.json</h2><p>通常大家在使用一个工具的时候，都会针对各自喜好做一些个性化配置，例如界面颜色、编译配置等等，当你换了另外一台电脑重新安装工具的时候，你还要重新配置。</p>
+<p>考虑到这点，小程序开发者工具在每个项目的根目录都会生成一个 <code>project.config.json</code>，你在工具上做的任何配置都会写入到这个文件，当你重新安装工具或者换电脑工作时，你只要载入同一个项目的代码包，开发者工具就自动会帮你恢复到当时你开发项目时的个性化配置，其中会包括编辑器的颜色、代码上传时自动压缩等等一系列选项。</p>
+<p>其他配置项细节可以参考文档 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html">开发者工具的配置</a> 。</p>
+<h2 id="页面配置-page-json"><a href="#页面配置-page-json" class="headerlink" title="页面配置 page.json"></a>页面配置 page.json</h2><p>这里的 <code>page.json</code> 其实用来表示 pages&#x2F;logs 目录下的 <code>logs.json</code> 这类和小程序页面相关的配置。</p>
+<p>如果你整个小程序的风格是蓝色调，那么你可以在 <code>app.json</code> 里边声明顶部颜色是蓝色即可。实际情况可能不是这样，可能你小程序里边的每个页面都有不一样的色调来区分不同功能模块，因此我们提供了 <code>page.json</code>，让开发者可以独立定义每个页面的一些属性，例如刚刚说的顶部颜色、是否允许下拉刷新等等。</p>
+<p>navigationBarBackgroundColor   导航栏背景颜色，如 <code>#000000</code> </p>
+<p>navigationBarTextStyle 导航栏标题、状态栏颜色，仅支持 <code>black</code> &#x2F; <code>white</code> </p>
+<p>navigationBarTitleText 导航栏标题文字内容 </p>
+<p>navigationStyle 导航栏样式，仅支持以下值： <code>default</code> 默认样式 <code>custom</code> 自定义导航栏，只保留右上角胶囊按钮。 </p>
+<p>homeButton 在非首页、非页面栈最底层页面或非tabbar内页面中的导航栏展示home键 </p>
+<p>backgroundColor 窗口的背景色 </p>
+<p>backgroundColorContent 页面容器背景色，<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/runtime/skyline/custom-route.html#%E8%AE%BE%E7%BD%AE%E9%A1%B5%E9%9D%A2%E9%80%8F%E6%98%8E">点击查看设置背景色详情</a> </p>
+<p>backgroundTextStyle 下拉 loading 的样式，仅支持 <code>dark</code> &#x2F; <code>light</code> </p>
+<p>等。。。</p>
+<p>其他配置项细节可以参考文档 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#%E9%A1%B5%E9%9D%A2%E9%85%8D%E7%BD%AE">页面配置</a> 。</p>
+<h3 id="配置示例"><a href="#配置示例" class="headerlink" title="配置示例"></a>配置示例</h3><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs livescript">&#123;<br>  <span class="hljs-string">&quot;navigationBarBackgroundColor&quot;</span>: <span class="hljs-string">&quot;<span class="hljs-subst">#ffffff</span>&quot;</span>,<br>  <span class="hljs-string">&quot;navigationBarTextStyle&quot;</span>: <span class="hljs-string">&quot;black&quot;</span>,<br>  <span class="hljs-string">&quot;navigationBarTitleText&quot;</span>: <span class="hljs-string">&quot;微信接口功能演示&quot;</span>,<br>  <span class="hljs-string">&quot;backgroundColor&quot;</span>: <span class="hljs-string">&quot;<span class="hljs-subst">#eeeeee</span>&quot;</span>,<br>  <span class="hljs-string">&quot;backgroundTextStyle&quot;</span>: <span class="hljs-string">&quot;light&quot;</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="WXML-文件"><a href="#WXML-文件" class="headerlink" title="WXML 文件"></a>WXML 文件</h2><h3 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h3><figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;msgItem&quot;</span>&gt;</span></span><br><span class="language-xml">  <span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">text</span>&gt;</span> </span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">index</span>&#125;&#125;</span><span class="language-xml">: </span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">msg</span>&#125;&#125;</span><span class="language-xml"> <span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">text</span>&gt;</span> Time: </span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">time</span>&#125;&#125;</span><span class="language-xml"> <span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span></span><br><span class="language-xml">  <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span><br><span class="language-xml"> <span class="hljs-comment">&lt;!--</span></span><br><span class="hljs-comment"><span class="language-xml">item: &#123;</span></span><br><span class="hljs-comment"><span class="language-xml">  index: 0,</span></span><br><span class="hljs-comment"><span class="language-xml">  msg: &#x27;this is a template&#x27;,</span></span><br><span class="hljs-comment"><span class="language-xml">  time: &#x27;2016-06-18&#x27;</span></span><br><span class="hljs-comment"><span class="language-xml">&#125;</span></span><br><span class="hljs-comment"><span class="language-xml">--&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<h3 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h3><figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml">// pages/wxml/index.js</span><br><span class="language-xml">Page(&#123;</span><br><span class="language-xml">  /**</span><br><span class="language-xml">   * 页面的初始数据</span><br><span class="language-xml">   */</span><br><span class="language-xml">  data: &#123;</span><br><span class="language-xml">    time: (new Date()).toString()</span><br><span class="language-xml">  &#125;,</span><br><span class="language-xml">&#125;)</span><br><span class="language-xml"></span><br><span class="language-xml">标签——内容数值绑定</span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">text</span>&gt;</span>当前时间：</span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">time</span>&#125;&#125;</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span></span><br><span class="language-xml"></span><br><span class="language-xml">属性——数值绑定</span><br><span class="language-xml"><span class="hljs-comment">&lt;!-- 正确的写法 --&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">data-test</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">test</span>&#125;&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>&gt;</span> hello world<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<h3 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h3><figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml"><span class="hljs-comment">&lt;!--wxml--&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span> </span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">message</span>&#125;&#125;</span><span class="language-xml"> <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs haskell">// page.js<br><span class="hljs-type">Page</span>(&#123;<br>  <span class="hljs-class"><span class="hljs-keyword">data</span>: &#123;</span><br><span class="hljs-class">    <span class="hljs-title">message</span>: &#x27;<span class="hljs-type">Hello</span> <span class="hljs-type">MINA</span>!&#x27;</span><br><span class="hljs-class">  &#125;</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="逻辑语法"><a href="#逻辑语法" class="headerlink" title="逻辑语法"></a>逻辑语法</h3><h4 id="三元"><a href="#三元" class="headerlink" title="三元"></a>三元</h4><figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">text</span>&gt;</span></span><span class="hljs-template-variable">&#123;&#123; <span class="hljs-name">a</span> === <span class="hljs-number">10</span>? <span class="hljs-string">&quot;变量 a 等于10&quot;</span>: <span class="hljs-string">&quot;变量 a 不等于10&quot;</span>&#125;&#125;</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<h4 id="算数"><a href="#算数" class="headerlink" title="算数"></a>算数</h4><figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml"><span class="hljs-comment">&lt;!--</span></span><br><span class="hljs-comment"><span class="language-xml">&#123; a: 1,  b: 2, c: 3 &#125;</span></span><br><span class="hljs-comment"><span class="language-xml">--&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span> </span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">a</span> + b&#125;&#125;</span><span class="language-xml"> + </span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">c</span>&#125;&#125;</span><span class="language-xml"> + d <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-comment">&lt;!-- 输出 3 + 3 + d --&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<h4 id="字符串拼接"><a href="#字符串拼接" class="headerlink" title="字符串拼接"></a>字符串拼接</h4><figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">&quot;hello &quot;</span> + name&#125;&#125;</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<h4 id="条件逻辑"><a href="#条件逻辑" class="headerlink" title="条件逻辑"></a>条件逻辑</h4><figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml">WXML 中，使用 wx:if=&quot;</span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">condition</span>&#125;&#125;</span><span class="language-xml">&quot; 来判断是否需要渲染该代码块：</span><br><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">wx:if</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">condition</span>&#125;&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>&gt;</span> True <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml">使用 wx:elif 和 wx:else 来添加一个 else 块：</span><br><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">wx:if</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">length</span> &gt; <span class="hljs-number">5</span>&#125;&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>&gt;</span> 1 <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">wx:elif</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">length</span> &gt; <span class="hljs-number">2</span>&#125;&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>&gt;</span> 2 <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">wx:else</span>&gt;</span> 3 <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml">因为 wx:if 是一个控制属性，需要将它添加到一个标签上。如果要一次性判断多个组件标签，可以使用一个 <span class="hljs-tag">&lt;<span class="hljs-name">block</span>/&gt;</span> 标签将多个组件包装起来，并在上边使用 wx:if 控制属性。</span><br><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">block</span> <span class="hljs-attr">wx:if</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">true</span>&#125;&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>&gt;</span></span><br><span class="language-xml">  <span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span> view1 <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml">  <span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span> view2 <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">block</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<h4 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h4><p>在组件上使用 wx:for 控制属性绑定一个数组，即可使用数组中各项的数据重复渲染该组件。默认数组的当前项的下标变量名默认为 index，数组当前项的变量名默认为 item</p>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml"><span class="hljs-comment">&lt;!-- array 是一个数组 --&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">wx:for</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">array</span>&#125;&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>&gt;</span></span><br><span class="language-xml">  </span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">index</span>&#125;&#125;</span><span class="language-xml">: </span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">item.message</span>&#125;&#125;</span><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-comment">&lt;!-- 对应的脚本文件</span></span><br><span class="hljs-comment"><span class="language-xml">Page(&#123;</span></span><br><span class="hljs-comment"><span class="language-xml">  data: &#123;</span></span><br><span class="hljs-comment"><span class="language-xml">    array: [&#123;</span></span><br><span class="hljs-comment"><span class="language-xml">      message: &#x27;foo&#x27;,</span></span><br><span class="hljs-comment"><span class="language-xml">    &#125;, &#123;</span></span><br><span class="hljs-comment"><span class="language-xml">      message: &#x27;bar&#x27;</span></span><br><span class="hljs-comment"><span class="language-xml">    &#125;]</span></span><br><span class="hljs-comment"><span class="language-xml">  &#125;</span></span><br><span class="hljs-comment"><span class="language-xml">&#125;)</span></span><br><span class="hljs-comment"><span class="language-xml">--&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<p>使用 wx:for-item 指定数组当前元素的变量名，使用 wx:for-index 指定数组当前下标的变量名：</p>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">wx:for</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">array</span>&#125;&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span> <span class="hljs-attr">wx:for-index</span>=<span class="hljs-string">&quot;idx&quot;</span> <span class="hljs-attr">wx:for-item</span>=<span class="hljs-string">&quot;itemName&quot;</span>&gt;</span></span><br><span class="language-xml">  </span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">idx</span>&#125;&#125;</span><span class="language-xml">: </span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">itemName.message</span>&#125;&#125;</span><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml">类似 block wx:if ，也可以将 wx:for 用在 <span class="hljs-tag">&lt;<span class="hljs-name">block</span>/&gt;</span> 标签上，以渲染一个包含多节点的结构块。例如：</span><br><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">block</span> <span class="hljs-attr">wx:for</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">[1, 2, 3]</span>&#125;&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>&gt;</span></span><br><span class="language-xml">  <span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span> </span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">index</span>&#125;&#125;</span><span class="language-xml">: <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml">  <span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span> </span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">item</span>&#125;&#125;</span><span class="language-xml"> <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">block</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<p>wx:key 的值以两种形式提供：</p>
+<figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs qml">&lt;<span class="hljs-keyword">switch</span> <span class="hljs-attribute">wx</span>:<span class="hljs-attribute">for=&quot;&#123;&#123;objectArray&#125;&#125;&quot; wx</span>:<span class="hljs-attribute">key=&quot;unique&quot; &gt; &#123;&#123;item.id&#125;&#125; &lt;/switch&gt;</span><br><span class="hljs-attribute"></span><br><span class="hljs-attribute"></span><br><span class="hljs-attribute">data</span>: &#123;<br>    <span class="hljs-attribute">objectArray</span>: [<br>      &#123;<span class="hljs-attribute">id:</span><span class="hljs-string"> 5, unique</span>: <span class="hljs-string">&#x27;unique_5&#x27;</span>&#125;,<br>      &#123;<span class="hljs-attribute">id:</span><span class="hljs-string"> 4, unique</span>: <span class="hljs-string">&#x27;unique_4&#x27;</span>&#125;,<br>      &#123;<span class="hljs-attribute">id:</span><span class="hljs-string"> 3, unique</span>: <span class="hljs-string">&#x27;unique_3&#x27;</span>&#125;,<br>      &#123;<span class="hljs-attribute">id:</span><span class="hljs-string"> 2, unique</span>: <span class="hljs-string">&#x27;unique_2&#x27;</span>&#125;,<br>      &#123;<span class="hljs-attribute">id:</span><span class="hljs-string"> 1, unique</span>: <span class="hljs-string">&#x27;unique_1&#x27;</span>&#125;,<br>      &#123;<span class="hljs-attribute">id:</span><span class="hljs-string"> 0, unique</span>: <span class="hljs-string">&#x27;unique_0&#x27;</span>&#125;,<br>    ],<br>    <span class="hljs-attribute">numberArray</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]<br>  &#125;,<br></code></pre></td></tr></table></figure>
+
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>WXML 提供两种文件引用方式import和include。</p>
+<h4 id="import"><a href="#import" class="headerlink" title="import"></a>import</h4><figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml">WXML 提供两种文件引用方式import和include。</span><br><span class="language-xml">import 可以在该文件中使用目标文件定义的 template，如：</span><br><span class="language-xml"></span><br><span class="language-xml">在 item.wxml 中定义了一个叫 item的 template ：</span><br><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-comment">&lt;!-- item.wxml --&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span></span><br><span class="language-xml">  <span class="hljs-tag">&lt;<span class="hljs-name">text</span>&gt;</span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">text</span>&#125;&#125;</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span><br><span class="language-xml">在 index.wxml 中引用了 item.wxml，就可以使用 item模板：</span><br><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">import</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;item.wxml&quot;</span>/&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">is</span>=<span class="hljs-string">&quot;item&quot;</span> <span class="hljs-attr">data</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">text:</span> <span class="hljs-string">&#x27;forbar&#x27;</span>&#125;&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>/&gt;</span></span><br><span class="language-xml">需要注意的是 import 有作用域的概念，即只会 import 目标文件中定义的 template，而不会 import 目标文件中 import 的 template，简言之就是 import 不具有递归的特性。</span><br><span class="language-xml"></span><br><span class="language-xml">例如：C 引用 B，B 引用A，在C中可以使用B定义的 template，在B中可以使用A定义的 template ，但是C不能使用A定义的template ，如代码2-19、代码2-20、代码2-21所示</span><br><span class="language-xml">代码清单2-19 模板 A</span><br><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-comment">&lt;!-- A.wxml --&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;A&quot;</span>&gt;</span></span><br><span class="language-xml">  <span class="hljs-tag">&lt;<span class="hljs-name">text</span>&gt;</span> A template <span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span><br><span class="language-xml">代码清单2-20 模板 B</span><br><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-comment">&lt;!-- B.wxml --&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">import</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;a.wxml&quot;</span>/&gt;</span></span><br><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;B&quot;</span>&gt;</span></span><br><span class="language-xml">  <span class="hljs-tag">&lt;<span class="hljs-name">text</span>&gt;</span> B template <span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span><br><span class="language-xml">代码清单2-21 模板 C</span><br><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-comment">&lt;!-- C.wxml --&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">import</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;b.wxml&quot;</span>/&gt;</span></span><br><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">is</span>=<span class="hljs-string">&quot;A&quot;</span>/&gt;</span>  <span class="hljs-comment">&lt;!-- 这里将会触发一个警告，因为 b 中并没有定义模板 A --&gt;</span></span><br><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">is</span>=<span class="hljs-string">&quot;B&quot;</span>/&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<h4 id="include"><a href="#include" class="headerlink" title="include"></a>include</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs xml">include 可以将目标文件中除了 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>/&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">wxs</span>/&gt;</span> 外的整个代码引入，相当于是拷贝到 include 位置，如代码2-22、代码2-23、代码2-24所示。<br>代码清单2-22 index.wxml<br><br><span class="hljs-comment">&lt;!-- index.wxml --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;header.wxml&quot;</span>/&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span> body <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;footer.wxml&quot;</span>/&gt;</span><br>代码清单2-23 header.wxml<br><br><span class="hljs-comment">&lt;!-- header.wxml --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span> header <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br>代码清单2-24 footer.wxml<br><br><span class="hljs-comment">&lt;!-- footer.wxml --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span> footer <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="共同属性"><a href="#共同属性" class="headerlink" title="共同属性"></a>共同属性</h3><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript">所有wxml 标签都支持的属性称之为共同属性，如表<span class="hljs-number">2</span><span class="hljs-number">-1</span>所示。<br><br>属性名	类型	描述	注解<br>id	<span class="hljs-built_in">String</span>	组件的唯一标识	整个页面唯一<br><span class="hljs-keyword">class</span>	<span class="hljs-title class_">String</span>	组件的样式类	在对应的 WXSS 中定义的样式类<br>style	<span class="hljs-built_in">String</span>	组件的内联样式	可以动态设置的内联样式<br>hidden	<span class="hljs-built_in">Boolean</span>	组件是否显示	所有组件默认显示<br>data-*	Any	自定义属性	组件上触发的事件时，会发送给事件处理函数<br>bind*/<span class="hljs-keyword">catch</span>*	EventHandler	组件的事件<br>https://developers.weixin.qq.com/ebook?action=get_post_info&amp;docid=<span class="hljs-number">000</span>ee2c29d4f805b0086a37a254c0a<br></code></pre></td></tr></table></figure>
+
+<h2 id="WXSS-样式"><a href="#WXSS-样式" class="headerlink" title="WXSS 样式"></a>WXSS 样式</h2><p>app.wxss为项目公共样式，它会被注入到小程序的每个页面。</p>
+<h3 id="单位rpx"><a href="#单位rpx" class="headerlink" title="单位rpx"></a>单位rpx</h3><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs abnf">小程序编译后，rpx会做一次px换算。换算是以<span class="hljs-number">375</span>个物理像素为基准，也就是在一个宽度为<span class="hljs-number">375</span>物理像素的屏幕下，<span class="hljs-number">1</span>rpx <span class="hljs-operator">=</span> <span class="hljs-number">1</span>px。<br><br>举个例子：iPhone6屏幕宽度为<span class="hljs-number">375</span>px，共<span class="hljs-number">750</span>个物理像素，那么<span class="hljs-number">1</span>rpx <span class="hljs-operator">=</span> <span class="hljs-number">375</span> / <span class="hljs-number">750</span> px <span class="hljs-operator">=</span> <span class="hljs-number">0.5</span>px。<br></code></pre></td></tr></table></figure>
+
+<h3 id="WXSS引用"><a href="#WXSS引用" class="headerlink" title="WXSS引用"></a>WXSS引用</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">在CSS中，开发者可以这样引用另一个样式文件：@<span class="hljs-keyword">import</span> url(<span class="hljs-string">&#x27;./test_0.css&#x27;</span>)<br><br>这种方法在请求上不会把test_0.css合并到<span class="hljs-keyword">index</span>.css中，也就是请求<span class="hljs-keyword">index</span>.css的时候，会多一个test_0.css的请求。<br></code></pre></td></tr></table></figure>
+
+<h3 id="内联样式"><a href="#内联样式" class="headerlink" title="内联样式"></a>内联样式</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml">WXSS内联样式与Web开发一致:<br><br><span class="hljs-comment">&lt;!--index.wxml--&gt;</span><br><br><span class="hljs-comment">&lt;!--内联样式--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;color: red; font-size: 48rpx&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="动态跟新内联样式（数据绑定）"><a href="#动态跟新内联样式（数据绑定）" class="headerlink" title="动态跟新内联样式（数据绑定）"></a>动态跟新内联样式（数据绑定）</h3><figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;color: </span></span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">eleColor</span>&#125;&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">; font-size: </span></span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">eleFontsize</span>&#125;&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">类型	选择器	样例	样例描述<br>类选择器	.class	.<span class="hljs-built_in">int</span>ro	选择所有拥有 <span class="hljs-keyword">class</span>=&quot;<span class="hljs-symbol">intro</span>&quot; 的组件<br><span class="hljs-symbol">id</span>选择器	#<span class="hljs-symbol">id</span>	#<span class="hljs-symbol">firstname</span>	选择拥有 <span class="hljs-symbol">id</span>=&quot;<span class="hljs-symbol">firstname</span>&quot; 的组件<br>元素选择器	<span class="hljs-symbol">element</span>	<span class="hljs-symbol">view</span> <span class="hljs-symbol">checkbox</span>	选择所有文档的 <span class="hljs-symbol">view</span> 组件和所有的 <span class="hljs-symbol">checkbox</span> 组件<br>伪元素选择器	::<span class="hljs-symbol">after</span>	<span class="hljs-symbol">view::<span class="hljs-symbol">after</span></span>	在 <span class="hljs-symbol">view</span> 组件后边插入内容<br>伪元素选择器	::<span class="hljs-symbol">before</span>	<span class="hljs-symbol">view::<span class="hljs-symbol">before</span></span>	在 <span class="hljs-symbol">view</span> 组件前边插入内容<br></code></pre></td></tr></table></figure>
+
+<p>小程序提供的样式库</p>
+<h2 id="JS-逻辑交互"><a href="#JS-逻辑交互" class="headerlink" title="JS 逻辑交互"></a>JS 逻辑交互</h2><p>一个服务仅仅只有界面展示是不够的，还需要和用户做交互：响应用户的点击、获取用户的位置等等。在小程序里边，我们就通过编写 <code>JS</code> 脚本文件来处理用户的操作。 </p>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span></span><span class="hljs-template-variable">&#123;&#123; <span class="hljs-name">msg</span> &#125;&#125;</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">bindtap</span>=<span class="hljs-string">&quot;clickMe&quot;</span>&gt;</span>点击我<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<p>点击 <code>button</code> 按钮的时候，我们希望把界面上 <code>msg</code> 显示成 <code>&quot;Hello World&quot;</code>，于是我们在 <code>button</code> 上声明一个属性: <code>bindtap</code> ，在 JS 文件里边声明了 <code>clickMe</code> 方法来响应这次点击操作： </p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs actionscript">Page(&#123;<br>  clickMe: <span class="hljs-keyword">function</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-keyword">this</span>.setData(&#123; msg: <span class="hljs-string">&quot;Hello World&quot;</span> &#125;)<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/blog/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" class="category-chain-item">小程序</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/blog/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" class="print-no-link">#小程序</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>小程序的配置和代码构成</div>
+      <div>https://gitee.com/dong-wanyang/blog/2022/01/02/小程序/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>幸福来敲门</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>January 2, 2022</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/blog/2022/01/08/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%95%B0%E6%8D%AE%E7%9A%84%E4%BA%A4%E4%BA%92%E6%93%8D%E4%BD%9C%E9%9A%8F%E7%AC%94/" title="小程序数据的交互操作随笔">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">小程序数据的交互操作随笔</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/2021/09/03/axios%E6%8F%92%E4%BB%B6/" title="axios插件">
+                        <span class="hidden-mobile">axios插件</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Luck</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>幸福来敲门</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/blog/js/events.js" ></script>
+<script  src="/blog/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/blog/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/blog/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/blog/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+  <!-- 动态背景 -->
+<script color="0,0,0" opacity='0.7' zIndex="-2" count="200" type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
