@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/blog/img/avatar2.jpg">
-  <link rel="icon" href="/blog/img/avatar2.jpg">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar2.jpg">
+  <link rel="icon" href="/img/avatar2.jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -19,18 +19,18 @@
     <meta name="description" content="正则表达式RegExp用于对字符串进行处理操作，匹配、替换、提取 创建方式构造函数创建方式var reg &#x3D; new RegExp(‘abc’); 字面量形式var reg &#x3D; &#x2F;abc&#x2F;; test方法12用于对字符串进行匹配操作，参数为字符串，返回值为true或falseconsole.log(reg.test(&#x27;shdabcgeys&amp;#x27">
 <meta property="og:type" content="article">
 <meta property="og:title" content="正则表达式RegExp">
-<meta property="og:url" content="https://gitee.com/dong-wanyang/blog/2021/02/10/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8FRegExp/index.html">
+<meta property="og:url" content="http://luckyangyang.github.io/2021/02/10/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8FRegExp/index.html">
 <meta property="og:site_name" content="幸福来敲门">
 <meta property="og:description" content="正则表达式RegExp用于对字符串进行处理操作，匹配、替换、提取 创建方式构造函数创建方式var reg &#x3D; new RegExp(‘abc’); 字面量形式var reg &#x3D; &#x2F;abc&#x2F;; test方法12用于对字符串进行匹配操作，参数为字符串，返回值为true或falseconsole.log(reg.test(&#x27;shdabcgeys&amp;#x27">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://gitee.com/blog/img/myimg1.jpg">
+<meta property="og:image" content="http://luckyangyang.github.io/img/myimg1.jpg">
 <meta property="article:published_time" content="2021-02-10T02:01:20.000Z">
 <meta property="article:modified_time" content="2024-03-27T07:42:03.643Z">
 <meta property="article:author" content="幸福来敲门">
 <meta property="article:tag" content="javascript">
 <meta property="article:tag" content="RegExp">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://gitee.com/blog/img/myimg1.jpg">
+<meta name="twitter:image" content="http://luckyangyang.github.io/img/myimg1.jpg">
   
   
   
@@ -58,33 +58,33 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/blog/css/main.css" />
+<link  rel="stylesheet" href="/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/blog/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/blog/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
 
 
   
-<link rel="stylesheet" href="/blog/css/font_gd7ak9jx13f/iconfont.css">
+<link rel="stylesheet" href="/css/font_gd7ak9jx13f/iconfont.css">
 
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"gitee.com","root":"/blog/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/blog/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"luckyangyang.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/blog/js/utils.js" ></script>
-  <script  src="/blog/js/color-schema.js" ></script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
   
 
 
@@ -101,7 +101,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/blog/">
+    <a class="navbar-brand" href="/">
       <strong>幸福来敲门</strong>
     </a>
 
@@ -120,7 +120,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/" target="_self">
+              <a class="nav-link" href="/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -132,7 +132,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/archives/" target="_self">
+              <a class="nav-link" href="/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -144,7 +144,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/categories/" target="_self">
+              <a class="nav-link" href="/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -156,7 +156,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/tags/" target="_self">
+              <a class="nav-link" href="/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -168,7 +168,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/about/" target="_self">
+              <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -180,7 +180,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/links/" target="_self">
+              <a class="nav-link" href="/links/" target="_self">
                 <i class="iconfont icon-link-fill"></i>
                 <span>友链</span>
               </a>
@@ -192,7 +192,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/commonweal/" target="_self">
+              <a class="nav-link" href="/commonweal/" target="_self">
                 <i class="iconfont icon-gongyi"></i>
                 <span>公益</span>
               </a>
@@ -204,7 +204,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/guestbook/" target="_self">
+              <a class="nav-link" href="/guestbook/" target="_self">
                 <i class="iconfont icon-B-liuyan"></i>
                 <span>留言</span>
               </a>
@@ -234,7 +234,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/blog/img/default.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/default.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -409,7 +409,7 @@
     
       <span class="category-chain">
         
-  <a href="/blog/categories/javascript/" class="category-chain-item">javascript</a>
+  <a href="/categories/javascript/" class="category-chain-item">javascript</a>
   
   
 
@@ -424,9 +424,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/blog/tags/javascript/" class="print-no-link">#javascript</a>
+        <a href="/tags/javascript/" class="print-no-link">#javascript</a>
       
-        <a href="/blog/tags/RegExp/" class="print-no-link">#RegExp</a>
+        <a href="/tags/RegExp/" class="print-no-link">#RegExp</a>
       
     </div>
   
@@ -439,7 +439,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>正则表达式RegExp</div>
-      <div>https://gitee.com/dong-wanyang/blog/2021/02/10/正则表达式RegExp/</div>
+      <div>http://luckyangyang.github.io/2021/02/10/正则表达式RegExp/</div>
     </div>
     <div class="license-meta">
       
@@ -483,7 +483,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/blog/2021/02/11/H5C3%E5%B0%8F%E5%8A%9F%E8%83%BD%E6%A1%88%E4%BE%8B%E5%88%86%E4%BA%AB/" title="H5C3小功能案例分享">
+                      <a href="/2021/02/11/H5C3%E5%B0%8F%E5%8A%9F%E8%83%BD%E6%A1%88%E4%BE%8B%E5%88%86%E4%BA%AB/" title="H5C3小功能案例分享">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">H5C3小功能案例分享</span>
                         <span class="visible-mobile">上一篇</span>
@@ -493,7 +493,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/blog/2020/10/15/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7/" title="html自定义属性">
+                      <a href="/2020/10/15/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7/" title="html自定义属性">
                         <span class="hidden-mobile">html自定义属性</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -623,8 +623,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/blog/js/events.js" ></script>
-<script  src="/blog/js/plugins.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -646,7 +646,7 @@
 
 
   
-    <script  src="/blog/js/img-lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -745,7 +745,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/blog/js/local-search.js" ></script>
+  <script  src="/js/local-search.js" ></script>
 
 
 
@@ -753,7 +753,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/blog/js/boot.js" ></script>
+<script  src="/js/boot.js" ></script>
 
 
   
@@ -763,5 +763,5 @@
   </noscript>
   <!-- 动态背景 -->
 <script color="0,0,0" opacity='0.7' zIndex="-2" count="200" type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
-<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
